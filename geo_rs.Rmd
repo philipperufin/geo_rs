@@ -1,0 +1,186 @@
+---
+title: 'Introduction to Remote Sensing'
+date: 'Winter term 2020/2021'
+author: BSc Geography
+output: 
+  rmdformats::material:
+    css: material_adjust_blue.css
+    self_contained: false
+    highlight: kate
+knit: (function(input_file, encoding) {
+      out_dir <- 'docs';
+      rmarkdown::render(input_file, encoding=encoding, output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
+---
+ 
+
+```{r knitr_init, echo=FALSE, cache=FALSE, message=FALSE, include=FALSE}
+library(knitr)
+library(rmdformats)
+library(shiny)
+
+## Global options
+options(max.print='75')
+opts_chunk$set(echo=FALSE,
+	             cache=TRUE,
+               prompt=FALSE,
+               tidy=FALSE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE, 
+               use_bookdown = TRUE)
+opts_knit$set(width=75)
+```
+
+# Welcome!
+
+![](fig/EO_header.PNG)
+
+## About
+
+Introduction to Remote Sensing is an introductory remote sensing course for Geography students at Humboldt-Universität zu Berlin. In this course, you will be exposed to theoretical fundaments and introductory applications of remote sensing. The course is based on open source software.
+
+------
+
+## Requirements 
+
+------
+
+## Learning goals & course contents
+
+------
+
+# Course materials
+
+## Software 
+
+We use openly available and platform independent (Windows, Linux, Mac OS) software packages throughout this course. Please install the latest versions of: 
+
+* [R v3.6.X](https://www.r-project.org/)
+* [R studio v1.2.X](https://rstudio.com/products/rstudio/)
+* [QGIS v3.1X.X](https://www.qgis.org/)
+
+
+------
+
+## Data
+
+------
+
+## Assignments
+
+The weekly assignments are defined in the respective session. Each session comprises several tasks that involve scipting in R. Course participants must submit completed assignments, documented as R scripts, in [moodle](http://moodle.hu-berlin.de/) to pass. Weekly submission deadlines are monday, 23:59. Please name the script of your work group as SXX_name1_name2.R. Please structure your script for every assignment as follows:
+
+------
+
+# Visual image interpretation
+
+## Image interpretation
+
+## Digitizing
+
+## Observing change
+
+## Exercise
+
+------
+
+# On-screen visualization
+
+## Additive color model
+
+## Image histogram
+
+## Contrast stretch
+
+## Exercise
+
+------
+
+# Land cover / land use classification
+
+## Mapping the Earth surface
+
+## Land cover or land use? 
+
+## Visual image interpretation
+
+## Land use / cover area frame survey (LUCAS)
+
+## Exercise
+
+------
+
+# Lab and field spectroscopy
+
+## 
+
+------
+# Optical data (Multi- / Hyperspectral)
+
+## Raster formats
+
+## Metadata
+
+## HyMap data
+
+------
+
+# EnMAP Box for QGIS
+
+## Introduction
+
+## Installation
+
+## Key features
+
+## Demo
+
+------
+
+# Data acquisition
+
+## Providers
+
+## Acquiring Sentinel-2 data
+
+## Pre-processing
+
+### Visualizing
+
+### Create VRT 
+
+### Amend metadata
+
+### Compare S2 & HyMap
+
+------
+
+
+# Vegetation properties & spectral indices
+
+------
+
+# Image classification
+
+------
+
+# Random forest
+
+------
+
+# Accuracy assessment
+
+------
+
+# Sentinel-2 time series
+
+------
+
+# MODIS time series
+
+------
+
+# Case studies: Change detection
+
+------
+

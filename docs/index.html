@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="author" content="BSc Geography" />
+
+
+<title>Introduction to Remote Sensing</title>
+<!-- Material Design fonts -->
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script src="index_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="index_files/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+<script src="index_files/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="index_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="index_files/navigation-1.1/tabsets.js"></script>
+<script src="index_files/navigation-1.1/codefolding.js"></script>
+<link href="index_files/magnific-popup-1.1.0/magnific-popup.css" rel="stylesheet" />
+<script src="index_files/magnific-popup-1.1.0/jquery.magnific-popup.min.js"></script>
+<link href="index_files/bootstrap_material-0.1/bootstrap-material-design.min.css" rel="stylesheet" />
+<link href="index_files/bootstrap_material-0.1/ripples.min.css" rel="stylesheet" />
+<script src="index_files/bootstrap_material-0.1/material.min.js"></script>
+<script src="index_files/bootstrap_material-0.1/ripples.min.js"></script>
+<link href="index_files/material-0.1/material.css" rel="stylesheet" />
+<script src="index_files/material-0.1/material.js"></script>
+
+
+
+<link rel="stylesheet" href="material_adjust_blue.css" type="text/css" />
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("toc");
+});
+</script>
+
+<!-- code folding -->
+
+</head>
+
+<body>
+
+<div class="header-panel shadow z-2">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-3">
+        <div id="header">
+    <h1 class="title">Introduction to Remote Sensing</h1>
+                <h4 class="author">BSc Geography</h4>
+                <h4 class="date">Winter term 2020/2021</h4>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+<div class="container-fluid main-container">
+    <div class="row">
+      <nav class="col-xs-3 menu">
+        <div id="toc">
+        <ul>
+        <li><a href="#welcome">Welcome!</a></li>
+        <li><a href="#course-materials">Course materials</a></li>
+        <li><a href="#visual-image-interpretation">Visual image interpretation</a></li>
+        <li><a href="#on-screen-visualization">On-screen visualization</a></li>
+        <li><a href="#land-cover-land-use-classification">Land cover / land use classification</a></li>
+        <li><a href="#lab-and-field-spectroscopy">Lab and field spectroscopy</a></li>
+        <li><a href="#enmap-box-for-qgis">EnMAP Box for QGIS</a></li>
+        <li><a href="#data-acquisition">Data acquisition</a></li>
+        <li><a href="#vegetation-properties-spectral-indices">Vegetation properties &amp; spectral indices</a></li>
+        <li><a href="#image-classification">Image classification</a></li>
+        <li><a href="#random-forest">Random forest</a></li>
+        <li><a href="#accuracy-assessment">Accuracy assessment</a></li>
+        <li><a href="#sentinel-2-time-series">Sentinel-2 time series</a></li>
+        <li><a href="#modis-time-series">MODIS time series</a></li>
+        <li><a href="#case-studies-change-detection">Case studies: Change detection</a></li>
+        </ul>
+        </div>
+        
+        
+        
+      </nav>
+     <div class="pages col-xs-9">
+     <div class="row">
+       <div class="col-xs-10">
+
+
+
+<div id="welcome" class="section level1">
+<h1>Welcome!</h1>
+<p><img src="fig/EO_header.PNG" /></p>
+<div id="about" class="section level2">
+<h2>About</h2>
+<p>Introduction to Remote Sensing is an introductory remote sensing course for Geography students at Humboldt-Universität zu Berlin. In this course, you will be exposed to theoretical fundaments and introductory applications of remote sensing. The course is based on open source software.</p>
+<hr />
+</div>
+<div id="requirements" class="section level2">
+<h2>Requirements</h2>
+<hr />
+</div>
+<div id="learning-goals-course-contents" class="section level2">
+<h2>Learning goals &amp; course contents</h2>
+<hr />
+</div>
+</div>
+<div id="course-materials" class="section level1">
+<h1>Course materials</h1>
+<div id="software" class="section level2">
+<h2>Software</h2>
+<p>We use openly available and platform independent (Windows, Linux, Mac OS) software packages throughout this course. Please install the latest versions of:</p>
+<ul>
+<li><a href="https://www.r-project.org/">R v3.6.X</a></li>
+<li><a href="https://rstudio.com/products/rstudio/">R studio v1.2.X</a></li>
+<li><a href="https://www.qgis.org/">QGIS v3.1X.X</a></li>
+</ul>
+<hr />
+</div>
+<div id="data" class="section level2">
+<h2>Data</h2>
+<hr />
+</div>
+<div id="assignments" class="section level2">
+<h2>Assignments</h2>
+<p>The weekly assignments are defined in the respective session. Each session comprises several tasks that involve scipting in R. Course participants must submit completed assignments, documented as R scripts, in <a href="http://moodle.hu-berlin.de/">moodle</a> to pass. Weekly submission deadlines are monday, 23:59. Please name the script of your work group as SXX_name1_name2.R. Please structure your script for every assignment as follows:</p>
+<hr />
+</div>
+</div>
+<div id="visual-image-interpretation" class="section level1">
+<h1>Visual image interpretation</h1>
+<div id="image-interpretation" class="section level2">
+<h2>Image interpretation</h2>
+</div>
+<div id="digitizing" class="section level2">
+<h2>Digitizing</h2>
+</div>
+<div id="observing-change" class="section level2">
+<h2>Observing change</h2>
+</div>
+<div id="exercise" class="section level2">
+<h2>Exercise</h2>
+<hr />
+</div>
+</div>
+<div id="on-screen-visualization" class="section level1">
+<h1>On-screen visualization</h1>
+<div id="additive-color-model" class="section level2">
+<h2>Additive color model</h2>
+</div>
+<div id="image-histogram" class="section level2">
+<h2>Image histogram</h2>
+</div>
+<div id="contrast-stretch" class="section level2">
+<h2>Contrast stretch</h2>
+</div>
+<div id="exercise-1" class="section level2">
+<h2>Exercise</h2>
+<hr />
+</div>
+</div>
+<div id="land-cover-land-use-classification" class="section level1">
+<h1>Land cover / land use classification</h1>
+<div id="mapping-the-earth-surface" class="section level2">
+<h2>Mapping the Earth surface</h2>
+</div>
+<div id="land-cover-or-land-use" class="section level2">
+<h2>Land cover or land use?</h2>
+</div>
+<div id="visual-image-interpretation-1" class="section level2">
+<h2>Visual image interpretation</h2>
+</div>
+<div id="land-use-cover-area-frame-survey-lucas" class="section level2">
+<h2>Land use / cover area frame survey (LUCAS)</h2>
+</div>
+<div id="exercise-2" class="section level2">
+<h2>Exercise</h2>
+<hr />
+</div>
+</div>
+<div id="lab-and-field-spectroscopy" class="section level1">
+<h1>Lab and field spectroscopy</h1>
+<div id="section" class="section level2">
+<h2></h2>
+<table style="width:10%;">
+<colgroup>
+<col width="9%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td># Optical data (Multi- / Hyperspectral)</td>
+</tr>
+<tr class="even">
+<td>## Raster formats</td>
+</tr>
+<tr class="odd">
+<td>## Metadata</td>
+</tr>
+<tr class="even">
+<td>## HyMap data</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="enmap-box-for-qgis" class="section level1">
+<h1>EnMAP Box for QGIS</h1>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+</div>
+<div id="installation" class="section level2">
+<h2>Installation</h2>
+</div>
+<div id="key-features" class="section level2">
+<h2>Key features</h2>
+</div>
+<div id="demo" class="section level2">
+<h2>Demo</h2>
+<hr />
+</div>
+</div>
+<div id="data-acquisition" class="section level1">
+<h1>Data acquisition</h1>
+<div id="providers" class="section level2">
+<h2>Providers</h2>
+</div>
+<div id="acquiring-sentinel-2-data" class="section level2">
+<h2>Acquiring Sentinel-2 data</h2>
+</div>
+<div id="pre-processing" class="section level2">
+<h2>Pre-processing</h2>
+<div id="visualizing" class="section level3">
+<h3>Visualizing</h3>
+</div>
+<div id="create-vrt" class="section level3">
+<h3>Create VRT</h3>
+</div>
+<div id="amend-metadata" class="section level3">
+<h3>Amend metadata</h3>
+</div>
+<div id="compare-s2-hymap" class="section level3">
+<h3>Compare S2 &amp; HyMap</h3>
+<hr />
+</div>
+</div>
+</div>
+<div id="vegetation-properties-spectral-indices" class="section level1">
+<h1>Vegetation properties &amp; spectral indices</h1>
+<hr />
+</div>
+<div id="image-classification" class="section level1">
+<h1>Image classification</h1>
+<hr />
+</div>
+<div id="random-forest" class="section level1">
+<h1>Random forest</h1>
+<hr />
+</div>
+<div id="accuracy-assessment" class="section level1">
+<h1>Accuracy assessment</h1>
+<hr />
+</div>
+<div id="sentinel-2-time-series" class="section level1">
+<h1>Sentinel-2 time series</h1>
+<hr />
+</div>
+<div id="modis-time-series" class="section level1">
+<h1>MODIS time series</h1>
+<hr />
+</div>
+<div id="case-studies-change-detection" class="section level1">
+<h1>Case studies: Change detection</h1>
+<hr />
+</div>
+
+    </div>
+    <div class="col-xs-2">
+        </div>
+  </div>
+  </div>
+  </div>
+  <div class="row">
+    </div>
+  </div>
+
+<script>
+$(document).ready(function () {
+  // add bootstrap table styles to pandoc tables
+  $('tr.header').parent('thead').parent('table').addClass('table table-striped table-hover');
+
+    var images = $('.pages img');
+  images.filter(function() {
+      if ($(this).parent().attr("class") == "figure") {
+          return(false)
+      } else {
+          return(true);
+      }
+  }).wrap("<div class='figure'></div>");
+  images.addClass("image-thumb").wrap("<div class='panel-body'></div>");
+  $('.figure p.caption').wrap("<div class='panel-footer'></div>");
+  $('.figure').addClass('panel panel-default');
+  
+    $('.pages img')
+ 	  .addClass("image-lb");
+  $('.pages').magnificPopup({
+	      type:'image',
+	      closeOnContentClick: false,
+	      closeBtnInside: false,
+        delegate: 'img',
+	      gallery: {enabled: false },
+          removalDelay: 500,
+          callbacks: {
+              beforeOpen: function() {
+                // just a hack that adds mfp-anim class to markup
+                this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+              }
+          },
+          mainClass: 'mfp-move-from-top',
+	      image: {
+	        verticalFit: true,
+            titleSrc: 'alt'
+	      }
+ 	    });
+ 	
+    
+    $('#toc ul li').first().addClass("active");
+    $('#toc ul li').attr("data-target", function() {
+        return($(this).children("a").attr("href"));
+    })
+    $('body .section.level1').first().addClass("active");
+    $('body .section.level1').not('.active').hide();
+    
+    $('#toc a[href*="#"]').click(function() {
+
+      var id = $(this).attr("href");
+      if (id === "#") return;
+      if (id.substring(0, 8) === "#dyntab-") return;
+      toggle_page(id);
+
+      // Menu
+      var menu_entry = $(".menu li[data-target='"+id+"']");
+      menu_entry.addClass("active");
+      $(".menu li").not(menu_entry).removeClass("active"); 
+      
+
+    });
+
+    function toggle_page(id) {
+      $(".page").not(page).removeClass("active").hide();
+      window.page = id;
+      var page = $(window.page);
+      window.location.hash = window.page;
+      //$(this).addClass("active");
+
+      page.show();
+
+      var totop = setInterval(function () {
+        $(".pages").animate({scrollTop: 0}, 0);
+      }, 10);
+
+      setTimeout(function () {
+        page.addClass("active");
+        setTimeout(function () {
+          clearInterval(totop);
+        }, 1000);
+      }, 100);
+
+      window.dispatchEvent(new Event('resize'));
+
+    }
+
+
+    $(".menu li").click(function () {
+
+      toggle_page($(this).data("target"));
+
+      // Menu
+      if (!$(this).data("target")) return;
+      if ($(this).is(".active")) return;
+      $(".menu li").not($(this)).removeClass("active");
+      $(this).addClass("active");
+
+    });
+  
+    
+
+
+    window.page = window.location.hash;
+    if (window.page != "") {
+      $(".menu").find("li[data-target=" + window.page + "]").trigger("click");
+    }
+
+    /* init material bootstrap js */
+    $.material.init();
+});
+</script>
+
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
