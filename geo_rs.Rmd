@@ -33,7 +33,7 @@ opts_knit$set(width=75)
 
 # Welcome!
 
-![](fig/EO_header.PNG)
+![EOL Logo](fig/EO_header.PNG)
 
 ## About
 
@@ -112,7 +112,7 @@ The weekly assignments are defined in the respective session. Each session compr
 
 # Lab and field spectroscopy
 
-## 
+## [USGS spectral characteristics viewer](https://landsat.usgs.gov/spectral-characteristics-viewer)
 
 ------
 # Optical data (Multi- / Hyperspectral)
