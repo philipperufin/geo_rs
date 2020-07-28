@@ -114,7 +114,10 @@ The weekly assignments are defined in the respective session. Each session compr
 
 ## [USGS spectral characteristics viewer](https://landsat.usgs.gov/spectral-characteristics-viewer)
 
+## 
+
 ------
+
 # Optical data (Multi- / Hyperspectral)
 
 ## Raster formats
