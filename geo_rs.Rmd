@@ -142,11 +142,60 @@ The weekly assignments are defined in the respective session. Each session compr
 
 # Data acquisition
 
-## Providers
+## Provider (vielleicht eher 'Sentinel 2'?)
+
+* COPERNICUS program features a pair of optical Earth observing satellites: Sentinel-2A and -2B
+Launched in June 2015  (Sentinel-2A), and March 2017 (Sentinel-2B)
+
+* Revisit time 5 days with both satellites, 290km swath width
+
+* Sensor: Multispectral Imager (MSI), 13 spectral bands, partly resembling Landsat
+
+* Spatial resolution of 10 – 60 m, depending on spectral bands, e.g. nIR bands 8 (10m) and 8a (20m).
+
+![Sentinel 2 vs Landsat 7 and 8](fig/Sentinel2_bands.PNG)
+
+## Sentinel 2
+* Sentinel-2 products are delivered in various processing levels. 
+
+* Level 1B: Top-of-atmosphere radiance values in sensor geometry 
+
+* Level 1C: Top-of-atmosphere reflectance in cartographic geometry 
+
+* Level 2A: Bottom-of-atmosphere reflectance in cartographic geometry
+
+* L1C and L2A products are partitioned in “granules”: 100x100 km2 UTM/WGS84 projection
+
+![Sentinel 2 Granules](fig/Sentinel2_granules.PNG)
 
 ## Acquiring Sentinel-2 data
+* Create a User-Account at the [Copernicus Open Access Hub](https://scihub.copernicus.eu/dhus/#/home)
+* Search for images with these specifications: 
+
+
+      Date: XXX
+
+      Sensor: Sentinel-2
+
+      Producttype: Surface Reflectance (Level 2A, S2MSI2A) 
+
+      Cloud cover: max. 20%
+
+      Region: greater area of Berlin
+
+* How many images are available for these specifications?
+download this image: 
+
+Granule: XXX
+
+Date: XXX
 
 ## Pre-processing
+* the downloaded Sentinel 2 image is a .zip-file
+* unzip it and delete the .zip-file
+* take a look at your files
+
+![Sentinel 2 filestructure](docs/fig/Sentinel2_filestructure.png)
 
 ### Visualizing
 

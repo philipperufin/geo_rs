@@ -230,14 +230,63 @@ $(document).ready(function () {
 </div>
 <div id="data-acquisition" class="section level1">
 <h1>Data acquisition</h1>
-<div id="providers" class="section level2">
-<h2>Providers</h2>
+<div id="provider-vielleicht-eher-sentinel-2" class="section level2">
+<h2>Provider (vielleicht eher ‘Sentinel 2’?)</h2>
+<ul>
+<li><p>COPERNICUS program features a pair of optical Earth observing satellites: Sentinel-2A and -2B Launched in June 2015 (Sentinel-2A), and March 2017 (Sentinel-2B)</p></li>
+<li><p>Revisit time 5 days with both satellites, 290km swath width</p></li>
+<li><p>Sensor: Multispectral Imager (MSI), 13 spectral bands, partly resembling Landsat</p></li>
+<li><p>Spatial resolution of 10 – 60 m, depending on spectral bands, e.g. nIR bands 8 (10m) and 8a (20m).</p></li>
+</ul>
+<div class="figure">
+<img src="fig/Sentinel2_bands.PNG" alt="Sentinel 2 vs Landsat 7 and 8" />
+<p class="caption">Sentinel 2 vs Landsat 7 and 8</p>
+</div>
+</div>
+<div id="sentinel-2" class="section level2">
+<h2>Sentinel 2</h2>
+<ul>
+<li><p>Sentinel-2 products are delivered in various processing levels.</p></li>
+<li><p>Level 1B: Top-of-atmosphere radiance values in sensor geometry</p></li>
+<li><p>Level 1C: Top-of-atmosphere reflectance in cartographic geometry</p></li>
+<li><p>Level 2A: Bottom-of-atmosphere reflectance in cartographic geometry</p></li>
+<li><p>L1C and L2A products are partitioned in “granules”: 100x100 km2 UTM/WGS84 projection</p></li>
+</ul>
+<div class="figure">
+<img src="fig/Sentinel2_granules.PNG" alt="Sentinel 2 Granules" />
+<p class="caption">Sentinel 2 Granules</p>
+</div>
 </div>
 <div id="acquiring-sentinel-2-data" class="section level2">
 <h2>Acquiring Sentinel-2 data</h2>
+<ul>
+<li>Create a User-Account at the <a href="https://scihub.copernicus.eu/dhus/#/home">Copernicus Open Access Hub</a></li>
+<li><p>Search for images with these specifications:</p>
+<pre><code>Date: XXX
+
+Sensor: Sentinel-2
+
+Producttype: Surface Reflectance (Level 2A, S2MSI2A) 
+
+Cloud cover: max. 20%
+
+Region: greater area of Berlin</code></pre></li>
+<li><p>How many images are available for these specifications? download this image:</p></li>
+</ul>
+<p>Granule: XXX</p>
+<p>Date: XXX</p>
 </div>
 <div id="pre-processing" class="section level2">
 <h2>Pre-processing</h2>
+<ul>
+<li>the downloaded Sentinel 2 image is a .zip-file</li>
+<li>unzip it and delete the .zip-file</li>
+<li>take a look at your files</li>
+</ul>
+<div class="figure">
+<img src="fig/Sentinel2_filestructure.png" alt="Sentinel 2 filestructure" />
+<p class="caption">Sentinel 2 filestructure</p>
+</div>
 <div id="visualizing" class="section level3">
 <h3>Visualizing</h3>
 </div>
