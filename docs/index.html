@@ -239,21 +239,23 @@ $(document).ready(function () {
 <li><p>Spatial resolution of 10 – 60 m, depending on spectral bands, e.g. nIR bands 8 (10m) and 8a (20m).</p></li>
 </ul>
 <div class="figure">
-<img src="fig/Sentinel2_bands.PNG" alt="Sentinel 2 vs Landsat 7 and 8" />
+<img src="fig/Sentinel2_bands.png" alt="Sentinel 2 vs Landsat 7 and 8" />
 <p class="caption">Sentinel 2 vs Landsat 7 and 8</p>
 </div>
 </div>
 <div id="sentinel-2" class="section level2">
 <h2>Sentinel 2</h2>
 <ul>
-<li><p>Sentinel-2 products are delivered in various processing levels.</p></li>
+<li><p>Sentinel-2 products are delivered in various processing levels.</p>
+<ul>
 <li><p>Level 1B: Top-of-atmosphere radiance values in sensor geometry</p></li>
 <li><p>Level 1C: Top-of-atmosphere reflectance in cartographic geometry</p></li>
 <li><p>Level 2A: Bottom-of-atmosphere reflectance in cartographic geometry</p></li>
+</ul></li>
 <li><p>L1C and L2A products are partitioned in “granules”: 100x100 km2 UTM/WGS84 projection</p></li>
 </ul>
 <div class="figure">
-<img src="fig/Sentinel2_granules.PNG" alt="Sentinel 2 Granules" />
+<img src="fig/Sentinel2_granules.png" alt="Sentinel 2 Granules" />
 <p class="caption">Sentinel 2 Granules</p>
 </div>
 </div>
@@ -279,25 +281,67 @@ Region: greater area of Berlin</code></pre></li>
 <div id="pre-processing" class="section level2">
 <h2>Pre-processing</h2>
 <ul>
-<li>the downloaded Sentinel 2 image is a .zip-file</li>
-<li>unzip it and delete the .zip-file</li>
-<li>take a look at your files</li>
+<li><p>The downloaded Sentinel-2 image is a .zip-file</p></li>
+<li><p>Unzip it and delete the .zip-file</p></li>
+<li><p>Take a look at your files</p></li>
 </ul>
 <div class="figure">
 <img src="fig/Sentinel2_filestructure.png" alt="Sentinel 2 filestructure" />
 <p class="caption">Sentinel 2 filestructure</p>
 </div>
-<div id="visualizing" class="section level3">
-<h3>Visualizing</h3>
+<div id="visualizing-the-sentinel-2-image-with-virtual-raster-builder-in-the-enmap-box" class="section level3">
+<h3>Visualizing the Sentinel-2 image with ‘Virtual Raster Builder’ in the EnMAP-Box</h3>
+<ul>
+<li><p>Goal: the single bands in JPEG2000-format (.jp2) will be merged into a single Multiband-Image in ENVI-format</p></li>
+<li><p>Open QGIS and install the ‘Virtual Raster Builder’ plugin</p></li>
+<li><p>Open the EnMAP-Box and load ‘S2_Subset_Berlin.shp’ into Data Sources. The shapefile will be used to clip the Sentinel-2 scene to a smaller extend</p></li>
+<li>Open ‘Virtual Raster Builder’ from the EnMAP-Box. Create a Multiband-Image with the following specifications:
+<ul>
+<li>Spectral Bands: B2, B3, B4, B5, B6, B7, B8a, B11, B12</li>
+<li>Spatial Resolution: 20m (from the ‘R20M’ file)</li>
+<li>Spatial Extend: according to the shapefile</li>
+<li>Format: ENVI</li>
+</ul></li>
+</ul>
 </div>
-<div id="create-vrt" class="section level3">
-<h3>Create VRT</h3>
+<div id="create-vrt-in-den-folien-vom-vorjahr-soll-man-ein-envi-erstellen" class="section level3">
+<h3>Create VRT (in den Folien vom Vorjahr soll man ein ENVI erstellen…)</h3>
 </div>
 <div id="amend-metadata" class="section level3">
 <h3>Amend metadata</h3>
+<ul>
+<li><p>Visualize the Multiband Sentinel-2 Image in the EnMAP-Box with the band combination R = 8a (nIR), G = 4 (red), B = 3 (green).</p></li>
+<li><p>Take a look at the .hdr file. Which metainformation is missing ?</p></li>
+<li><p>Delete the edited Sentinel-2 image from the Data Source Panel. Also delete the .aux-file and .vrt-file from apple finder / windows explorer</p></li>
+<li><p>Add the wavelengths of the single bands and the unit for the wavelengths in the .hdr file (metadata). Research the unit and the extend of the applied Sentinel-2 wavelengths.</p></li>
+<li><p>Reload the Sentinel-2 image into the Data Source Panel. The wavelengths should now be displayed on the x-axis when visualizing at image spectra. Now you can compare spectra from different Sensors.</p></li>
+</ul>
 </div>
 <div id="compare-s2-hymap" class="section level3">
 <h3>Compare S2 &amp; HyMap</h3>
+<p>part 1 - spatial resolution</p>
+<ul>
+<li><p>Visualize the Sentinel-2 image and the HyMap image from last week in a RGB bandcombination that is suited for comparison. In order to do that open the images in two separate MapViews and link them (spatialy + zoom)</p></li>
+<li><p>Compare both images visually and describe the effects on image details due to the different spatial resolution (20 m vs. 3.6 m).</p></li>
+<li><p>Choose one surface as example for each of these classes: impervious- build up, impervious- not build up, grass/lawn, trees, soil, water.</p></li>
+<li><p>Take a screenshot from each example.</p></li>
+</ul>
+</div>
+<div id="compare-s2-hymap-1" class="section level3">
+<h3>Compare S2 &amp; HyMap</h3>
+<p>part 2 - spectral resolution</p>
+<ul>
+<li><p>Restart QGIS and EnMAP-Box. Visualize the Sentinel-2 image and the HyMap image in a suited RGB band combination (Wozu ist der Neustart notwendig ?)</p></li>
+<li><p>Visualize spectra of the same surface in the Sentinel-2 and in the HyMAP image (9 vs. 111 spectral bands).</p></li>
+<li><p>Try to choose a ‘pure’ surface (no mixtures) which is also stable in temporal terms (unchanged over time).</p></li>
+<li><p>Do this for the classes mentioned above and add a description and a screenshot.</p></li>
+</ul>
+<div class="figure">
+<img src="fig/homework_example.png" alt="example" />
+<p class="caption">example</p>
+</div>
+<p>Starten Sie die QGIS und die EnMAP-Box neu. Stellen Sie das Sentinel-2 Bild und das HyMap-Bild in einer geeigneten RGB Bandkombination dar.</p>
+<p>Visualisieren Sie Bildspektren derselben Oberfläche in Sentinel-2 und HyMap spektraler Auflösung (9 vs. 111 spektrale Bänder). Betrachten Sie eine möglichst reine (d.h., nicht gemischte), temporal stabile (d.h., unveränderte) Oberfläche für die Klassen Gebäude, versiegelt unbebaut, Gras, Baum, Boden, Wasser. Fügen Sie zu jedem Beispiel eine Beschreib-ung, und einen Screenshot des Bildausschnitts und der Spektren hinzu. *</p>
 <hr />
 </div>
 </div>
