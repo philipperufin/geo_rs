@@ -140,14 +140,51 @@ $(document).ready(function () {
 </div>
 <div id="visual-image-interpretation" class="section level1">
 <h1>Visual image interpretation</h1>
+<div class="figure">
+<img src="fig/Berlin_2009.png" alt="Berlin from above in Google Earth, 2009" />
+<p class="caption">Berlin from above in Google Earth, 2009</p>
+</div>
+<div class="figure">
+<img src="fig/Berlin_2019.png" alt="Berlin from above in Google Earth, 2019" />
+<p class="caption">Berlin from above in Google Earth, 2019</p>
+</div>
 <div id="image-interpretation" class="section level2">
 <h2>Image interpretation</h2>
+<ul>
+<li><p>Open Google Earth</p></li>
+<li><p>Deactivate the oblique view (use key “R”)</p></li>
+<li><p>Disable multimedia (e.g. pictures)</p></li>
+<li><p>Move to two different positions in Berlin and answer the following questions with help of the aerial photographs:</p>
+<ul>
+<li><p>Which season was the flight operated in?</p></li>
+<li><p>Is it possible to get the exact month and/or day?</p></li>
+<li><p>What was the day of the week?</p></li>
+<li><p>What was the time of day?</p></li>
+</ul></li>
+</ul>
 </div>
 <div id="digitizing" class="section level2">
 <h2>Digitizing</h2>
+<ul>
+<li><p>Navigate to Campus Adlershof</p></li>
+<li><p>Right-click on ‘Meine Orte’ and create a new folder called ‘FE1’</p></li>
+<li><p>Use the digitizing tools (see image below) to…</p>
+<ul>
+<li><p>Mark the wind tunnel as a point</p></li>
+<li><p>Digitize a section of the S-Bahn trail as a line</p></li>
+<li><p>Save the Institute of Geography as a polygon (semitransparent and outlined)</p></li>
+</ul></li>
+<li><p>The results of the digitization need to be located in the ‘FE1’ folder</p></li>
+<li><p>Save the folder ‘FE1’ with a right-click on the folder as a .kmz file on O:/…</p>
+<div class="figure">
+<img src="fig/digitizing_tools.png" alt="Digitizing tools" />
+<p class="caption">Digitizing tools</p>
+</div></li>
+</ul>
 </div>
 <div id="observing-change" class="section level2">
 <h2>Observing change</h2>
+<p>note: add digitizing tools img in section digitizing, add img 2009 and 2019 in the beginning</p>
 </div>
 <div id="exercise" class="section level2">
 <h2>Exercise</h2>
@@ -262,7 +299,7 @@ $(document).ready(function () {
 <div id="acquiring-sentinel-2-data" class="section level2">
 <h2>Acquiring Sentinel-2 data</h2>
 <ul>
-<li>Create a User-Account at the <a href="https://scihub.copernicus.eu/dhus/#/home">Copernicus Open Access Hub</a></li>
+<li><p>Create a User-Account at the <a href="https://scihub.copernicus.eu/dhus/#/home">Copernicus Open Access Hub</a></p></li>
 <li><p>Search for images with these specifications:</p>
 <pre><code>Date: XXX
 
@@ -295,7 +332,7 @@ Region: greater area of Berlin</code></pre></li>
 <li><p>Goal: the single bands in JPEG2000-format (.jp2) will be merged into a single Multiband-Image in ENVI-format</p></li>
 <li><p>Open QGIS and install the ‘Virtual Raster Builder’ plugin</p></li>
 <li><p>Open the EnMAP-Box and load ‘S2_Subset_Berlin.shp’ into Data Sources. The shapefile will be used to clip the Sentinel-2 scene to a smaller extend</p></li>
-<li>Open ‘Virtual Raster Builder’ from the EnMAP-Box. Create a Multiband-Image with the following specifications:
+<li><p>Open ‘Virtual Raster Builder’ from the EnMAP-Box. Create a Multiband-Image with the following specifications:</p>
 <ul>
 <li>Spectral Bands: B2, B3, B4, B5, B6, B7, B8a, B11, B12</li>
 <li>Spatial Resolution: 20m (from the ‘R20M’ file)</li>
@@ -337,11 +374,9 @@ Region: greater area of Berlin</code></pre></li>
 <li><p>Do this for the classes mentioned above and add a description and a screenshot.</p></li>
 </ul>
 <div class="figure">
-<img src="fig/homework_example.png" alt="example" />
-<p class="caption">example</p>
+<img src="fig/homework_example.png" alt="Example" />
+<p class="caption">Example</p>
 </div>
-<p>Starten Sie die QGIS und die EnMAP-Box neu. Stellen Sie das Sentinel-2 Bild und das HyMap-Bild in einer geeigneten RGB Bandkombination dar.</p>
-<p>Visualisieren Sie Bildspektren derselben Oberfläche in Sentinel-2 und HyMap spektraler Auflösung (9 vs. 111 spektrale Bänder). Betrachten Sie eine möglichst reine (d.h., nicht gemischte), temporal stabile (d.h., unveränderte) Oberfläche für die Klassen Gebäude, versiegelt unbebaut, Gras, Baum, Boden, Wasser. Fügen Sie zu jedem Beispiel eine Beschreib-ung, und einen Screenshot des Bildausschnitts und der Spektren hinzu. *</p>
 <hr />
 </div>
 </div>

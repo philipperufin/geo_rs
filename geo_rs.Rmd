@@ -74,13 +74,57 @@ The weekly assignments are defined in the respective session. Each session compr
 
 # Visual image interpretation
 
+![Berlin from above in Google Earth, 2009](docs/fig/Berlin_2009.png) 
+
+![Berlin from above in Google Earth, 2019](docs/fig/Berlin_2019.png)
+
+
+
 ## Image interpretation
+
+* Open Google Earth
+
+* Deactivate the oblique view (use key "R")
+
+* Disable multimedia (e.g. pictures)
+
+* Move to two different positions in Berlin and answer the following questions with help of the aerial photographs:
+
+    + Which season was the flight operated in?
+
+    + Is it possible to get the exact month and/or day?
+
+    + What was the day of the week?
+
+    + What was the time of day?
 
 ## Digitizing
 
+* Navigate to Campus Adlershof
+
+* Right-click on 'Meine Orte' and create a new folder called 'FE1'
+
+* Use the digitizing tools (see image below) to...
+
+    + Mark the wind tunnel as a point
+    
+    + Digitize a section of the S-Bahn trail as a line
+    
+    + Save the Institute of Geography as a polygon (semitransparent and outlined)
+    
+* The results of the digitization need to be located in the 'FE1' folder
+
+* Save the folder 'FE1' with a right-click on the folder as a .kmz file on O:/...
+
+    ![Digitizing tools](docs/fig/digitizing_tools.png)
+
+
 ## Observing change
 
+note: add digitizing tools img in section digitizing, add img 2009 and 2019 in the beginning
+
 ## Exercise
+
 
 ------
 
