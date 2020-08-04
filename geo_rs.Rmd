@@ -74,15 +74,13 @@ The weekly assignments are defined in the respective session. Each session compr
 
 # Visual image interpretation
 
-![Berlin from above in Google Earth, 2009](docs/fig/Berlin_2009.png) 
+![Berlin from above in Google Earth^TM^, 2009](docs/fig/Berlin_2009.png) 
 
-![Berlin from above in Google Earth, 2019](docs/fig/Berlin_2019.png)
-
-
+![Berlin from above in Google Earth^TM^, 2019](docs/fig/Berlin_2019.png)
 
 ## Image interpretation
 
-* Open Google Earth
+* Open Google Earth^TM^
 
 * Deactivate the oblique view (use key "R")
 
@@ -118,13 +116,45 @@ The weekly assignments are defined in the respective session. Each session compr
 
     ![Digitizing tools](docs/fig/digitizing_tools.png)
 
-
 ## Observing change
 
-note: add digitizing tools img in section digitizing, add img 2009 and 2019 in the beginning
+* Use the date tool (see image below) to observe older/historical photos of Adlershof and answer the following questions:
+
+    + What is the frequency of photo observations before and after 2010?
+    
+    + What major changes can be detected in Adlershof in 2000, 2010 and 2019?
+    
+    + Do your polygons/lines/points fit older pictures as well?
+    
+    + Describe the differences of image data in 1953, 2000 and 2019. Why do they differ?
+    
+    ![date tool](docs/fig/datumstool.png)
+
+## Summary
+
+* The analysis of earth observation data (satellite and aerial images) allows us to draw a variety of conclusions about processes and conditions of the Earth's surface. For such analysis, different image properties are used (object features and context).
+
+* With help of image data from different dates, changes of the Earth's surface can be analyzed.
+
+* The quality of image data enhanced over time. Today, satellite images with a spatial resolution of less than 1 m are available for most parts of the earth, in urban agglomerations aerial photographs often even exceed 10 cm spatial resolution.
 
 ## Exercise
 
+Characterize the land cover and land use change in Berlin with Google Earth^TM^.
+
+* On O:/WS2021_FE1/S01 you find a .kmz file with two given areas (Berlin-Mitte and Berlin-Adlershof)
+
+* Choose three suitable objects within each area and outline them with the digitizing tools
+
+* Choose three time steps (depending on the available data) that show a change process for your chosen objects
+
+* Answer the following questions for your objects (with images and text):
+
+    + What changes contentwise?
+    
+    + What changes concretely in the photos?
+    
+Upload your results as a PDF on Moodle.
 
 ------
 
