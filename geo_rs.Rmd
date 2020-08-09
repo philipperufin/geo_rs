@@ -154,11 +154,56 @@ Characterize the land cover and land use change in Berlin with Google Earth^TM^.
     
     + What changes concretely in the photos?
     
-Upload your results as a PDF on Moodle.
+*Upload your results as a PDF file on Moodle (each participant separately).*
 
 ------
 
 # On-screen visualization
+
+## Recap
+
+* We can describe the human eye as a 'sensor with three bands'
+
+* Sensitive for electromagnetic radiation (EMR) in the blue, green and red regions: **spectral range** between ~400-700 nm
+
+* The receptors for the three colors are stimulated across wavelength regions of ~150-200 nm (**spectral resolution**)
+
+* The intervals between the wavelengths of maximum sensitivity are ~50 nm to 150 nm wide (**spectral sampling interval**) 
+
+![retinal response of the human eye (Source: [planetary.org LINK ÜBERPRÜFEN!](http://www.planetary.org/rrgtm/emspectrum.html)
+)](docs/fig/retinal response.png)
+
+* digital cameras correspond to imaging sensors with three bands
+
+![red-green-blue representation](docs/fig/red-green-blue.png)
+
+* Spectrometers are sensitive to wavelengths beyond the human eye’s sensitivity
+
+* **Optical remote sensing** makes use of the visible light (~380 - 700 nm), and the near and short-wave infrared (0.7 - ~3 µm)
+
+* **Thermal remote sensing**  detects thermal infrared radiation (5 - 15 µm)
+
+* **Radar remote sensing** detects microwave radiation (1 mm - 1 m)
+
+* Common abbrevations:
+
+    + VIS = visible: 380 - 700 nm
+    
+    + nIR = near infrared: 0.7 - 1.3 µm
+    
+    + swIR = short wave infrared: 1.3 - 3 µm
+    
+    + tIR = thermal infrared: 5 - 15 µm
+    
+![wavelength regions (Source: [arm.gov LINK ÜBERPRÜFEN!](http://www.arm.gov/news/facility/post/5946 
+))](docs/fig/wavelength regions.jpg)
+
+* optical remote sensing sensors make it possible to take images in the visible light (VIS), near-infrared (nIR) and shortwave-infrared (swIR)
+
+![image showing the reflection of the visible light](docs/fig/Bild sichtbares Licht.png)
+
+![image showing the reflection of the near-infrared and visible light](docs/fig/Bild nir swir.png)
+
 
 ## Additive color model
 

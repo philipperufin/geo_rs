@@ -30,6 +30,7 @@
 <script src="index_files/bootstrap_material-0.1/ripples.min.js"></script>
 <link href="index_files/material-0.1/material.css" rel="stylesheet" />
 <script src="index_files/material-0.1/material.js"></script>
+<script src="index_files/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 
@@ -99,7 +100,7 @@ $(document).ready(function () {
 <div id="welcome" class="section level1">
 <h1>Welcome!</h1>
 <div class="figure">
-<img src="fig/EO_header.PNG" alt="EOL Logo" />
+<img src="fig/EO_header.PNG" alt="" />
 <p class="caption">EOL Logo</p>
 </div>
 <div id="about" class="section level2">
@@ -141,11 +142,11 @@ $(document).ready(function () {
 <div id="visual-image-interpretation" class="section level1">
 <h1>Visual image interpretation</h1>
 <div class="figure">
-<img src="fig/Berlin_2009.png" alt="Berlin from above in Google EarthTM, 2009" />
+<img src="fig/Berlin_2009.png" alt="" />
 <p class="caption">Berlin from above in Google Earth<sup>TM</sup>, 2009</p>
 </div>
 <div class="figure">
-<img src="fig/Berlin_2019.png" alt="Berlin from above in Google EarthTM, 2019" />
+<img src="fig/Berlin_2019.png" alt="" />
 <p class="caption">Berlin from above in Google Earth<sup>TM</sup>, 2019</p>
 </div>
 <div id="image-interpretation" class="section level2">
@@ -177,7 +178,7 @@ $(document).ready(function () {
 <li><p>The results of the digitization need to be located in the ‘FE1’ folder</p></li>
 <li><p>Save the folder ‘FE1’ with a right-click on the folder as a .kmz file on O:/…</p>
 <div class="figure">
-<img src="fig/digitizing_tools.png" alt="Digitizing tools" />
+<img src="fig/digitizing_tools.png" alt="" />
 <p class="caption">Digitizing tools</p>
 </div></li>
 </ul>
@@ -193,7 +194,7 @@ $(document).ready(function () {
 <li><p>Describe the differences of image data in 1953, 2000 and 2019. Why do they differ?</p></li>
 </ul>
 <div class="figure">
-<img src="fig/datumstool.png" alt="date tool" />
+<img src="fig/datumstool.png" alt="" />
 <p class="caption">date tool</p>
 </div></li>
 </ul>
@@ -219,12 +220,60 @@ $(document).ready(function () {
 <li><p>What changes concretely in the photos?</p></li>
 </ul></li>
 </ul>
-<p>Upload your results as a PDF on Moodle.</p>
+<p><em>Upload your results as a PDF file on Moodle (each participant separately).</em></p>
 <hr />
 </div>
 </div>
 <div id="on-screen-visualization" class="section level1">
 <h1>On-screen visualization</h1>
+<div id="recap" class="section level2">
+<h2>Recap</h2>
+<ul>
+<li><p>We can describe the human eye as a ‘sensor with three bands’</p></li>
+<li><p>Sensitive for electromagnetic radiation (EMR) in the blue, green and red regions: <strong>spectral range</strong> between ~400-700 nm</p></li>
+<li><p>The receptors for the three colors are stimulated across wavelength regions of ~150-200 nm (<strong>spectral resolution</strong>)</p></li>
+<li><p>The intervals between the wavelengths of maximum sensitivity are ~50 nm to 150 nm wide (<strong>spectral sampling interval</strong>)</p></li>
+</ul>
+<div class="figure">
+<img src="fig/retinal%20response.png" alt="" />
+<p class="caption">retinal response of the human eye (Source: <a href="http://www.planetary.org/rrgtm/emspectrum.html">planetary.org LINK ÜBERPRÜFEN!</a> )</p>
+</div>
+<ul>
+<li>digital cameras correspond to imaging sensors with three bands</li>
+</ul>
+<div class="figure">
+<img src="fig/red-green-blue.png" alt="" />
+<p class="caption">red-green-blue representation</p>
+</div>
+<ul>
+<li><p>Spectrometers are sensitive to wavelengths beyond the human eye’s sensitivity</p></li>
+<li><p><strong>Optical remote sensing</strong> makes use of the visible light (~380 - 700 nm), and the near and short-wave infrared (0.7 - ~3 µm)</p></li>
+<li><p><strong>Thermal remote sensing</strong> detects thermal infrared radiation (5 - 15 µm)</p></li>
+<li><p><strong>Radar remote sensing</strong> detects microwave radiation (1 mm - 1 m)</p></li>
+<li><p>Common abbrevations:</p>
+<ul>
+<li><p>VIS = visible: 380 - 700 nm</p></li>
+<li><p>nIR = near infrared: 0.7 - 1.3 µm</p></li>
+<li><p>swIR = short wave infrared: 1.3 - 3 µm</p></li>
+<li><p>tIR = thermal infrared: 5 - 15 µm</p></li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="fig/wavelength%20regions.jpg" alt="" />
+<p class="caption">wavelength regions (Source: <a href="http://www.arm.gov/news/facility/post/5946">arm.gov LINK ÜBERPRÜFEN!</a>)</p>
+</div>
+<ul>
+<li>optical remote sensing sensors make it possible to take images in the visible light (VIS), near-infrared (nIR) and shortwave-infrared (swIR)</li>
+</ul>
+<div class="figure">
+<img src="fig/Bild%20sichtbares%20Licht.png" alt="" />
+<p class="caption">image showing the reflection of the visible light</p>
+</div>
+<div class="figure">
+<img src="fig/Bild%20nir%20swir.png" alt="" />
+<p class="caption">image showing the reflection of the near-infrared and visible light</p>
+</div>
+</div>
 <div id="additive-color-model" class="section level2">
 <h2>Additive color model</h2>
 </div>
@@ -308,7 +357,7 @@ $(document).ready(function () {
 <li><p>Spatial resolution of 10 – 60 m, depending on spectral bands, e.g. nIR bands 8 (10m) and 8a (20m).</p></li>
 </ul>
 <div class="figure">
-<img src="fig/Sentinel2_bands.png" alt="Sentinel 2 vs Landsat 7 and 8" />
+<img src="fig/Sentinel2_bands.png" alt="" />
 <p class="caption">Sentinel 2 vs Landsat 7 and 8</p>
 </div>
 </div>
@@ -324,7 +373,7 @@ $(document).ready(function () {
 <li><p>L1C and L2A products are partitioned in “granules”: 100x100 km2 UTM/WGS84 projection</p></li>
 </ul>
 <div class="figure">
-<img src="fig/Sentinel2_granules.png" alt="Sentinel 2 Granules" />
+<img src="fig/Sentinel2_granules.png" alt="" />
 <p class="caption">Sentinel 2 Granules</p>
 </div>
 </div>
@@ -355,7 +404,7 @@ Region: greater area of Berlin</code></pre></li>
 <li><p>Take a look at your files</p></li>
 </ul>
 <div class="figure">
-<img src="fig/Sentinel2_filestructure.png" alt="Sentinel 2 filestructure" />
+<img src="fig/Sentinel2_filestructure.png" alt="" />
 <p class="caption">Sentinel 2 filestructure</p>
 </div>
 <div id="visualizing-the-sentinel-2-image-with-virtual-raster-builder-in-the-enmap-box" class="section level3">
@@ -406,7 +455,7 @@ Region: greater area of Berlin</code></pre></li>
 <li><p>Do this for the classes mentioned above and add a description and a screenshot.</p></li>
 </ul>
 <div class="figure">
-<img src="fig/homework_example.png" alt="Example" />
+<img src="fig/homework_example.png" alt="" />
 <p class="caption">Example</p>
 </div>
 <hr />
