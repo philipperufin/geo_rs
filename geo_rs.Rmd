@@ -359,7 +359,7 @@ part 1 - spatial resolution
 ### Compare S2 & HyMap
 part 2 - spectral resolution
 
-* Restart QGIS and EnMAP-Box. Visualize the Sentinel-2 image and the HyMap image in a suited RGB band combination (Wozu ist der Neustart notwendig ?)
+* Restart QGIS and EnMAP-Box. Display the Sentinel-2 image and the HyMap image in a suited RGB band combination (Wozu ist der Neustart notwendig ?)
 
 * Visualize spectra of the same surface in the Sentinel-2 and in the HyMAP image (9 vs. 111 spectral bands). 
 
@@ -367,11 +367,104 @@ part 2 - spectral resolution
 
 * Do this for the classes mentioned above and add a description and a screenshot. 
 
-![Example](docs/fig/homework_example.png)
+* **Assignment:** please upload the comparison (spatial and spectral) of the Sentinel-2 and the HyMap image as pdf to moodle.  
+
+![assignment example](docs/fig/homework_example.png) 
 
 ------
 
 # Vegetation properties & spectral indices
+![](docs/fig/spectral_resolution_comparison.png)
+
+## Normalized Difference Vegetation Index (NDVI)
+
+* The derivation of vegetation indicies or similar variables is based on feature extraction 
+
+* NDVI the one of the most common vegeation indicies 
+
+* It represents the difference between red and nIR reflectance. This difference is strongly prounounced with photosynthetically active vegetation.  (Sollte man wahrscheinlich nochmal umschreiben)
+
+* The NDVI displayes this difference within a normalized value (between -1 and 1) for each pixel.
+ 
+$$NDVI = (ρnIR- ρred) / (ρnIR+ ρred)$$
+
+* e.g. for Sentinel-2 data use reflectance from bands nIR = 865 nm and red = 665 nm for calculating the NDVI.
+ 
+* The calculation of the NDVI results in a singleband grayscale image which can be saved as a new file.  
+
+## Part 1: Calculating the Normalized Difference Vegetation Index (NDVI) for Sentinel-2 data 
+
+* Open the EnMAP-Box and display the Sentinel-2 image (20 m, 9 spectral bands, subset Berlin, DATE: XXX) from last week in a RGB bandcombination of your choice. 
+
+* via 'Applications' start the 'imageMath Calculator' and calculate the NDVI. 
+
+      1. specify the the input image    -> S2_20m = [select Sentinel-2 image]
+      
+      2. define bands nIR [865 nm] and  -> red    = float32(S2_20m[2])
+         red [665 nm] as variable       -> nIR    = float32(S2_20m[6])  
+         
+      3. provide the NDVI formular      -> NDVI   = (nIR - red)/(nIR + red)
+      
+      4. specify the output image       -> NDVI   = [filepath and name of the NDVI image]
+
+    
+* Run the function and open the singleband grayscale image in a new Map View 
+
+## Part 2: Discussion of the NDVI 
+
+* Take a look at the NDVI-Pixelvalues and create a NDVI image-histogram (Tools 'ImageStatistics') 
+
+
+* Which value range take pixels in the NDVI image ? 
+
+* Note a representative NDVI value for these surfaces: water, asphalt, decidous forest, open soil. 
+
+* Also, note the corresponding refectance values in the red and nIR band from the original image. How can the values be explained, concerning the spectral properties of the surfaces? 
+
+* Under what cirumstances (relation red to nIR) can NDVI values of 0; 1; -1 be created (in theory)? Please note one pair of values (red and nIR) for each of these NDVI values. 
+
+## part 3: Visualizing of NDVI classes 
+
+* classify the NDVI image through the style menu within the layer properties. Try to display three surfaces: water, impervious/soil and vegetation. 
+
+![](docs/fig/NDVI_classification_properties.png)
+
+## Assignment part 1: Correlation of NDVI and Imperviousness  
+
+* Open the image 'copernius_imperviousness_2015_berlin.bsq' in a second Map Window and link it to the NDVI image. 
+
+* Inform yourself about the origin of the layer: (https://land.copernicus.eu/pan-european/high-resolution-layers/imperviousness)
+
+* Gather NDVI values of 20 surfaces (zu viele, 10 würden reichen) in a table. Make sure to cover a wide range of values (e.g. -0.2 to 1).
+
+* Create a scatterplot that shows the correlation between NDVI and imperviousness. Use a software of your choice; prefarably R. 
+
+* Describe and discuss the scatterplot in bullitpoints. 
+
+## Assignment part 2: Temporal Variation of the NDVI
+
+* Calculate another NDVI image from the provided Sentinel-2 image taken in winter (date XXX). Use the 'imageMath Calculator'. 
+
+    -> Sentinel_2_T33UUU_20190216_20m_9bands_subset_berlin.bsq  
+
+* Then calculate a difference-image for summer and winter NDVI.
+
+    -> NDVI 27. Juli 2019 – NDVI 16. Februar 2019  DATES: XXX
+    
+* Create the histogram of the difference-image and briefly discuss the distribution   
+
+* Display the difference-image in a suited Visualisation; e.g. discrete classes, colour gradient from high negative to high positive differences. 
+
+* Discuss the resulting Map in bullitpoints concerning these surfaces: impervious (buildings, and non build-up), agriculture, forest, water. 
+* **Assignment:** Please upload the results of the comparison of NDVI and imperviousness (part 1, plot and discussion) and the temporal variation of NDVI (part 2, histogram, map + legend, discussion) as pdf to moodle.
+
+Berechnen Sie das Histogramm des NDVI-Differenzbildes und diskutieren Sie die Verteilung stichpunktartig.
+
+Stellen Sie das NDVI-Differenzbild mit einer sinnvollen Visualisierung dar, z.B. einer diskrete Klassenunterteilung, oder einem Farbgradienten von hohen negativen bis zu hohen positiven Differenzen. 
+Diskutieren Sie die Karte stichpunktartig bzgl. folgender Oberflächen: Versiegelte Flächen (Gebäude & unbebaut), Landwirtschaft, Wald, Wasser
+Bitte laden Sie die Ergebnisse des Vergleiches NDVI und Versieglung (Teil 1, Plot, Diskussion) und der temporalen Variation des NDVI (Teil 2; Histogramm, Karte + Legende, Diskussion) als PDF in Moodle hoch.
+
+
 
 ------
 
