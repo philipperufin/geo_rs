@@ -128,7 +128,7 @@ The weekly assignments are defined in the respective session. Each session compr
     
     + Describe the differences of image data in 1953, 2000 and 2019. Why do they differ?
     
-    ![date tool](docs/fig/datumstool.png)
+    ![Date tool](docs/fig/datumstool.png)
 
 ## Summary
 
@@ -170,12 +170,12 @@ Characterize the land cover and land use change in Berlin with Google Earth^TM^.
 
 * The intervals between the wavelengths of maximum sensitivity are ~50 nm to 150 nm wide (**spectral sampling interval**) 
 
-![retinal response of the human eye (Source: [planetary.org LINK ÜBERPRÜFEN!](http://www.planetary.org/rrgtm/emspectrum.html)
+![Retinal response of the human eye (Source: [planetary.org LINK ÜBERPRÜFEN!](http://www.planetary.org/rrgtm/emspectrum.html)
 )](docs/fig/retinal response.png)
 
-* digital cameras correspond to imaging sensors with three bands
+* Digital cameras correspond to imaging sensors with three bands
 
-![red-green-blue representation](docs/fig/red-green-blue.png)
+![Red-green-blue representation](docs/fig/red-green-blue.png)
 
 * Spectrometers are sensitive to wavelengths beyond the human eye’s sensitivity
 
@@ -195,23 +195,140 @@ Characterize the land cover and land use change in Berlin with Google Earth^TM^.
     
     + tIR = thermal infrared: 5 - 15 µm
     
-![wavelength regions (Source: [arm.gov LINK ÜBERPRÜFEN!](http://www.arm.gov/news/facility/post/5946 
+![Wavelength regions (Source: [arm.gov LINK ÜBERPRÜFEN!](http://www.arm.gov/news/facility/post/5946 
 ))](docs/fig/wavelength regions.jpg)
 
-* optical remote sensing sensors make it possible to take images in the visible light (VIS), near-infrared (nIR) and shortwave-infrared (swIR)
+* Optical remote sensing sensors make it possible to take images in the visible light (VIS), near-infrared (nIR) and shortwave-infrared (swIR)
 
-![image showing the reflection of the visible light](docs/fig/Bild sichtbares Licht.png)
+![Image showing the reflection of the visible light](docs/fig/Bild sichtbares Licht.png)
 
-![image showing the reflection of the near-infrared and visible light](docs/fig/Bild nir swir.png)
-
+![Image showing the reflection of the near-infrared and visible light](docs/fig/Bild nir swir.png)
 
 ## Additive color model
 
+* Primary colours: red, green and blue (RGB)
+
+* Values range from 0 to 255 (the higher the more intense)
+
+* Max. 256 * 256 * 256 = 16,7 mio colours
+
+* Complementary/secondary colours: cyan, magenta and yellow (CMY)
+
+![RGB color model (Source left: [orange-sinne.de](http://www.orange-sinne.de/additives_farbmodell.html), source right: [informatikzentrale.de](http://www.informatikzentrale.de ))](docs/fig/RGB Farbmodell.png)
+
+### Exercise for colour mixing in QGIS
+
+* Open the shapefile 'charlottenburg_point.shp' in a new QGIS-project
+
+* Open the 'Select Color Tool' of the shapefile (Properties > Symbology > double click on colour bar)
+    
+* For displaying different colours QGIS offers the RGB and HSV colour model
+
+![Select Color Tool in QGIS](docs/fig/RGB QGIS.png)
+
+* Enter the colour values of the following table in the QGIS colour model and note/describe the resulting colour
+
+![Table with colour values](docs/fig/tabelle rgb.jpg)
+
+## Screen representation of remote sensing images
+
+* Remote sensing images can be presented as a greyscale image (single band) or RGB-composite (combination of three different bands)
+
+![Satellite images as single band grey, RGB-composite (true colour), RGB-composite (false colour)](docs/fig/rgb fe bilder.png)
+
 ## Image histogram
 
-## Contrast stretch
+* Image histograms show the frequency distribution of pixel values i.e. of a single band
+
+![Band 3 (red) as a greyscale image and its image histogram](docs/fig/histogramm 1.png)
+
+### Contrast stretch
+
+* Every RGB-channel has a colour depth of 8-bit on a monitor (equivalent to 256 greyscales)
+
+* Transfer of pixel values of an image (or band) to a monitor initially 1:1
+
+* At best, full grey value range is utilized optimally
+
+![Image histogram and satellite image with an optimally utilized grey value range](docs/fig/histogramm 2.png)
+
+* Due to recording and sensor conditions, data sets (or bands) often display only a section of the 256 obtainable grey values
+
+* With a 1:1 transfer, images are often low-contrast
+
+![Image histogram and satellite image with low-contrast](docs/fig/histogramm 3.png)
+
+* "Stretching" the image histogram, the screen display can be enhanced
+
+* Caution! The screen display changes, the data stays the same!
+
+![Stretching of an image histogram](docs/fig/histogramm 4.png)
+
+* Contrast enhancement describes a function of representation that is used to transfer pixel values in grey values
+
+* Often, linear contrast enhancement is used where the increase in gray value per increase in pixel value remains the same for the relevant value ranges
+
+![Min-max linear contrast stretch and standard deviation linear contrast stretch (Source: Jensen, 2011)](docs/fig/histogramm 5.png)
 
 ## Exercise
+
+* Open the Sentinel-2 image '20150704_LEVEL2_SEN2A_BOA_berlin.bsq' in QGIS
+
+* The image has a spatial resolution of 10 m, an extent of 2700 x 2700 pixel and 4 spectral bands (B1 = blue, B2 = green, B3 = red, B4 = nIR) 
+
+* Open the display options of the image (Symbology)
+
+* What are the default settings after loading the image:
+
+    + render type
+    
+    + RGB assignment
+    
+    + min/max value settings
+    
+![Layer properties > Symbology in QGIS](docs/fig/bildschirmdarstellung qgis.png)
+
+* Display the Sentinel-2 image in true colours
+
+![Sentinel-2 image in true colours](docs/fig/sen2 echtfarben.png)
+
+* Now, display only band 1 (blue) in greyscale (Render type > Singleband grey)
+
+    + How did the min/max value settings change?
+    
+    + How rich in contrast does the image appear?
+    
+    + How does the image representation change when you alter the min/max value settings (i.e. cumulative count cut, etc.)?
+    
+1. Switch to the histogram section and calculate the image histogram
+
+2. Adjust the settings as shown in the picture below
+
+3. Select the nIR band
+
+4. Vary the settings for min/max values to alter the contrast manually
+
+5. Try to differentiate water bodies from land mass by stretching the min/max values
+
+![Settings for image histogram](docs/fig/bildschirmdarstellung qgis 2.png)
+
+1. Create a true and false colour (R = nIR, G = red, B = green) representation of the Sentinel 2 image and describe the main differences (key words)
+
+2. Find one example (Screenshot) for each of the following surfaces with the true and false colour representation:
+
+    + Deciduous forest
+    
+    + Coniferous forest
+    
+    + Artificial turf pitch
+    
+    + True turf pitch
+    
+3. Subsequently, describe the differences between deciduous and coniferous forest and artificial and true turf
+
+4. For what phenomenons and/or surfaces is the nIR channel particularly sensitive?
+
+*Summarize task 1 - 4 visually and textually and upload your results as a PDF file on Moodle.*
 
 ------
 

@@ -30,6 +30,7 @@
 <script src="index_files/bootstrap_material-0.1/ripples.min.js"></script>
 <link href="index_files/material-0.1/material.css" rel="stylesheet" />
 <script src="index_files/material-0.1/material.js"></script>
+<script src="index_files/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 
@@ -99,7 +100,7 @@ $(document).ready(function () {
 <div id="welcome" class="section level1">
 <h1>Welcome!</h1>
 <div class="figure">
-<img src="fig/EO_header.PNG" alt="EOL Logo" />
+<img src="fig/EO_header.PNG" alt="" />
 <p class="caption">EOL Logo</p>
 </div>
 <div id="about" class="section level2">
@@ -141,11 +142,11 @@ $(document).ready(function () {
 <div id="visual-image-interpretation" class="section level1">
 <h1>Visual image interpretation</h1>
 <div class="figure">
-<img src="fig/Berlin_2009.png" alt="Berlin from above in Google EarthTM, 2009" />
+<img src="fig/Berlin_2009.png" alt="" />
 <p class="caption">Berlin from above in Google Earth<sup>TM</sup>, 2009</p>
 </div>
 <div class="figure">
-<img src="fig/Berlin_2019.png" alt="Berlin from above in Google EarthTM, 2019" />
+<img src="fig/Berlin_2019.png" alt="" />
 <p class="caption">Berlin from above in Google Earth<sup>TM</sup>, 2019</p>
 </div>
 <div id="image-interpretation" class="section level2">
@@ -177,7 +178,7 @@ $(document).ready(function () {
 <li><p>The results of the digitization need to be located in the ‘FE1’ folder</p></li>
 <li><p>Save the folder ‘FE1’ with a right-click on the folder as a .kmz file on O:/…</p>
 <div class="figure">
-<img src="fig/digitizing_tools.png" alt="Digitizing tools" />
+<img src="fig/digitizing_tools.png" alt="" />
 <p class="caption">Digitizing tools</p>
 </div></li>
 </ul>
@@ -193,8 +194,8 @@ $(document).ready(function () {
 <li><p>Describe the differences of image data in 1953, 2000 and 2019. Why do they differ?</p></li>
 </ul>
 <div class="figure">
-<img src="fig/datumstool.png" alt="date tool" />
-<p class="caption">date tool</p>
+<img src="fig/datumstool.png" alt="" />
+<p class="caption">Date tool</p>
 </div></li>
 </ul>
 </div>
@@ -234,15 +235,15 @@ $(document).ready(function () {
 <li><p>The intervals between the wavelengths of maximum sensitivity are ~50 nm to 150 nm wide (<strong>spectral sampling interval</strong>)</p></li>
 </ul>
 <div class="figure">
-<img src="fig/retinal%20response.png" alt="retinal response of the human eye (Source: planetary.org LINK ÜBERPRÜFEN! )" />
-<p class="caption">retinal response of the human eye (Source: <a href="http://www.planetary.org/rrgtm/emspectrum.html">planetary.org LINK ÜBERPRÜFEN!</a> )</p>
+<img src="fig/retinal%20response.png" alt="" />
+<p class="caption">Retinal response of the human eye (Source: <a href="http://www.planetary.org/rrgtm/emspectrum.html">planetary.org LINK ÜBERPRÜFEN!</a> )</p>
 </div>
 <ul>
-<li>digital cameras correspond to imaging sensors with three bands</li>
+<li>Digital cameras correspond to imaging sensors with three bands</li>
 </ul>
 <div class="figure">
-<img src="fig/red-green-blue.png" alt="red-green-blue representation" />
-<p class="caption">red-green-blue representation</p>
+<img src="fig/red-green-blue.png" alt="" />
+<p class="caption">Red-green-blue representation</p>
 </div>
 <ul>
 <li><p>Spectrometers are sensitive to wavelengths beyond the human eye’s sensitivity</p></li>
@@ -258,32 +259,165 @@ $(document).ready(function () {
 </ul></li>
 </ul>
 <div class="figure">
-<img src="fig/wavelength%20regions.jpg" alt="wavelength regions (Source: arm.gov LINK ÜBERPRÜFEN!)" />
-<p class="caption">wavelength regions (Source: <a href="http://www.arm.gov/news/facility/post/5946">arm.gov LINK ÜBERPRÜFEN!</a>)</p>
+<img src="fig/wavelength%20regions.jpg" alt="" />
+<p class="caption">Wavelength regions (Source: <a href="http://www.arm.gov/news/facility/post/5946">arm.gov LINK ÜBERPRÜFEN!</a>)</p>
 </div>
 <ul>
-<li>optical remote sensing sensors make it possible to take images in the visible light (VIS), near-infrared (nIR) and shortwave-infrared (swIR)</li>
+<li>Optical remote sensing sensors make it possible to take images in the visible light (VIS), near-infrared (nIR) and shortwave-infrared (swIR)</li>
 </ul>
 <div class="figure">
-<img src="fig/Bild%20sichtbares%20Licht.png" alt="image showing the reflection of the visible light" />
-<p class="caption">image showing the reflection of the visible light</p>
+<img src="fig/Bild%20sichtbares%20Licht.png" alt="" />
+<p class="caption">Image showing the reflection of the visible light</p>
 </div>
 <div class="figure">
-<img src="fig/Bild%20nir%20swir.png" alt="image showing the reflection of the near-infrared and visible light" />
-<p class="caption">image showing the reflection of the near-infrared and visible light</p>
+<img src="fig/Bild%20nir%20swir.png" alt="" />
+<p class="caption">Image showing the reflection of the near-infrared and visible light</p>
 </div>
 </div>
 <div id="additive-color-model" class="section level2">
 <h2>Additive color model</h2>
+<ul>
+<li><p>Primary colours: red, green and blue (RGB)</p></li>
+<li><p>Values range from 0 to 255 (the higher the more intense)</p></li>
+<li><p>Max. 256 * 256 * 256 = 16,7 mio colours</p></li>
+<li><p>Complementary/secondary colours: cyan, magenta and yellow (CMY)</p></li>
+</ul>
+<div class="figure">
+<img src="fig/RGB%20Farbmodell.png" alt="" />
+<p class="caption">RGB color model (Source left: <a href="http://www.orange-sinne.de/additives_farbmodell.html">orange-sinne.de</a>, source right: <a href="http://www.informatikzentrale.de">informatikzentrale.de</a>)</p>
+</div>
+<div id="exercise-for-colour-mixing-in-qgis" class="section level3">
+<h3>Exercise for colour mixing in QGIS</h3>
+<ul>
+<li><p>Open the shapefile ‘charlottenburg_point.shp’ in a new QGIS-project</p></li>
+<li><p>Open the ‘Select Color Tool’ of the shapefile (Properties &gt; Symbology &gt; double click on colour bar)</p></li>
+<li><p>For displaying different colours QGIS offers the RGB and HSV colour model</p></li>
+</ul>
+<div class="figure">
+<img src="fig/RGB%20QGIS.png" alt="" />
+<p class="caption">Select Color Tool in QGIS</p>
+</div>
+<ul>
+<li>Enter the colour values of the following table in the QGIS colour model and note/describe the resulting colour</li>
+</ul>
+<div class="figure">
+<img src="fig/tabelle%20rgb.jpg" alt="" />
+<p class="caption">Table with colour values</p>
+</div>
+</div>
+</div>
+<div id="screen-representation-of-remote-sensing-images" class="section level2">
+<h2>Screen representation of remote sensing images</h2>
+<ul>
+<li>Remote sensing images can be presented as a greyscale image (single band) or RGB-composite (combination of three different bands)</li>
+</ul>
+<div class="figure">
+<img src="fig/rgb%20fe%20bilder.png" alt="" />
+<p class="caption">Satellite images as single band grey, RGB-composite (true colour), RGB-composite (false colour)</p>
+</div>
 </div>
 <div id="image-histogram" class="section level2">
 <h2>Image histogram</h2>
+<ul>
+<li>Image histograms show the frequency distribution of pixel values i.e. of a single band</li>
+</ul>
+<div class="figure">
+<img src="fig/histogramm%201.png" alt="" />
+<p class="caption">Band 3 (red) as a greyscale image and its image histogram</p>
 </div>
-<div id="contrast-stretch" class="section level2">
-<h2>Contrast stretch</h2>
+<div id="contrast-stretch" class="section level3">
+<h3>Contrast stretch</h3>
+<ul>
+<li><p>Every RGB-channel has a colour depth of 8-bit on a monitor (equivalent to 256 greyscales)</p></li>
+<li><p>Transfer of pixel values of an image (or band) to a monitor initially 1:1</p></li>
+<li><p>At best, full grey value range is utilized optimally</p></li>
+</ul>
+<div class="figure">
+<img src="fig/histogramm%202.png" alt="" />
+<p class="caption">Image histogram and satellite image with an optimally utilized grey value range</p>
+</div>
+<ul>
+<li><p>Due to recording and sensor conditions, data sets (or bands) often display only a section of the 256 obtainable grey values</p></li>
+<li><p>With a 1:1 transfer, images are often low-contrast</p></li>
+</ul>
+<div class="figure">
+<img src="fig/histogramm%203.png" alt="" />
+<p class="caption">Image histogram and satellite image with low-contrast</p>
+</div>
+<ul>
+<li><p>“Stretching” the image histogram, the screen display can be enhanced</p></li>
+<li><p>Caution! The screen display changes, the data stays the same!</p></li>
+</ul>
+<div class="figure">
+<img src="fig/histogramm%204.png" alt="" />
+<p class="caption">Stretching of an image histogram</p>
+</div>
+<ul>
+<li><p>Contrast enhancement describes a function of representation that is used to transfer pixel values in grey values</p></li>
+<li><p>Often, linear contrast enhancement is used where the increase in gray value per increase in pixel value remains the same for the relevant value ranges</p></li>
+</ul>
+<div class="figure">
+<img src="fig/histogramm%205.png" alt="" />
+<p class="caption">Min-max linear contrast stretch and standard deviation linear contrast stretch (Source: Jensen, 2011)</p>
+</div>
+</div>
 </div>
 <div id="exercise-1" class="section level2">
 <h2>Exercise</h2>
+<ul>
+<li><p>Open the Sentinel-2 image ‘20150704_LEVEL2_SEN2A_BOA_berlin.bsq’ in QGIS</p></li>
+<li><p>The image has a spatial resolution of 10 m, an extent of 2700 x 2700 pixel and 4 spectral bands (B1 = blue, B2 = green, B3 = red, B4 = nIR)</p></li>
+<li><p>Open the display options of the image (Symbology)</p></li>
+<li><p>What are the default settings after loading the image:</p>
+<ul>
+<li><p>render type</p></li>
+<li><p>RGB assignment</p></li>
+<li><p>min/max value settings</p></li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="fig/bildschirmdarstellung%20qgis.png" alt="" />
+<p class="caption">Layer properties &gt; Symbology in QGIS</p>
+</div>
+<ul>
+<li>Display the Sentinel-2 image in true colours</li>
+</ul>
+<div class="figure">
+<img src="fig/sen2%20echtfarben.png" alt="" />
+<p class="caption">Sentinel-2 image in true colours</p>
+</div>
+<ul>
+<li><p>Now, display only band 1 (blue) in greyscale (Render type &gt; Singleband grey)</p>
+<ul>
+<li><p>How did the min/max value settings change?</p></li>
+<li><p>How rich in contrast does the image appear?</p></li>
+<li><p>How does the image representation change when you alter the min/max value settings (i.e. cumulative count cut, etc.)?</p></li>
+</ul></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><p>Switch to the histogram section and calculate the image histogram</p></li>
+<li><p>Adjust the settings as shown in the picture below</p></li>
+<li><p>Select the nIR band</p></li>
+<li><p>Vary the settings for min/max values to alter the contrast manually</p></li>
+<li><p>Try to differentiate water bodies from land mass by stretching the min/max values</p></li>
+</ol>
+<div class="figure">
+<img src="fig/bildschirmdarstellung%20qgis%202.png" alt="" />
+<p class="caption">Settings for image histogram</p>
+</div>
+<ol style="list-style-type: decimal">
+<li><p>Create a true and false colour (R = nIR, G = red, B = green) representation of the Sentinel 2 image and describe the main differences (key words)</p></li>
+<li><p>Find one example (Screenshot) for each of the following surfaces with the true and false colour representation:</p>
+<ul>
+<li><p>Deciduous forest</p></li>
+<li><p>Coniferous forest</p></li>
+<li><p>Artificial turf pitch</p></li>
+<li><p>True turf pitch</p></li>
+</ul></li>
+<li><p>Subsequently, describe the differences between deciduous and coniferous forest and artificial and true turf</p></li>
+<li><p>For what phenomenons and/or surfaces is the nIR channel particularly sensitive?</p></li>
+</ol>
+<p><em>Summarize task 1 - 4 visually and textually and upload your results as a PDF file on Moodle.</em></p>
 <hr />
 </div>
 </div>
@@ -356,7 +490,7 @@ $(document).ready(function () {
 <li><p>Spatial resolution of 10 – 60 m, depending on spectral bands, e.g. nIR bands 8 (10m) and 8a (20m).</p></li>
 </ul>
 <div class="figure">
-<img src="fig/Sentinel2_bands.png" alt="Sentinel 2 vs Landsat 7 and 8" />
+<img src="fig/Sentinel2_bands.png" alt="" />
 <p class="caption">Sentinel 2 vs Landsat 7 and 8</p>
 </div>
 </div>
@@ -372,14 +506,14 @@ $(document).ready(function () {
 <li><p>L1C and L2A products are partitioned in “granules”: 100x100 km2 UTM/WGS84 projection</p></li>
 </ul>
 <div class="figure">
-<img src="fig/Sentinel2_granules.png" alt="Sentinel 2 Granules" />
+<img src="fig/Sentinel2_granules.png" alt="" />
 <p class="caption">Sentinel 2 Granules</p>
 </div>
 </div>
 <div id="acquiring-sentinel-2-data" class="section level2">
 <h2>Acquiring Sentinel-2 data</h2>
 <ul>
-<li>Create a User-Account at the <a href="https://scihub.copernicus.eu/dhus/#/home">Copernicus Open Access Hub</a></li>
+<li><p>Create a User-Account at the <a href="https://scihub.copernicus.eu/dhus/#/home">Copernicus Open Access Hub</a></p></li>
 <li><p>Search for images with these specifications:</p>
 <pre><code>Date: XXX
 
@@ -403,7 +537,7 @@ Region: greater area of Berlin</code></pre></li>
 <li><p>Take a look at your files</p></li>
 </ul>
 <div class="figure">
-<img src="fig/Sentinel2_filestructure.png" alt="Sentinel 2 filestructure" />
+<img src="fig/Sentinel2_filestructure.png" alt="" />
 <p class="caption">Sentinel 2 filestructure</p>
 </div>
 <div id="visualizing-the-sentinel-2-image-with-virtual-raster-builder-in-the-enmap-box" class="section level3">
@@ -412,7 +546,7 @@ Region: greater area of Berlin</code></pre></li>
 <li><p>Goal: the single bands in JPEG2000-format (.jp2) will be merged into a single Multiband-Image in ENVI-format</p></li>
 <li><p>Open QGIS and install the ‘Virtual Raster Builder’ plugin</p></li>
 <li><p>Open the EnMAP-Box and load ‘S2_Subset_Berlin.shp’ into Data Sources. The shapefile will be used to clip the Sentinel-2 scene to a smaller extend</p></li>
-<li>Open ‘Virtual Raster Builder’ from the EnMAP-Box. Create a Multiband-Image with the following specifications:
+<li><p>Open ‘Virtual Raster Builder’ from the EnMAP-Box. Create a Multiband-Image with the following specifications:</p>
 <ul>
 <li>Spectral Bands: B2, B3, B4, B5, B6, B7, B8a, B11, B12</li>
 <li>Spatial Resolution: 20m (from the ‘R20M’ file)</li>
@@ -448,14 +582,14 @@ Region: greater area of Berlin</code></pre></li>
 <h3>Compare S2 &amp; HyMap</h3>
 <p>part 2 - spectral resolution</p>
 <ul>
-<li><p>Restart QGIS and EnMAP-Box. Visualize the Sentinel-2 image and the HyMap image in a suited RGB band combination (Wozu ist der Neustart notwendig ?)</p></li>
+<li><p>Restart QGIS and EnMAP-Box. Display the Sentinel-2 image and the HyMap image in a suited RGB band combination (Wozu ist der Neustart notwendig ?)</p></li>
 <li><p>Visualize spectra of the same surface in the Sentinel-2 and in the HyMAP image (9 vs. 111 spectral bands).</p></li>
 <li><p>Try to choose a ‘pure’ surface (no mixtures) which is also stable in temporal terms (unchanged over time).</p></li>
 <li><p>Do this for the classes mentioned above and add a description and a screenshot.</p></li>
 <li><p><strong>Assignment:</strong> please upload the comparison (spatial and spectral) of the Sentinel-2 and the HyMap image as pdf to moodle.</p></li>
 </ul>
 <div class="figure">
-<img src="fig/homework_example.png" alt="assignment example" />
+<img src="fig/homework_example.png" alt="" />
 <p class="caption">assignment example</p>
 </div>
 <hr />
@@ -510,7 +644,7 @@ Region: greater area of Berlin</code></pre></li>
 <ul>
 <li>classify the NDVI image through the style menu within the layer properties. Try to display three surfaces: water, impervious/soil and vegetation.</li>
 </ul>
-<p><img src="fig/NDVI_example_EnMAP_Box.png" /></p>
+<p><img src="fig/NDVI_classification_properties.png" /></p>
 </div>
 <div id="assignment-part-1-correlation-of-ndvi-and-imperviousness" class="section level2">
 <h2>Assignment part 1: Correlation of NDVI and Imperviousness</h2>
@@ -522,16 +656,20 @@ Region: greater area of Berlin</code></pre></li>
 <li><p>Describe and discuss the scatterplot in bullitpoints.</p></li>
 </ul>
 </div>
-<div id="assignment-part-2-temporale-variation-of-the-ndvi" class="section level2">
-<h2>Assignment part 2: Temporale Variation of the NDVI</h2>
+<div id="assignment-part-2-temporal-variation-of-the-ndvi" class="section level2">
+<h2>Assignment part 2: Temporal Variation of the NDVI</h2>
 <ul>
 <li><p>Calculate another NDVI image from the provided Sentinel-2 image taken in winter (date XXX). Use the ‘imageMath Calculator’.</p>
 <p>-&gt; Sentinel_2_T33UUU_20190216_20m_9bands_subset_berlin.bsq</p></li>
-<li><p>Then calculate a difference-image for summer and winter NDVI.</p></li>
+<li><p>Then calculate a difference-image for summer and winter NDVI.</p>
+<p>-&gt; NDVI 27. Juli 2019 – NDVI 16. Februar 2019 DATES: XXX</p></li>
+<li><p>Create the histogram of the difference-image and briefly discuss the distribution</p></li>
+<li><p>Display the difference-image in a suited Visualisation; e.g. discrete classes, colour gradient from high negative to high positive differences.</p></li>
+<li><p>Discuss the resulting Map in bullitpoints concerning these surfaces: impervious (buildings, and non build-up), agriculture, forest, water.</p></li>
+<li><p><strong>Assignment:</strong> Please upload the results of the comparison of NDVI and imperviousness (part 1, plot and discussion) and the temporal variation of NDVI (part 2, histogram, map + legend, discussion) as pdf to moodle.</p></li>
 </ul>
-<p>|NDVI 27. Juli 2019 – NDVI 16. Februar 2019 DATES: XXX</p>
-<p>Teil 2: Temporale Variation des NDVI Berechnen Sie mittels „imageMath Calculator“ für das bereitgestellte Sentinel-2 Bild aus dem Winter (16. Februar 2019) in zweites NDVI Bild.  Sentinel_2_T33UUU_20190216_20m_9bands_subset_berlin.bsq Berechnen Sie nun mittels „imageMath Calculator“ ein Differenzbild zwischen Sommer und Winter NDVI:  NDVI 27. Juli 2019 – NDVI 16. Februar 2019</p>
-<p>Berechnen Sie das Histogramm des NDVI-Differenzbildes und diskutieren Sie die Verteilung stichpunktartig. Stellen Sie das NDVI-Differenzbild mit einer sinnvollen Visualisierung dar, z.B. einer diskrete Klassenunterteilung, oder einem Farbgradienten von hohen negativen bis zu hohen positiven Differenzen. Diskutieren Sie die Karte stichpunktartig bzgl. folgender Oberflächen: Versiegelte Flächen (Gebäude &amp; unbebaut), Landwirtschaft, Wald, Wasser Bitte laden Sie die Ergebnisse des Vergleiches NDVI und Versieglung (Teil 1, Plot, Diskussion) und der temporalen Variation des NDVI (Teil 2; Histogramm, Karte + Legende, Diskussion) als PDF in Moodle hoch.</p>
+<p>Berechnen Sie das Histogramm des NDVI-Differenzbildes und diskutieren Sie die Verteilung stichpunktartig.</p>
+<p>Stellen Sie das NDVI-Differenzbild mit einer sinnvollen Visualisierung dar, z.B. einer diskrete Klassenunterteilung, oder einem Farbgradienten von hohen negativen bis zu hohen positiven Differenzen. Diskutieren Sie die Karte stichpunktartig bzgl. folgender Oberflächen: Versiegelte Flächen (Gebäude &amp; unbebaut), Landwirtschaft, Wald, Wasser Bitte laden Sie die Ergebnisse des Vergleiches NDVI und Versieglung (Teil 1, Plot, Diskussion) und der temporalen Variation des NDVI (Teil 2; Histogramm, Karte + Legende, Diskussion) als PDF in Moodle hoch.</p>
 <hr />
 </div>
 </div>
