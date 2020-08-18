@@ -653,6 +653,115 @@ $(document).ready(function () {
 </div>
 <div id="lab-and-field-spectroscopy" class="section level1">
 <h1>Lab and field spectroscopy</h1>
+<div id="the-spectral-dimension-of-remote-sensing-data" class="section level2">
+<h2>The spectral dimension of remote sensing data</h2>
+<ul>
+<li>How do we produce such measurements that allow differentiating different surfaces or monitoring changes of surfaces over time?</li>
+</ul>
+<div class="figure">
+<img src="fig/arena.png" alt="" />
+<p class="caption">True colour image (left) and false colour image (right) of the stadium on the Wisconsin-Madison University campus, USA (Source: Lillesand, Kiefer and Chipman 2008)</p>
+</div>
+<div class="figure">
+<img src="fig/spectroscopy%20arena.png" alt="" />
+<p class="caption">Reflectance of natural and artificial turf (Source: Lillesand, Kiefer and Chipman 2008)</p>
+</div>
+</div>
+<div id="basics---what-is-electromagnetic-radiance-what-do-we-measure" class="section level2">
+<h2>Basics - What is electromagnetic radiance? What do we measure?</h2>
+<div id="the-nature-of-electromagnetic-energy" class="section level3">
+<h3>The nature of electromagnetic energy</h3>
+<ul>
+<li><p>Energy (or light) travels as a periodic electromagnetic field (sinusoidal wave)</p></li>
+<li><p>Light travels with – surprise! – <strong>speed of light <em>(c)</em> </strong></p></li>
+<li><p>Relevant characteristics are <strong>wavelength <em>λ</em> [nm]</strong> and <strong>frequency <em>ν</em> [Hz]</strong></p></li>
+<li><p>The wavelength is hence defined according to: <span class="math inline">\(λ = c / ν\)</span></p></li>
+<li><p>In remote sensing, wavelength is the common unit</p>
+<ul>
+<li><p>1 nm (nanometer) = 1 x 10<sup>-9</sup> m</p></li>
+<li><p>1 µm (micrometer) = 1 x 10<sup>-6</sup> m</p></li>
+<li><p>1 mm (millimeter) = 1 x 10<sup>-3</sup> m</p></li>
+</ul></li>
+<li><p>In remote sensing, a target’s spectral properties are measured across a wavelength region and in several or even many distinct bands</p></li>
+</ul>
+<div class="figure">
+<img src="fig/electromagnetic%20radiance.png" alt="" />
+<p class="caption">Electromagnetic wavelength (Source: Drury 1993)</p>
+</div>
+</div>
+<div id="electromagnetic-spectrum" class="section level3">
+<h3>Electromagnetic spectrum</h3>
+<ul>
+<li><p>Spectrometers are sensitive to wavelengths beyond the human eye’s sensitivity</p></li>
+<li><p>Optical remote sensing makes use of the visible light (~400 - 700 nm), and the near and short-wave infrared (0,7 - ~3 µm)</p></li>
+<li><p>Thermal remote sensing detects thermal infrared radiation (5 - 15 µm)</p></li>
+<li><p>Radar remote sensing detects microwave radiation (1 mm - 1 m)</p></li>
+<li><p>Common abbrevations:</p>
+<ul>
+<li><p>VIS = visible: 370 - 700 nm</p></li>
+<li><p>nIR = near infrared: 0.7 - 1.3 µm</p></li>
+<li><p>swIR = short wave infrared: 1.3 - 3 µm</p></li>
+<li><p>tIR = thermal infrared: 5 - 15 µm</p></li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="fig/wavelength%20regions.jpg" alt="" />
+<p class="caption">Wavelength regions (Source: <a href="http://www.arm.gov/news/facility/post/5946">arm.gov LINK ÜBERPRÜFEN!</a>)</p>
+</div>
+</div>
+<div id="measuring-surface-properties" class="section level3">
+<h3>Measuring surface properties</h3>
+<ul>
+<li><p>Geo- and environmental sciences are primarily interested in processes at the Earth’s surface</p></li>
+<li><p>From the interaction between radiation and surface we can draw conclusions on the surface’s characteristics</p></li>
+<li><p>Each surface’s interaction with radiation depends on it’s physical and chemical properties and varies with wavelength</p></li>
+<li><p>That’s the <strong>basis for the entire remote sensing process</strong></p></li>
+<li><p>To start with: let’s control illumination and ignore the atmosphere</p></li>
+<li><p>Let’s assume laboratory conditions (using an artificial light source instead of the sun)</p></li>
+</ul>
+<div class="figure">
+<img src="fig/Kraus%20und%20Schneider.png" alt="" />
+<p class="caption">Remote sensing without atmosphere (Source: Kraus und Schneider 1988)</p>
+</div>
+</div>
+<div id="a-laboratory-setup" class="section level3">
+<h3>A laboratory setup</h3>
+<ul>
+<li><p>Lab measurements are performed with a spectrometer and allow an exact characterization of a surface</p></li>
+<li><p>We control illumination by using a lamp</p></li>
+<li><p>We control the distance and angle to the surface to be measured (usually nadir measurement)</p></li>
+<li><p>We control the instrument calibration, i.e. we measure and eliminate the noise from the signal</p></li>
+</ul>
+<div class="figure">
+<img src="fig/laboratory%20setup.jpg" alt="" />
+<p class="caption">Typical laboratory setup with an ASD spectrometer (in blue), the fiber optics ending in a pistol grip mounted on a tripod and a video spot as artificial illumination source. The bright target on the smaller tripod is a calibration panel. (Source: <a href="http://www.lineas.cchs.csic.es/biospec/methods/laboratory">Biospec</a>)</p>
+</div>
+</div>
+<div id="measuring-target-radiance" class="section level3">
+<h3>Measuring target radiance</h3>
+<ul>
+<li><p>In Earth remote sensing, we perform measurements from above, i.e. we are interested in the reflected portion of the energy</p></li>
+<li><p>At any surface, incoming radiation is either partially or fully:</p>
+<ul>
+<li><p>reflected (ρ)</p></li>
+<li><p>absorbed (α)</p></li>
+<li><p>transmitted (τ)</p></li>
+</ul></li>
+<li><p>The sum of all three terms is always 100% of the incoming radiance: <span class="math inline">\(ρ + α + τ = 1\)</span> (Law of conservation of energy)</p></li>
+</ul>
+<div class="figure">
+<img src="fig/light%20and%20surface.png" alt="" />
+<p class="caption">Emittance, absorbance, reflectance and transmittance of energy (light) (Source: <a href="http://www.edaphic.com.au/emittance-absorbance-reflectance-transmittance/">edaphic.com</a>)</p>
+</div>
+<ul>
+<li><p>The remote sensing sensor measures the reflected portion of the energy in the physical quantity called <strong>radiance</strong></p></li>
+<li><p>The unit of radiance is watts per square meter per steradian: W • m<sup>-2</sup> • sr<sup>-1</sup></p></li>
+</ul>
+<blockquote>
+<p><em>The energy (i.e. electro magnetic radiation [W]) that is reflected (or emitted/transmitted) by a unit of a surface [per m²] into a portion of the hemisphere [per sr]?</em></p>
+</blockquote>
+</div>
+</div>
 <div id="usgs-spectral-characteristics-viewer" class="section level2">
 <h2><a href="https://landsat.usgs.gov/spectral-characteristics-viewer">USGS spectral characteristics viewer</a></h2>
 </div>
