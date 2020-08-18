@@ -228,7 +228,16 @@ Characterize the land cover and land use change in Berlin with Google Earth^TM^.
 
 * Enter the colour values of the following table in the QGIS colour model and note/describe the resulting colour
 
-![Table with colour values](docs/fig/tabelle rgb.jpg)
+    | red | green | blue | colour |
+    | :---: | :---: | :---: | :---: |
+    | 255 | 0 | 0 |                |
+    | 255 | 0 | 255 |                |
+    | 0 | 255 | 255 |                |
+    | 255 | 255 | 0 |                |
+    | 0 | 0 | 0 |                |
+    | 25 | 25 | 25 |                |
+    | 150 | 150 | 150 |                |
+    | 255 | 255 | 255 |                |
 
 ## Screen representation of remote sensing images
 
@@ -334,15 +343,125 @@ Characterize the land cover and land use change in Berlin with Google Earth^TM^.
 
 # Land cover / land use classification
 
-## Mapping the Earth surface
+## Mapping the Earth's surface
+
+* The Earth's surface is a mosaic of various landscapes (natural, semi-natural and anthropogenic)
+
+* Mapping with remote sensing requires generalized/transferable classification schemes to describe the Earth's surface
+
+![Various landscapes including natural, semi-natural and anthropogenic surface types](docs/fig/landscape.png)
 
 ## Land cover or land use? 
 
+* What does a satellite see from orbit?
+
+![View from satellite platform](docs/fig/Blick Satellit 1.jpg)
+
+![Spatial resolution affects what the satellite records](docs/fig/Blick Satellit 2.jpg)
+
+* Land **cover**:
+
+    + Biophysical cover of the Earth's surface
+    
+    + For instance crops, forest, build-up area
+
+
+* Land **use**:
+
+    + Anthropogenic use of the Earth's surface
+    
+    + For instance agriculture, forestry, residential area
+    
+![**Land cover**: crops, **land use**: agriculture (left); **land cover**: forest, **land use**: forest management (middle); **land cover**: build-up area, **land use**: residential area (right)](docs/fig/lu lc 1.png)
+
 ## Visual image interpretation
+
+| factor | explanation | example |
+| :----- | :--------- | :------ |
+| contrast, colour, brightness | depend on reflective properties of the recorded surfaces | depth of water, roof material |
+| shape and size | geometry, outlines and edges that divide the landscape in different objects | airport, river course |
+| texture | structure of a surface due to material or surface properties, strongly depends on scale | maize cultivation, fields, forest |
+| spatial context | determines functional interrelationship i.e. building function | railway station, lido, farm |
+| shadows | contain information on object form, height and function | wind turbine, landscape topography |
+
+![**Land cover**: crops and bare soil, **land use**: agriculture (upper left); **land cover**: pines, **land use**: forestry (upper right); **land cover**: build-up area, **land use**: city district (bottom left); **land cover**: build-up area, river and grassland, **land use**: village (bottom right)](docs/fig/lu lc 2.png)
 
 ## Land use / cover area frame survey (LUCAS)
 
+* Sample survey for land use and land cover in the EU
+
+    + Collection of data on land use and land cover (LULC) as well as temporal changes
+    
+    + In situ gathering of point data by a standardized classification scheme to ensure comparability between EU member states
+    
+* Used in the context of
+
+    + Agriculture policy i.e. common agriculture policy
+    
+    + Conservation i.e. EU biodiversity strategy
+    
+    + Environmental monitoring i.e. COPERNICUS
+    
+* [**Further information on LUCAS**](https://ec.europa.eu/eurostat/statistics-explained/index.php/LUCAS_-_Land_use_and_land_cover_survey)
+
+* LUCAS points are based on a 2-km-raster (ca. 1,1 mio points) from which around 270,000 were extracted for the survey
+
+* Survey takes place every three years (last 2018) involving ca. 750 cartographers
+
+![Points used for the LUCAS survey in Berlin and Northern Brandenburg (Source: [eurostat](http://ec.europa.eu/eurostat/statistical-atlas/gis/viewer/?config=LUCAS-2015.json
+))](docs/fig/LUCAS 1.png)
+
+![Land cover of the EU-27 (Source: EU-LUCAS 2012)](docs/fig/LUCAS 2.png)
+
+* LUCAS as reference for remote sensing analyses i.e. europe-wide classification of land cover (Pflugmacher et. al 2018)
+
+![Classification of land cover of the EU member states in 2018 (Source: [HU-Berlin geovis](https://www2.hu-berlin.de/geovis/eolab/europeanlandcover/euroLandCover.html
+))](docs/fig/LUCAS 3.png)
+
+### LUCAS classification scheme
+
+![LUCAS classification scheme divided into land cover (green) and land use (red)](docs/fig/LUCAS 4.png)
+
 ## Exercise
+
+**Part 1: Development of a classification scheme based on LUCAS nomenclature**
+
+* Open the false-colour satellite image of Wuhlheide (1990) on O:/ in QGIS
+
+  ![False-colour satellite image of Wuhlheide, Berlin,  from 1990](docs/fig/bild uebung S03.png)
+
+*  Create a classification scheme for the following nine surface types: 
+
+    + Buildings
+    + Streets
+    + Rails
+    + Sealed (non-build-up) areas
+    + Coniferous forest
+    + Deciduous forest
+    + Mixed forest
+    + Grassland
+    + Water
+  
+  
+* Add a sample image and a short description (class properties) for every class
+
+* Further, add the LUCAS land use and land cover class. Use the most detailed level! (See *LUCAS2015_C1_Annex_Classification_sheme.pdf*)
+
+![Example for surface type 'building'](docs/fig/exercise S03.png)
+
+**Part 2: Mapping of your example areas**
+
+* Digitize your example areas in QGIS according to your classification scheme from task 1. Note the following:
+
+    + Three example areas for each class
+    
+    + Minimum mapping unit equals 0.05 ha (500 m^2^), objects smaller than that are included in the surrounding class
+    
+* Create a map with your results and add a legend
+
+* Note and discuss problems and inaccuracies (key words)
+
+*Upload the classififation scheme, map with legend and your discussion as a PDF file on Moodle.*
 
 ------
 

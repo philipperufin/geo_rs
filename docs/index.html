@@ -298,12 +298,68 @@ $(document).ready(function () {
 <p class="caption">Select Color Tool in QGIS</p>
 </div>
 <ul>
-<li>Enter the colour values of the following table in the QGIS colour model and note/describe the resulting colour</li>
+<li><p>Enter the colour values of the following table in the QGIS colour model and note/describe the resulting colour</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">red</th>
+<th align="center">green</th>
+<th align="center">blue</th>
+<th align="center">colour</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">255</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">255</td>
+<td align="center">0</td>
+<td align="center">255</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">0</td>
+<td align="center">255</td>
+<td align="center">255</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">255</td>
+<td align="center">255</td>
+<td align="center">0</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">25</td>
+<td align="center">25</td>
+<td align="center">25</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">150</td>
+<td align="center">150</td>
+<td align="center">150</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">255</td>
+<td align="center">255</td>
+<td align="center">255</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table></li>
 </ul>
-<div class="figure">
-<img src="fig/tabelle%20rgb.jpg" alt="" />
-<p class="caption">Table with colour values</p>
-</div>
 </div>
 </div>
 <div id="screen-representation-of-remote-sensing-images" class="section level2">
@@ -423,20 +479,175 @@ $(document).ready(function () {
 </div>
 <div id="land-cover-land-use-classification" class="section level1">
 <h1>Land cover / land use classification</h1>
-<div id="mapping-the-earth-surface" class="section level2">
-<h2>Mapping the Earth surface</h2>
+<div id="mapping-the-earths-surface" class="section level2">
+<h2>Mapping the Earth’s surface</h2>
+<ul>
+<li><p>The Earth’s surface is a mosaic of various landscapes (natural, semi-natural and anthropogenic)</p></li>
+<li><p>Mapping with remote sensing requires generalized/transferable classification schemes to describe the Earth’s surface</p></li>
+</ul>
+<div class="figure">
+<img src="fig/landscape.png" alt="" />
+<p class="caption">Various landscapes including natural, semi-natural and anthropogenic surface types</p>
+</div>
 </div>
 <div id="land-cover-or-land-use" class="section level2">
 <h2>Land cover or land use?</h2>
+<ul>
+<li>What does a satellite see from orbit?</li>
+</ul>
+<div class="figure">
+<img src="fig/Blick%20Satellit%201.jpg" alt="" />
+<p class="caption">View from satellite platform</p>
+</div>
+<div class="figure">
+<img src="fig/Blick%20Satellit%202.jpg" alt="" />
+<p class="caption">Spatial resolution affects what the satellite records</p>
+</div>
+<ul>
+<li><p>Land <strong>cover</strong>:</p>
+<ul>
+<li><p>Biophysical cover of the Earth’s surface</p></li>
+<li><p>For instance crops, forest, build-up area</p></li>
+</ul></li>
+<li><p>Land <strong>use</strong>:</p>
+<ul>
+<li><p>Anthropogenic use of the Earth’s surface</p></li>
+<li><p>For instance agriculture, forestry, residential area</p></li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="fig/lu%20lc%201.png" alt="" />
+<p class="caption"><strong>Land cover</strong>: crops, <strong>land use</strong>: agriculture (left); <strong>land cover</strong>: forest, <strong>land use</strong>: forest management (middle); <strong>land cover</strong>: build-up area, <strong>land use</strong>: residential area (right)</p>
+</div>
 </div>
 <div id="visual-image-interpretation-1" class="section level2">
 <h2>Visual image interpretation</h2>
+<table>
+<colgroup>
+<col width="26%" />
+<col width="43%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">factor</th>
+<th align="left">explanation</th>
+<th align="left">example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">contrast, colour, brightness</td>
+<td align="left">depend on reflective properties of the recorded surfaces</td>
+<td align="left">depth of water, roof material</td>
+</tr>
+<tr class="even">
+<td align="left">shape and size</td>
+<td align="left">geometry, outlines and edges that divide the landscape in different objects</td>
+<td align="left">airport, river course</td>
+</tr>
+<tr class="odd">
+<td align="left">texture</td>
+<td align="left">structure of a surface due to material or surface properties, strongly depends on scale</td>
+<td align="left">maize cultivation, fields, forest</td>
+</tr>
+<tr class="even">
+<td align="left">spatial context</td>
+<td align="left">determines functional interrelationship i.e. building function</td>
+<td align="left">railway station, lido, farm</td>
+</tr>
+<tr class="odd">
+<td align="left">shadows</td>
+<td align="left">contain information on object form, height and function</td>
+<td align="left">wind turbine, landscape topography</td>
+</tr>
+</tbody>
+</table>
+<div class="figure">
+<img src="fig/lu%20lc%202.png" alt="" />
+<p class="caption"><strong>Land cover</strong>: crops and bare soil, <strong>land use</strong>: agriculture (upper left); <strong>land cover</strong>: pines, <strong>land use</strong>: forestry (upper right); <strong>land cover</strong>: build-up area, <strong>land use</strong>: city district (bottom left); <strong>land cover</strong>: build-up area, river and grassland, <strong>land use</strong>: village (bottom right)</p>
+</div>
 </div>
 <div id="land-use-cover-area-frame-survey-lucas" class="section level2">
 <h2>Land use / cover area frame survey (LUCAS)</h2>
+<ul>
+<li><p>Sample survey for land use and land cover in the EU</p>
+<ul>
+<li><p>Collection of data on land use and land cover (LULC) as well as temporal changes</p></li>
+<li><p>In situ gathering of point data by a standardized classification scheme to ensure comparability between EU member states</p></li>
+</ul></li>
+<li><p>Used in the context of</p>
+<ul>
+<li><p>Agriculture policy i.e. common agriculture policy</p></li>
+<li><p>Conservation i.e. EU biodiversity strategy</p></li>
+<li><p>Environmental monitoring i.e. COPERNICUS</p></li>
+</ul></li>
+<li><p><a href="https://ec.europa.eu/eurostat/statistics-explained/index.php/LUCAS_-_Land_use_and_land_cover_survey"><strong>Further information on LUCAS</strong></a></p></li>
+<li><p>LUCAS points are based on a 2-km-raster (ca. 1,1 mio points) from which around 270,000 were extracted for the survey</p></li>
+<li><p>Survey takes place every three years (last 2018) involving ca. 750 cartographers</p></li>
+</ul>
+<div class="figure">
+<img src="fig/LUCAS%201.png" alt="" />
+<p class="caption">Points used for the LUCAS survey in Berlin and Northern Brandenburg (Source: <a href="http://ec.europa.eu/eurostat/statistical-atlas/gis/viewer/?config=LUCAS-2015.json">eurostat</a>)</p>
+</div>
+<div class="figure">
+<img src="fig/LUCAS%202.png" alt="" />
+<p class="caption">Land cover of the EU-27 (Source: EU-LUCAS 2012)</p>
+</div>
+<ul>
+<li>LUCAS as reference for remote sensing analyses i.e. europe-wide classification of land cover (Pflugmacher et. al 2018)</li>
+</ul>
+<div class="figure">
+<img src="fig/LUCAS%203.png" alt="" />
+<p class="caption">Classification of land cover of the EU member states in 2018 (Source: <a href="https://www2.hu-berlin.de/geovis/eolab/europeanlandcover/euroLandCover.html">HU-Berlin geovis</a>)</p>
+</div>
+<div id="lucas-classification-scheme" class="section level3">
+<h3>LUCAS classification scheme</h3>
+<div class="figure">
+<img src="fig/LUCAS%204.png" alt="" />
+<p class="caption">LUCAS classification scheme divided into land cover (green) and land use (red)</p>
+</div>
+</div>
 </div>
 <div id="exercise-2" class="section level2">
 <h2>Exercise</h2>
+<p><strong>Part 1: Development of a classification scheme based on LUCAS nomenclature</strong></p>
+<ul>
+<li><p>Open the false-colour satellite image of Wuhlheide (1990) on O:/ in QGIS</p>
+<div class="figure">
+<img src="fig/bild%20uebung%20S03.png" alt="" />
+<p class="caption">False-colour satellite image of Wuhlheide, Berlin, from 1990</p>
+</div></li>
+<li><p>Create a classification scheme for the following nine surface types:</p>
+<ul>
+<li>Buildings</li>
+<li>Streets</li>
+<li>Rails</li>
+<li>Sealed (non-build-up) areas</li>
+<li>Coniferous forest</li>
+<li>Deciduous forest</li>
+<li>Mixed forest</li>
+<li>Grassland</li>
+<li>Water</li>
+</ul></li>
+<li><p>Add a sample image and a short description (class properties) for every class</p></li>
+<li><p>Further, add the LUCAS land use and land cover class. Use the most detailed level! (See <em>LUCAS2015_C1_Annex_Classification_sheme.pdf</em>)</p></li>
+</ul>
+<div class="figure">
+<img src="fig/exercise%20S03.png" alt="" />
+<p class="caption">Example for surface type ‘building’</p>
+</div>
+<p><strong>Part 2: Mapping of your example areas</strong></p>
+<ul>
+<li><p>Digitize your example areas in QGIS according to your classification scheme from task 1. Note the following:</p>
+<ul>
+<li><p>Three example areas for each class</p></li>
+<li><p>Minimum mapping unit equals 0.05 ha (500 m<sup>2</sup>), objects smaller than that are included in the surrounding class</p></li>
+</ul></li>
+<li><p>Create a map with your results and add a legend</p></li>
+<li><p>Note and discuss problems and inaccuracies (key words)</p></li>
+</ul>
+<p><em>Upload the classififation scheme, map with legend and your discussion as a PDF file on Moodle.</em></p>
 <hr />
 </div>
 </div>
