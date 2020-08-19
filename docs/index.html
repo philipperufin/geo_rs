@@ -1011,16 +1011,143 @@ $(document).ready(function () {
 </div>
 <div id="usgs-spectral-characteristics-viewer" class="section level2">
 <h2><a href="https://landsat.usgs.gov/spectral-characteristics-viewer">USGS spectral characteristics viewer</a></h2>
-</div>
-<div id="section" class="section level2">
-<h2></h2>
 <hr />
 </div>
 </div>
 <div id="optical-data-multi--hyperspectral" class="section level1">
 <h1>Optical data (Multi- / Hyperspectral)</h1>
-<div id="raster-formats" class="section level2">
-<h2>Raster formats</h2>
+<div id="raster-formats-in-remote-sensing" class="section level2">
+<h2>Raster formats in remote sensing</h2>
+<ul>
+<li><p>What you always need to know about your dataset for proper data handling:</p>
+<ul>
+<li><p>Spectral resolution (wavelengths, bands) <img src="fig/spectral%20resolution.png" /></p></li>
+<li><p>Spatial resolution (pixel size, GSD), spatial resolution may differ for different bands in the same data set <img src="fig/spatial%20resolution.png" /></p></li>
+<li><p>Rows + columns (height + width) <img src="fig/rows%20and%20columns.png" /></p></li>
+<li><p>Radiometric resolution per band (data type) <img src="fig/radiometric%20resolution.png" /></p></li>
+</ul></li>
+<li><p>Band Interleaved by Pixel (BIP): for each band, gray values are stored in a pixel-wise manner on disk</p></li>
+</ul>
+<div class="figure">
+<img src="fig/BIP.png" alt="" />
+<p class="caption">BIP storage structure for three bands with n pixel</p>
+</div>
+<ul>
+<li>Band Interleaved by Line (BIL): bands are stored line-wise</li>
+</ul>
+<div class="figure">
+<img src="fig/BIL.png" alt="" />
+<p class="caption">BIL storage structure for three bands with n pixel</p>
+</div>
+<ul>
+<li>Band Sequential (BSQ): entire bands are stored on disk one after the other</li>
+</ul>
+<div class="figure">
+<img src="fig/BSQ.png" alt="" />
+<p class="caption">BSQ storage structure for three bands with n pixel</p>
+</div>
+<ul>
+<li><p>Metadata or auxiliary data are either stored as part of an integrated data format (in the same file) or as an extra dataset accompanying the image data</p></li>
+<li><p>Data types</p>
+<ul>
+<li><p>raster values are numbers that are stored in memory</p></li>
+<li><p>image size = bands * lines * columns * bit width</p></li>
+</ul></li>
+</ul>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Data type</th>
+<th align="left">Typical Bit Width</th>
+<th align="left">Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">byte</td>
+<td align="left">1 byte = 8 bit</td>
+<td align="left">-127 to 127 (signed); 0 to 255 (unsigned)</td>
+</tr>
+<tr class="even">
+<td align="left">integer</td>
+<td align="left">2 byte = 16 bit</td>
+<td align="left">-32768 to 32768 (signed); 0 to 65535 (unsigned)</td>
+</tr>
+<tr class="odd">
+<td align="left">float</td>
+<td align="left">4 byte = 32 bit</td>
+<td align="left">-Inf to +inf, ‘single precision’; floating point number according to IEEE 754</td>
+</tr>
+<tr class="even">
+<td align="left">double</td>
+<td align="left">8 byte = 64 bit</td>
+<td align="left">-Inf to +Inf, ‘double precision’</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>File types</p>
+<ul>
+<li><p>over 200 raster image formats (see <a href="https://gdal.org/drivers/raster/">gdal.org</a>)</p></li>
+<li><p>Most common: ENVI, JPEG2000, GeoTiff</p></li>
+</ul></li>
+</ul>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Extension</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">GeoTiff</td>
+<td align="left">.tif, .tiff, .gtiff</td>
+<td align="left">TIFF + geospatial reference</td>
+</tr>
+<tr class="even">
+<td align="left">JPEG2000</td>
+<td align="left">.jp2, .j2k</td>
+<td align="left">used by many data providers; usually for integer values only</td>
+</tr>
+<tr class="odd">
+<td align="left">ENVI</td>
+<td align="left"><None>, .bsq, .bil, .bip, .dat</td>
+<td align="left">generic, often used in imaging spectroscopy community; <em>Header file (.hdr) with meta data!</em></td>
+</tr>
+<tr class="even">
+<td align="left">VRT</td>
+<td align="left">.vrt</td>
+<td align="left">GDAL Virtual Raster, XML text file</td>
+</tr>
+<tr class="odd">
+<td align="left">HDF4, HDF5</td>
+<td align="left">.hdf, .h4, .hdf4, .h5, .hdf5</td>
+<td align="left">hierarchical data format, version 4 or 5; multi-resolution raster</td>
+</tr>
+<tr class="even">
+<td align="left">netCDF</td>
+<td align="left"></td>
+<td align="left">Network Common Data Forat; multi-resolution raster</td>
+</tr>
+<tr class="odd">
+<td align="left">SAVE</td>
+<td align="left"></td>
+<td align="left">Standard Archive Format for Europe e.g. Sentinel-1 and Sentinel-2</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="metadata" class="section level2">
 <h2>Metadata</h2>

@@ -808,20 +808,71 @@ Characterize the land cover and land use change in Berlin with Google Earth^TM^.
 
 ![Reflectance spectra of pure water from simulation (dark blue) and river water from the Mosel (turquoise)](docs/fig/water reflectance.png)
 
-
-
-
-
-
 ## [USGS spectral characteristics viewer](https://landsat.usgs.gov/spectral-characteristics-viewer)
-
-## 
 
 ------
 
 # Optical data (Multi- / Hyperspectral)
 
-## Raster formats
+## Raster formats in remote sensing
+
+* What you always need to know about your dataset for proper data handling:
+
+    + Spectral resolution (wavelengths, bands)
+    ![](docs/fig/spectral resolution.png)
+    
+    + Spatial resolution (pixel size, GSD), spatial resolution may differ for different bands in the same data set
+    ![](docs/fig/spatial resolution.png)
+    
+    + Rows + columns (height + width)
+    ![](docs/fig/rows and columns.png)
+    
+    + Radiometric resolution per band (data type)
+    ![](docs/fig/radiometric resolution.png)
+
+* Band Interleaved by Pixel (BIP): for each band, gray values are stored in a pixel-wise manner on disk
+
+![BIP storage structure for three bands with n pixel](docs/fig/BIP.png)
+
+* Band Interleaved by Line (BIL): bands are stored line-wise
+
+![BIL storage structure for three bands with n pixel](docs/fig/BIL.png)
+
+* Band Sequential (BSQ): entire bands are stored on disk one after the other
+
+![BSQ storage structure for three bands with n pixel](docs/fig/BSQ.png)
+
+* Metadata or auxiliary data are either stored as part of an integrated data format (in the same file) or as an extra dataset accompanying the image data
+
+* Data types
+
+    + raster values are numbers that are stored in memory
+    
+    + image size = bands * lines * columns * bit width
+    
+| Data type | Typical Bit Width | Range |
+| :--- | :--- | :--- |
+| byte | 1 byte = 8 bit | -127 to 127 (signed); 0 to 255 (unsigned) |
+| integer | 2 byte = 16 bit | -32768 to 32768 (signed); 0 to 65535 (unsigned) |
+| float | 4 byte = 32 bit | -Inf to +inf, 'single precision'; floating point number according to IEEE 754 |
+| double | 8 byte = 64 bit | -Inf to +Inf, 'double precision' |
+
+* File types
+
+    + over 200 raster image formats (see [gdal.org](https://gdal.org/drivers/raster/))
+    
+    + Most common: ENVI, JPEG2000, GeoTiff
+    
+| Name | Extension | Description |
+| :--- | :---| :---|
+| GeoTiff | .tif, .tiff, .gtiff | TIFF + geospatial reference |
+| JPEG2000 | .jp2, .j2k | used by many data providers; usually for integer values only |
+| ENVI | <None>, .bsq, .bil, .bip, .dat | generic, often used in imaging spectroscopy community; *Header file (.hdr) with meta data!* |
+| VRT | .vrt | GDAL Virtual Raster, XML text file |
+| HDF4, HDF5 | .hdf, .h4, .hdf4, .h5, .hdf5 | hierarchical data format, version 4 or 5; multi-resolution raster |
+| netCDF |  | Network Common Data Forat; multi-resolution raster |
+| SAVE |  | Standard Archive Format for Europe e.g. Sentinel-1 and Sentinel-2 |
+
 
 ## Metadata
 
