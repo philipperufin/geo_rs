@@ -576,6 +576,241 @@ Characterize the land cover and land use change in Berlin with Google Earth^TM^.
 
 > *The energy (i.e. electro magnetic radiation [W]) that is reflected (or emitted/transmitted) by a unit of a surface [per m²] into a portion of the hemisphere [per sr]?*
 
+### Excursus - solid angle
+
+* A three-dimensional angle is called **solid angle Ω**
+
+* Definition Ω: the area A cut out from a sphere with the radius r
+
+* Unit: **steradian [sr]**
+
+* Ω = 1 sr if a conus cuts an area A of 1 m^2^ from a sphere with the radius r = 1 m
+
+![Solid angle Ω (Source: [Wikipedia](https://de.wikipedia.org/wiki/Raumwinkel
+))](docs/fig/Raumwinkel.png)
+
+### From radiance to reflectance
+
+* The problem with radiance as the unit of measure: it varies with illumination
+
+* Needed: a stable measurement over time, independent of illumination, to avoid introducing changes when measuring unchanged surfaces
+
+* Solution: normalize the measurement relative to the irradiation 
+
+* The ratio between radiance reflected at the Earth’s surface and the incoming radiation is called **reflectance**
+
+  Reflectance = Rad<sub>reflected</sub> / Rad<sub>incoming</sub>
+
+* Reflectance is the percentage of the total measurable radiation, which has not been absorbed or transmitted
+
+![Emittance, absorbance, reflectance and transmittance of energy (light) (Source: [edaphic.com](http://www.edaphic.com.au/emittance-absorbance-reflectance-transmittance/
+))](docs/fig/light and surface.png)
+
+### Diffuse and direct reflectance
+
+* The observation direction influences the measured signal
+
+* In most cases, surfaces reflect the incoming radiation diffusely 
+
+* A special case is **Lambert reflectance** that is often assumed in remote sensing for the sake of simplicity
+
+* Lambert reflectance: the measured signal is independent of the observation direction (no directionality effects in the reflected signal)
+
+* In reality, most surfaces reflect in a mixed way, which can be described by the so called **Bidirectional Reflectance Distribution Function (BRDF)**
+
+* Spectral reference panels (e.g. Spectralon®) are almost Lambert reflectors
+
+![Direct reflectance (a), Lambertian reflectance (b) and mixed reflectance (c) (Source: Albertz 2001)](docs/fig/diffuse und direkte reflexion.png)
+
+## Spectral surface characteristics
+
+![Example of a vegetation measurement (green) in the field](docs/fig/ENVI plot.png)
+
+![Field measurements](docs/fig/veg measurement 1.png)
+
+### White reference
+
+* In addition to the target surface, a white surface is measured
+
+*This so-called White Reference is a surface with a reflectance of almost 100% across the entire wavelength spectrum 
+
+* Spectralon®, alternatively BaSO<sub>4</sub>
+
+* Reference panels allow measuring the maximum backscatter for a particular point in time and position on Earth
+
+*If a panel reflects 100% across the spectral region of interest, its radiance is the same as the incoming radiance, i.e. it can serve for normalizing the reflectance
+
+![Example of a white reference measurement (red) and vegetetation measurement (green) in the field](docs/fig/ENVI plot.png)
+
+![White reference measurement in the field](docs/fig/white reference with veg.jpg)
+
+### Reflectance
+
+* The ratio between the target radiance measured and the reference panel (white reference) is hence **reflectance**
+
+  reflectance = Rad<sub>target</sub> / Rad<sub>WR</sub>
+  
+* Reflectance is the percentage of the total measurable radiation, which has not been absorbed (or transmitted)
+
+* Note: The division by Rad<sub>WR</sub> can result in considerable noise in wavelength regions with poor signal-to-noise-ratio
+
+![White reference spectra in red and vegetation spectra in green (left) and the resulting reflectance in green (right)](docs/fig/reflectance spectra.png)
+
+## Reflectance of different surfaces and materials
+
+![Field measurements](docs/fig/ASD field measurements.png)
+
+* The object-specific influence determines object-specific patterns in the spectrum of recorded electromagnetic radiation
+
+* The change of irradiation at the Earth’s surface results from material-specific absorption
+
+* We distinguish between absorption features due to electron transitions, molecular vibrations and molecular rotation
+
+* Electron transitions require a high amount of energy > they occur mostly in the VIS
+
+* Vibration and rotation can lead to narrow absorption bands also in the nIR and SWIR
+
+### Reflectance of photosynthetic active vegetation
+
+* Vegetation produces a distinct spectral reflectance pattern due to its leaf and cell structure, its physiognomy, and complex stand structure
+
+* The reflectance of photosynthetically active vegetation is characterized by different factors in the VIS, nIR and SWIR:
+    
+    + VIS - leaf pigments
+    
+    + nIR - cell structure
+    
+    + SWIR - water content
+  
+* Photosynthetically inactive plant parts differ considerably from active ones across different wavelength regions
+
+![Spectra of photosynthetic active vegetation; VIS (leaf pigments) in green, nIR (cell structure) in red and SWIR (water content) in blue](docs/fig/photo active veg reflectance.png)
+
+#### Single leaf reflectance
+
+* The reflectance of a single leaf or needle is determined by various absorption, transmission and reflectance characteristics
+
+* Important characteristics are: 
+
+    + The local reflectance maximum in the VIS (green peak) is small
+    
+    + The high reflectance in the nIR results in the so-called “red edge”
+    
+    + Thus, transmission in the nIR is very high, in the VIS very small
+    
+    + Lignin and cellulose, and particularly water, lead to high absorption, especially in the SWIR
+
+![Plant traits that influence vegetation spectra](docs/fig/single leaf reflectance.png)
+
+#### Plant stress
+
+* According to the factors determining reflectance, there are also three determining damaging factors:
+
+    + Pigments
+    
+    + Cell structure
+    
+    + Cell water
+    
+* Destruction of chlorophyll causes a  flattening of the C<sub>ab</sub>-specific absorption bands
+
+* Destruction of the cell structure causes a shift of the red edge towards the nIR and a flattening of the nIR-plateau 
+
+* Both effects can be detected with remote sensing systems
+
+![Spectra of vegetation with (green) and without (orange) plant stress (Source: Gausman 1974)](docs/fig/plant stress reflectance.png)
+
+#### Water stress
+
+* Dehydration of the cell leads to a flattening of absorption bands that depend on water content
+
+* Additionally, albedo increases considerably
+
+* Absorption bands of cellulose and lignin appear more clearly
+
+* Heavy water stress ultimately leads to a destruction of the cell structure and a decrease in plant metabolism
+
+![Spectra of vegetation with low (red), medium (green), high (blue) and very high (black) water stress](docs/fig/water stress reflectance.png)
+
+#### Multi-layered leaf reflectance
+
+* The plant’s leaf organs produce complex reflectance patterns
+
+* In the VIS, one leaf layer is enough to absorb almost the entire radiation
+
+* In the nIR, complex radiation paths relate to multiple transmission
+
+![reflectance behaviour of wavelengths in the VIS (blue) and nIR (red) on plant leaf layers](docs/fig/multi layered leaf reflectance.png)
+
+* As the degree of transmission varies greatly in different wavelength regions, non-linear changes of the reflectance behaviour occur with an increasing number of leaf layers
+
+* A saturation of the reflectance in the nIR is – depending on the character of the respective leaves or needles – reached with 6 to 7 leaf layers 
+
+* A commonly used measure for the number of leaf layers is the so called 'leaf area index' (LAI), measured in [m^2^ • m^-2^]
+
+#### Plants as a system
+
+* Plants do include photosynthetically inactive parts
+
+* Fruits, spines, flowers, bark, and dead parts of the plant affect the reflectance
+
+* Also structural factors affect the signal
+
+* Aircraft or satellite based methods detect an integral signal
+
+* In remote sensing, the analysis often focuses on the green parts of the plants only
+
+![Reflectance spectra of a stack of leaves (green), the whole plant (blue) and bark (red)](docs/fig/plants as system.png)
+
+### Reflectance of soils
+
+#### Soil moisture
+
+* Example: silty loam
+
+* Alteration of
+
+    + Form of the reflectance curve
+    
+    + Albedo
+
+    + Absorption depth
+
+    + FWHM (here: maximum absorption depth, similar to sensitivity function of sensors > compare chapter on spectral resolution)
+
+![Reflectance spectra of soil with low and high water content (Source: Asrar 1989, adapted)](docs/fig/soil reflectance.png)
+
+#### Organic material content
+
+* Figure shows difference between low and very high organic content
+
+* With increasing portion of C<sub>org</sub>
+
+    + The total reflectance decreases
+    
+    + Particularly the reflectance at 0.6 µm decreases
+    
+    + The depth of the water-dependent absorption bands decreases
+
+![Reflectance spectra of soil with low and high organic material content](docs/fig/OM content.png)
+
+### Reflectance of water
+
+* Water, in its fluid phase, is an excellent absorber (especially in the infrared)
+
+* Clear water reflects less than 5 % in the VIS 
+
+* In the nIR and SWIR, reflectance is close to 0
+
+* Accordingly, water is almost a black body in these wavelength regions
+
+* In its frozen form of ice, and particularly as snow, water is a good reflector
+
+![Reflectance spectra of pure water from simulation (dark blue) and river water from the Mosel (turquoise)](docs/fig/water reflectance.png)
+
+
+
+
 
 
 ## [USGS spectral characteristics viewer](https://landsat.usgs.gov/spectral-characteristics-viewer)
