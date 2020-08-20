@@ -219,8 +219,8 @@ $(document).ready(function () {
 <li><p>What changes contentwise?</p></li>
 <li><p>What changes concretely in the photos?</p></li>
 </ul></li>
+<li><p><strong>Assignment:</strong> Upload your results as a PDF file on Moodle (each participant separately).</p></li>
 </ul>
-<p><em>Upload your results as a PDF file on Moodle (each participant separately).</em></p>
 <hr />
 </div>
 </div>
@@ -473,7 +473,9 @@ $(document).ready(function () {
 <li><p>Subsequently, describe the differences between deciduous and coniferous forest and artificial and true turf</p></li>
 <li><p>For what phenomenons and/or surfaces is the nIR channel particularly sensitive?</p></li>
 </ol>
-<p><em>Summarize task 1 - 4 visually and textually and upload your results as a PDF file on Moodle.</em></p>
+<ul>
+<li><strong>Assignment:</strong> Summarize task 1 - 4 visually and textually and upload your results as a PDF file on Moodle.</li>
+</ul>
 <hr />
 </div>
 </div>
@@ -646,8 +648,8 @@ $(document).ready(function () {
 </ul></li>
 <li><p>Create a map with your results and add a legend</p></li>
 <li><p>Note and discuss problems and inaccuracies (key words)</p></li>
+<li><p><strong>Assignment:</strong> Upload the classififation scheme, map with legend and your discussion as a PDF file on Moodle.</p></li>
 </ul>
-<p><em>Upload the classififation scheme, map with legend and your discussion as a PDF file on Moodle.</em></p>
 <hr />
 </div>
 </div>
@@ -1151,26 +1153,153 @@ $(document).ready(function () {
 </div>
 <div id="metadata" class="section level2">
 <h2>Metadata</h2>
+<ul>
+<li>Metadata are additional information about the data and are commonly recorded during data acquisition, e.g. Exchangeable Image File Format (EXIF) in standard camera images</li>
+</ul>
+<div class="figure">
+<img src="fig/metadata%20camera.png" alt="" />
+<p class="caption">Metadata of a photograph</p>
+</div>
+<ul>
+<li><p>Remote-sensing raster formats usually have their individual way to store metadata</p></li>
+<li><p>ENVI format: binary file (.bsq) + header File (.hdr)</p>
+<div class="figure">
+<img src="fig/ENVI%20metadata.png" alt="" />
+<p class="caption">Metadata in ENVI format as .hdr file</p>
+</div></li>
+<li><p>GeoTIFF: within .tiff image</p></li>
+<li><p>GDAL: (.aux.pam) XML file to supplement existing metadata</p>
+<div class="figure">
+<img src="fig/GDAL%20metadata.png" alt="" />
+<p class="caption">Metadata in GDAL format as XML file</p>
+</div></li>
+</ul>
 </div>
 <div id="hymap-data" class="section level2">
 <h2>HyMap data</h2>
+<div id="hymap-sensor-imaging-spectrometer" class="section level3">
+<h3>HyMap-sensor: imaging spectrometer</h3>
+<ul>
+<li><p>Airborne hyperspectral sensor</p></li>
+<li><p>Line scanner</p></li>
+<li><p>Spectral range: 450 - 2500 nm</p></li>
+<li><p>128 spectral channels</p></li>
+<li><p>4 sensor modules á 32 bands</p></li>
+<li><p>Geometric resolution: 3 - 10 m (depending on altitude)</p></li>
+</ul>
+<div class="figure">
+<img src="fig/Hymap%20NASA.jpg" alt="" />
+<p class="caption">HyMap sensor (Source: NASA)</p>
+</div>
+<div class="figure">
+<img src="fig/Hymap%20Berlin.png" alt="" />
+<p class="caption">HyMap data of Berlin</p>
+</div>
+<div class="figure">
+<img src="fig/Beispielspektren%20Hymap.png" alt="" />
+<p class="caption">HyMap sample spectra of “pure surface materials”</p>
+</div>
+</div>
+</div>
+<div id="exercise-3" class="section level2">
+<h2>Exercise</h2>
+<div id="dataset" class="section level3">
+<h3>Dataset</h3>
+<ul>
+<li><p>Extract of Berlin-Brandenburg from <a href="http://doi.org/10.5880/enmap.2016.002">Berlin-Urban-Gradient dataset</a></p></li>
+<li><p>Urban-land-gradient</p></li>
+<li><p>Recorded 20th August 2009</p></li>
+<li><p>111 of 128 spectral channels</p></li>
+</ul>
+<div class="figure">
+<img src="fig/hymap%20berlin%202.png" alt="" />
+<p class="caption">Dataset for the exercise</p>
+</div>
+</div>
+<div id="discussion-of-data-type-and-structure-on-the-basis-of-the-hymap-image" class="section level3">
+<h3>Discussion of data type and structure on the basis of the HyMap image</h3>
+<ul>
+<li><p>Open the header file (metadata) of the HyMap image on O:/ (…/S05/envi_format/HyMap_BB_subset.hdr) in Notepad++</p></li>
+<li><p>What do you find out about the following data properties of the image?</p>
+<ul>
+<li><p>Dimension in x and y</p></li>
+<li><p>Spatial resolution</p></li>
+<li><p>Spectral resolution</p></li>
+<li><p>Radiometric resolution</p></li>
+<li><p>Data type</p></li>
+<li><p>Interleave</p></li>
+</ul></li>
+<li><p>What additional data properties may be derived from the metadata?</p></li>
+</ul>
+<p><em>Upload on Moodle?</em></p>
 <hr />
+</div>
 </div>
 </div>
 <div id="enmap-box-for-qgis" class="section level1">
 <h1>EnMAP Box for QGIS</h1>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
+<ul>
+<li><p>Freely available and platform-independent QGIS plugin</p></li>
+<li><p>Developed by HU Berlin´s Earth Observation Lab for the hyperspectral satellite sensor EnMAP</p></li>
+</ul>
+<div class="figure">
+<img src="fig/EnMAP%20intro.png" alt="" />
+<p class="caption">Interface of the EnMAP plugin in QGIS</p>
+</div>
 </div>
 <div id="installation" class="section level2">
 <h2>Installation</h2>
+<ul>
+<li><p><a href="www.enmap.org">EnMAP-Box Portal</a></p></li>
+<li><p><a href="enmap-box.readthedocs.io/en/latest/">Dokumentation</a></p></li>
+<li><p><a href="enmap-box.readthedocs.io/en/latest/usr_section/usr_installation.html">Installation</a></p></li>
+</ul>
+<div class="figure">
+<img src="fig/EnMAP%20installation.png" alt="" />
+<p class="caption">EnMAP-Box documentation (see <a href="enmap-box.readthedocs.io/en/latest/">here</a>)</p>
 </div>
-<div id="key-features" class="section level2">
-<h2>Key features</h2>
 </div>
-<div id="demo" class="section level2">
-<h2>Demo</h2>
+<div id="exercise-4" class="section level2">
+<h2>Exercise</h2>
+<div id="part-1-get-to-know-the-enmap-box-and-key-features" class="section level3">
+<h3>Part 1: Get to know the EnMAP-Box and key features</h3>
+<ul>
+<li>Menu structure, opening and portraying images, zoom in and out, selection of bands, contrast stretching</li>
+</ul>
+<p><img src="fig/enmap%20anhang%201.png" /></p>
+<p><img src="fig/enmap%20anhang%202.png" /></p>
+<p><img src="fig/enmap%20anhang%203.png" /></p>
+<ul>
+<li>Visualizing and collecting image spectra, editing of attribute information, colouring of spectra, saving spectral library</li>
+</ul>
+<p><img src="fig/enmap%20anhang%204.png" /></p>
+<p><img src="fig/enmap%20anhang%205.png" /></p>
+<p><img src="fig/enmap%20anhang%206.png" /></p>
+<p><img src="fig/enmap%20anhang%207.png" /></p>
+<p><img src="fig/enmap%20anhang%208.png" /></p>
+</div>
+<div id="part-2-creating-a-specral-library" class="section level3">
+<h3>Part 2: Creating a specral library</h3>
+<ul>
+<li><p>Collect 5 reflectance spectra in the HyMap image (HyMAP_BB_Subset.bsq) for following (pure) materials/surfaces:</p>
+<ul>
+<li><p>Building</p></li>
+<li><p>Sealed (non build-up)</p></li>
+<li><p>Grass</p></li>
+<li><p>Tree</p></li>
+<li><p>Soil</p></li>
+<li><p>Water</p></li>
+</ul></li>
+<li><p>Create two attribute columns (‘class’, ‘description’) and fill them in. The first serves as an index for the assignment of the six classes (i.e. ‘building’), the latter should include a detailed description of the material/surface (i.e. ‘red tiles’)</p></li>
+<li><p>Colour the spectra appropriately with regard to the classes</p></li>
+<li><p>Save the collected spectra via the Spectral Library Viewer as a Spectral Library file (SLI)</p></li>
+<li><p>Export the image of the coloured spectra as a PNG file and create a PDF file (including a legend)</p></li>
+<li><p><strong>Assignment:</strong> Put the Spectral Library (all files) and the PDF together in a ZIP file and upload the ZIP file on Moodle.</p></li>
+</ul>
 <hr />
+</div>
 </div>
 </div>
 <div id="data-acquisition" class="section level1">

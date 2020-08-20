@@ -154,7 +154,7 @@ Characterize the land cover and land use change in Berlin with Google Earth^TM^.
     
     + What changes concretely in the photos?
     
-*Upload your results as a PDF file on Moodle (each participant separately).*
+* **Assignment:** Upload your results as a PDF file on Moodle (each participant separately).
 
 ------
 
@@ -337,7 +337,7 @@ Characterize the land cover and land use change in Berlin with Google Earth^TM^.
 
 4. For what phenomenons and/or surfaces is the nIR channel particularly sensitive?
 
-*Summarize task 1 - 4 visually and textually and upload your results as a PDF file on Moodle.*
+* **Assignment:** Summarize task 1 - 4 visually and textually and upload your results as a PDF file on Moodle.
 
 ------
 
@@ -461,7 +461,7 @@ Characterize the land cover and land use change in Berlin with Google Earth^TM^.
 
 * Note and discuss problems and inaccuracies (key words)
 
-*Upload the classififation scheme, map with legend and your discussion as a PDF file on Moodle.*
+* **Assignment:** Upload the classififation scheme, map with legend and your discussion as a PDF file on Moodle.
 
 ------
 
@@ -873,10 +873,82 @@ Characterize the land cover and land use change in Berlin with Google Earth^TM^.
 | netCDF |  | Network Common Data Forat; multi-resolution raster |
 | SAVE |  | Standard Archive Format for Europe e.g. Sentinel-1 and Sentinel-2 |
 
-
 ## Metadata
 
+* Metadata are additional information about the data and are commonly recorded during data acquisition, e.g. Exchangeable Image File Format (EXIF) in standard camera images
+
+![Metadata of a photograph](docs/fig/metadata camera.png)
+
+* Remote-sensing raster formats usually have their individual way to store metadata
+
+* ENVI format: binary file (.bsq) + header File (.hdr)
+
+  ![Metadata in ENVI format as .hdr file](docs/fig/ENVI metadata.png)
+
+* GeoTIFF: within .tiff image
+
+* GDAL: (.aux.pam) XML file to supplement existing metadata
+
+  ![Metadata in GDAL format as XML file](docs/fig/GDAL metadata.png)
+
 ## HyMap data
+
+### HyMap-sensor: imaging spectrometer
+
+* Airborne hyperspectral sensor
+
+* Line scanner
+
+* Spectral range: 450 - 2500 nm
+
+* 128 spectral channels
+
+* 4 sensor modules á 32 bands
+
+* Geometric resolution: 3 - 10 m (depending on altitude)
+
+![HyMap sensor (Source: NASA)](docs/fig/Hymap NASA.jpg)
+
+![HyMap data of Berlin](docs/fig/Hymap Berlin.png)
+
+![HyMap sample spectra of "pure surface materials"](docs/fig/Beispielspektren Hymap.png)
+
+## Exercise
+
+### Dataset
+
+* Extract of Berlin-Brandenburg from [Berlin-Urban-Gradient dataset](http://doi.org/10.5880/enmap.2016.002
+)
+
+* Urban-land-gradient
+
+* Recorded 20th August 2009
+
+* 111 of 128 spectral channels
+
+![Dataset for the exercise](docs/fig/hymap berlin 2.png)
+
+### Discussion of data type and structure on the basis of the HyMap image
+
+* Open the header file (metadata) of the HyMap image on O:/ (…/S05/envi_format/HyMap_BB_subset.hdr) in Notepad++
+
+* What do you find out about the following data properties of the image?
+
+    + Dimension in x and y
+    
+    + Spatial resolution
+    
+    + Spectral resolution
+    
+    + Radiometric resolution
+    
+    + Data type
+    
+    + Interleave
+    
+* What additional data properties may be derived from the metadata?
+
+*Upload on Moodle?*
 
 ------
 
@@ -884,11 +956,71 @@ Characterize the land cover and land use change in Berlin with Google Earth^TM^.
 
 ## Introduction
 
+* Freely available and platform-independent QGIS plugin
+
+* Developed by HU Berlin´s Earth Observation Lab for the hyperspectral satellite sensor EnMAP
+
+![Interface of the EnMAP plugin in QGIS](docs/fig/EnMAP intro.png)
+
 ## Installation
 
-## Key features
+* [EnMAP-Box Portal](www.enmap.org)
 
-## Demo
+* [Dokumentation](enmap-box.readthedocs.io/en/latest/) 
+
+* [Installation](enmap-box.readthedocs.io/en/latest/usr_section/usr_installation.html)
+
+![EnMAP-Box documentation (see [here](enmap-box.readthedocs.io/en/latest/))](docs/fig/EnMAP installation.png)
+
+## Exercise
+
+### Part 1: Get to know the EnMAP-Box and key features
+
+* Menu structure, opening and portraying images, zoom in and out, selection of bands, contrast stretching
+
+![](docs/fig/enmap anhang 1.png)
+
+![](docs/fig/enmap anhang 2.png)
+
+![](docs/fig/enmap anhang 3.png)
+
+* Visualizing and collecting image spectra, editing of attribute information, colouring of spectra, saving spectral library
+
+![](docs/fig/enmap anhang 4.png)
+
+![](docs/fig/enmap anhang 5.png)
+
+![](docs/fig/enmap anhang 6.png)
+
+![](docs/fig/enmap anhang 7.png)
+
+![](docs/fig/enmap anhang 8.png)
+
+### Part 2: Creating a specral library
+
+* Collect 5 reflectance spectra in the HyMap image (HyMAP_BB_Subset.bsq) for following (pure) materials/surfaces:
+
+    + Building
+    
+    + Sealed (non build-up)
+    
+    + Grass
+    
+    + Tree
+    
+    + Soil
+    
+    + Water
+    
+* Create two attribute columns ('class', 'description') and fill them in. The first serves as an index for the assignment of the six classes (i.e. 'building'), the latter should include a detailed description of the material/surface (i.e. 'red tiles')
+
+* Colour the spectra appropriately with regard to the classes
+
+* Save the collected spectra via the Spectral Library Viewer as a Spectral Library file (SLI)
+
+* Export the image of the coloured spectra as a PNG file and create a PDF file (including a legend)
+
+* **Assignment:** Put the Spectral Library (all files) and the PDF together in a ZIP file and upload the ZIP file on Moodle.
 
 ------
 
