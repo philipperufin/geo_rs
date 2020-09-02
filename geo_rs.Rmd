@@ -363,7 +363,7 @@ Characterize the land cover and land use change in Berlin with Google Earth^TM^.
 
     + Biophysical cover of the Earth's surface
     
-    + For instance crops, forest, build-up area
+    + For instance crops, forest, built-up area
 
 
 * Land **use**:
@@ -372,7 +372,7 @@ Characterize the land cover and land use change in Berlin with Google Earth^TM^.
     
     + For instance agriculture, forestry, residential area
     
-![**Land cover**: crops, **land use**: agriculture (left); **land cover**: forest, **land use**: forest management (middle); **land cover**: build-up area, **land use**: residential area (right)](docs/fig/lu lc 1.png)
+![**Land cover**: crops, **land use**: agriculture (left); **land cover**: forest, **land use**: forest management (middle); **land cover**: built-up area, **land use**: residential area (right)](docs/fig/lu lc 1.png)
 
 ## Visual image interpretation
 
@@ -384,7 +384,7 @@ Characterize the land cover and land use change in Berlin with Google Earth^TM^.
 | spatial context | determines functional interrelationship i.e. building function | railway station, lido, farm |
 | shadows | contain information on object form, height and function | wind turbine, landscape topography |
 
-![**Land cover**: crops and bare soil, **land use**: agriculture (upper left); **land cover**: pines, **land use**: forestry (upper right); **land cover**: build-up area, **land use**: city district (bottom left); **land cover**: build-up area, river and grassland, **land use**: village (bottom right)](docs/fig/lu lc 2.png)
+![**Land cover**: crops and bare soil, **land use**: agriculture (upper left); **land cover**: pines, **land use**: forestry (upper right); **land cover**: built-up area, **land use**: city district (bottom left); **land cover**: built-up area, river and grassland, **land use**: village (bottom right)](docs/fig/lu lc 2.png)
 
 ## Land use / cover area frame survey (LUCAS)
 
@@ -435,7 +435,7 @@ Characterize the land cover and land use change in Berlin with Google Earth^TM^.
     + Buildings
     + Streets
     + Rails
-    + Sealed (non-build-up) areas
+    + Sealed (non-built-up) areas
     + Coniferous forest
     + Deciduous forest
     + Mixed forest
@@ -1002,7 +1002,7 @@ Characterize the land cover and land use change in Berlin with Google Earth^TM^.
 
     + Building
     
-    + Sealed (non build-up)
+    + Sealed (non built-up)
     
     + Grass
     
@@ -1056,23 +1056,22 @@ Launched in June 2015  (Sentinel-2A), and March 2017 (Sentinel-2B)
 * Create a User-Account at the [Copernicus Open Access Hub](https://scihub.copernicus.eu/dhus/#/home)
 * Search for images with these specifications: 
 
+  * Date: XXX
 
-      Date: XXX
+  * Sensor: Sentinel-2
 
-      Sensor: Sentinel-2
+  * Producttype: Surface Reflectance (Level 2A, S2MSI2A) 
 
-      Producttype: Surface Reflectance (Level 2A, S2MSI2A) 
+  * Cloud cover: max. 20%
 
-      Cloud cover: max. 20%
-
-      Region: greater area of Berlin
+  * Region: greater area of Berlin
 
 * How many images are available for these specifications?
 download this image: 
 
-Granule: XXX
+* Granule: XXX
 
-Date: XXX
+* Date: XXX
 
 ## Pre-processing
 * The downloaded Sentinel-2 image is a .zip-file
@@ -1113,18 +1112,18 @@ Date: XXX
 ### Compare S2 & HyMap
 part 1 - spatial resolution 
 
-* Visualize the Sentinel-2 image and the HyMap image from last week in a RGB bandcombination that is suited for comparison. In order to do that open the images in two separate MapViews and link them (spatialy + zoom)
+* Visualize the Sentinel-2 image and the HyMap image from last week in a RGB bandcombination that is suited for comparison. In order to do that open the images in two separate MapViews and link them (spatialy + zoom).
 
 * Compare both images visually and describe the effects on image details due to the different spatial resolution (20 m vs. 3.6 m). 
 
-* Choose one surface as example for each of these classes: impervious- build up, impervious- not build up, grass/lawn, trees, soil, water. 
+* Choose one surface as example for each of these classes: impervious- built up, impervious- non built up, grass/lawn, trees, soil, water. 
 
 * Take a screenshot from each example. 
 
 ### Compare S2 & HyMap
 part 2 - spectral resolution
 
-* Restart QGIS and EnMAP-Box. Display the Sentinel-2 image and the HyMap image in a suited RGB band combination (Wozu ist der Neustart notwendig ?)
+* Restart QGIS and EnMAP-Box. Display the Sentinel-2 image and the HyMap image in a suited RGB band combination. (Wozu ist der Neustart notwendig ?)
 
 * Visualize spectra of the same surface in the Sentinel-2 and in the HyMAP image (9 vs. 111 spectral bands). 
 
@@ -1143,9 +1142,9 @@ part 2 - spectral resolution
 
 ## Normalized Difference Vegetation Index (NDVI)
 
-* The derivation of vegetation indicies or similar variables is based on feature extraction 
+* The derivation of vegetation indicies or similar variables is based on feature extraction.
 
-* NDVI the one of the most common vegeation indicies 
+* NDVI the one of the most common vegeation indicies.
 
 * It represents the difference between red and nIR reflectance. This difference is strongly prounounced with photosynthetically active vegetation.  (Sollte man wahrscheinlich nochmal umschreiben)
 
@@ -1173,7 +1172,7 @@ $$NDVI = (ρnIR- ρred) / (ρnIR+ ρred)$$
       4. specify the output image       -> NDVI   = [filepath and name of the NDVI image]
 
     
-* Run the function and open the singleband grayscale image in a new Map View 
+* Run the function and open the singleband grayscale image in a new Map View.
 
 ## Part 2: Discussion of the NDVI 
 
@@ -1216,28 +1215,66 @@ $$NDVI = (ρnIR- ρred) / (ρnIR+ ρred)$$
 
     -> NDVI 27. Juli 2019 – NDVI 16. Februar 2019  DATES: XXX
     
-* Create the histogram of the difference-image and briefly discuss the distribution   
+* Compute the histogram of the difference-image and briefly discuss the distribution. 
 
 * Display the difference-image in a suited Visualisation; e.g. discrete classes, colour gradient from high negative to high positive differences. 
 
 * Discuss the resulting Map in bullitpoints concerning these surfaces: impervious (buildings, and non build-up), agriculture, forest, water. 
+
 * **Assignment:** Please upload the results of the comparison of NDVI and imperviousness (part 1, plot and discussion) and the temporal variation of NDVI (part 2, histogram, map + legend, discussion) as pdf to moodle.
 
-Berechnen Sie das Histogramm des NDVI-Differenzbildes und diskutieren Sie die Verteilung stichpunktartig.
+------
 
-Stellen Sie das NDVI-Differenzbild mit einer sinnvollen Visualisierung dar, z.B. einer diskrete Klassenunterteilung, oder einem Farbgradienten von hohen negativen bis zu hohen positiven Differenzen. 
-Diskutieren Sie die Karte stichpunktartig bzgl. folgender Oberflächen: Versiegelte Flächen (Gebäude & unbebaut), Landwirtschaft, Wald, Wasser
-Bitte laden Sie die Ergebnisse des Vergleiches NDVI und Versieglung (Teil 1, Plot, Diskussion) und der temporalen Variation des NDVI (Teil 2; Histogramm, Karte + Legende, Diskussion) als PDF in Moodle hoch.
+# Image Classification part 1: Decision Tree 
 
+## Introduction to Decision Tree classification 
 
+* Landcover classification with the Decision Tree
+
+* DT is based on 'nodes'/decision-rules to convert spectral information (image) into thematic information (landcover map)
+
+* Each pixel will be assigned to a class (e.g. Landcover) if its spectral information (or indicies like NDVI) fits certain criteria
+
+* A Decision Tree is created by hierachically organized binary (yes/no) decisions. 
+
+![](docs/fig/decision_tree_scheme.png)
+
+## Example: classification of water
+
+* NDVI <= 0.6 and SWIR <= 2%
+![](docs/fig/Decision_Tree_Example.png)
+
+## Decision Tree exercise 
+
+* Open the processed Sentinel-2 image (20m, 9 spectral bands, subset Berlin, DATE XXX) from session 6 in the EnMAP-Box. 
+
+* Classify water bodies vs. land according to the nodes from the example (see slide above). Use the imageMath Calculator. Note that the reflexion values of the image are scaled 0 - 10.000 
+
+![](docs/fig/image_math_decisiontree_example.png)
+
+## Decision Tree for Landcover of Berlin and suburbs 
+
+* Open the processed Sentinel-2 image (20m, 9 spectral bands, subset Berlin, DATE XXX) from session 6 in the EnMAP-Box.
+
+* Create a Decision Tree with imageMath Calculator (see examples below) to categorize the these classes:
+  + class 1: water bodies
+  + class 2: built up 
+  + class 3: soil & dry vegetation
+  + class 4: coniferous forest 
+  + class 5: deciduous forest & lawns
+
+* Discuss the resulting classification critically and list pros and cons of the method and the nodes used respectively 
+* **Assignment:** Please upload a screenshot of your imageMath script, the classification (map + legend) and the discussion as .pdf to moodle. 
+
+![Example](docs/fig/decision_tree_exercise1.png) 
+
+![Code in imageMath Calculator](docs/fig/decision_tree_exercise2.png)
+
+![Example for resulting map](docs/fig/decision_tree_good_practice.png)
 
 ------
 
-# Image classification
-
-------
-
-# Random forest
+# Image Classification part 2: Random Forest
 
 ------
 

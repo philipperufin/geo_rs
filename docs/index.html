@@ -30,7 +30,6 @@
 <script src="index_files/bootstrap_material-0.1/ripples.min.js"></script>
 <link href="index_files/material-0.1/material.css" rel="stylesheet" />
 <script src="index_files/material-0.1/material.js"></script>
-<script src="index_files/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 
@@ -79,8 +78,8 @@ $(document).ready(function () {
         <li><a href="#enmap-box-for-qgis">EnMAP Box for QGIS</a></li>
         <li><a href="#data-acquisition">Data acquisition</a></li>
         <li><a href="#vegetation-properties-spectral-indices">Vegetation properties &amp; spectral indices</a></li>
-        <li><a href="#image-classification">Image classification</a></li>
-        <li><a href="#random-forest">Random forest</a></li>
+        <li><a href="#image-classification-part-1-decision-tree">Image Classification part 1: Decision Tree</a></li>
+        <li><a href="#image-classification-part-2-random-forest">Image Classification part 2: Random Forest</a></li>
         <li><a href="#accuracy-assessment">Accuracy assessment</a></li>
         <li><a href="#sentinel-2-time-series">Sentinel-2 time series</a></li>
         <li><a href="#modis-time-series">MODIS time series</a></li>
@@ -100,7 +99,7 @@ $(document).ready(function () {
 <div id="welcome" class="section level1">
 <h1>Welcome!</h1>
 <div class="figure">
-<img src="fig/EO_header.PNG" alt="" />
+<img src="fig/EO_header.PNG" alt="EOL Logo" />
 <p class="caption">EOL Logo</p>
 </div>
 <div id="about" class="section level2">
@@ -142,11 +141,11 @@ $(document).ready(function () {
 <div id="visual-image-interpretation" class="section level1">
 <h1>Visual image interpretation</h1>
 <div class="figure">
-<img src="fig/Berlin_2009.png" alt="" />
+<img src="fig/Berlin_2009.png" alt="Berlin from above in Google EarthTM, 2009" />
 <p class="caption">Berlin from above in Google Earth<sup>TM</sup>, 2009</p>
 </div>
 <div class="figure">
-<img src="fig/Berlin_2019.png" alt="" />
+<img src="fig/Berlin_2019.png" alt="Berlin from above in Google EarthTM, 2019" />
 <p class="caption">Berlin from above in Google Earth<sup>TM</sup>, 2019</p>
 </div>
 <div id="image-interpretation" class="section level2">
@@ -178,7 +177,7 @@ $(document).ready(function () {
 <li><p>The results of the digitization need to be located in the ‘FE1’ folder</p></li>
 <li><p>Save the folder ‘FE1’ with a right-click on the folder as a .kmz file on O:/…</p>
 <div class="figure">
-<img src="fig/digitizing_tools.png" alt="" />
+<img src="fig/digitizing_tools.png" alt="Digitizing tools" />
 <p class="caption">Digitizing tools</p>
 </div></li>
 </ul>
@@ -194,7 +193,7 @@ $(document).ready(function () {
 <li><p>Describe the differences of image data in 1953, 2000 and 2019. Why do they differ?</p></li>
 </ul>
 <div class="figure">
-<img src="fig/datumstool.png" alt="" />
+<img src="fig/datumstool.png" alt="Date tool" />
 <p class="caption">Date tool</p>
 </div></li>
 </ul>
@@ -235,14 +234,14 @@ $(document).ready(function () {
 <li><p>The intervals between the wavelengths of maximum sensitivity are ~50 nm to 150 nm wide (<strong>spectral sampling interval</strong>)</p></li>
 </ul>
 <div class="figure">
-<img src="fig/retinal%20response.png" alt="" />
+<img src="fig/retinal%20response.png" alt="Retinal response of the human eye (Source: planetary.org LINK ÜBERPRÜFEN! )" />
 <p class="caption">Retinal response of the human eye (Source: <a href="http://www.planetary.org/rrgtm/emspectrum.html">planetary.org LINK ÜBERPRÜFEN!</a> )</p>
 </div>
 <ul>
 <li>Digital cameras correspond to imaging sensors with three bands</li>
 </ul>
 <div class="figure">
-<img src="fig/red-green-blue.png" alt="" />
+<img src="fig/red-green-blue.png" alt="Red-green-blue representation" />
 <p class="caption">Red-green-blue representation</p>
 </div>
 <ul>
@@ -259,18 +258,18 @@ $(document).ready(function () {
 </ul></li>
 </ul>
 <div class="figure">
-<img src="fig/wavelength%20regions.jpg" alt="" />
+<img src="fig/wavelength%20regions.jpg" alt="Wavelength regions (Source: arm.gov LINK ÜBERPRÜFEN!)" />
 <p class="caption">Wavelength regions (Source: <a href="http://www.arm.gov/news/facility/post/5946">arm.gov LINK ÜBERPRÜFEN!</a>)</p>
 </div>
 <ul>
 <li>Optical remote sensing sensors make it possible to take images in the visible light (VIS), near-infrared (nIR) and shortwave-infrared (swIR)</li>
 </ul>
 <div class="figure">
-<img src="fig/Bild%20sichtbares%20Licht.png" alt="" />
+<img src="fig/Bild%20sichtbares%20Licht.png" alt="Image showing the reflection of the visible light" />
 <p class="caption">Image showing the reflection of the visible light</p>
 </div>
 <div class="figure">
-<img src="fig/Bild%20nir%20swir.png" alt="" />
+<img src="fig/Bild%20nir%20swir.png" alt="Image showing the reflection of the near-infrared and visible light" />
 <p class="caption">Image showing the reflection of the near-infrared and visible light</p>
 </div>
 </div>
@@ -283,7 +282,7 @@ $(document).ready(function () {
 <li><p>Complementary/secondary colours: cyan, magenta and yellow (CMY)</p></li>
 </ul>
 <div class="figure">
-<img src="fig/RGB%20Farbmodell.png" alt="" />
+<img src="fig/RGB%20Farbmodell.png" alt="RGB color model (Source left: orange-sinne.de, source right: informatikzentrale.de)" />
 <p class="caption">RGB color model (Source left: <a href="http://www.orange-sinne.de/additives_farbmodell.html">orange-sinne.de</a>, source right: <a href="http://www.informatikzentrale.de">informatikzentrale.de</a>)</p>
 </div>
 <div id="exercise-for-colour-mixing-in-qgis" class="section level3">
@@ -294,7 +293,7 @@ $(document).ready(function () {
 <li><p>For displaying different colours QGIS offers the RGB and HSV colour model</p></li>
 </ul>
 <div class="figure">
-<img src="fig/RGB%20QGIS.png" alt="" />
+<img src="fig/RGB%20QGIS.png" alt="Select Color Tool in QGIS" />
 <p class="caption">Select Color Tool in QGIS</p>
 </div>
 <ul>
@@ -368,7 +367,7 @@ $(document).ready(function () {
 <li>Remote sensing images can be presented as a greyscale image (single band) or RGB-composite (combination of three different bands)</li>
 </ul>
 <div class="figure">
-<img src="fig/rgb%20fe%20bilder.png" alt="" />
+<img src="fig/rgb%20fe%20bilder.png" alt="Satellite images as single band grey, RGB-composite (true colour), RGB-composite (false colour)" />
 <p class="caption">Satellite images as single band grey, RGB-composite (true colour), RGB-composite (false colour)</p>
 </div>
 </div>
@@ -378,7 +377,7 @@ $(document).ready(function () {
 <li>Image histograms show the frequency distribution of pixel values i.e. of a single band</li>
 </ul>
 <div class="figure">
-<img src="fig/histogramm%201.png" alt="" />
+<img src="fig/histogramm%201.png" alt="Band 3 (red) as a greyscale image and its image histogram" />
 <p class="caption">Band 3 (red) as a greyscale image and its image histogram</p>
 </div>
 <div id="contrast-stretch" class="section level3">
@@ -389,7 +388,7 @@ $(document).ready(function () {
 <li><p>At best, full grey value range is utilized optimally</p></li>
 </ul>
 <div class="figure">
-<img src="fig/histogramm%202.png" alt="" />
+<img src="fig/histogramm%202.png" alt="Image histogram and satellite image with an optimally utilized grey value range" />
 <p class="caption">Image histogram and satellite image with an optimally utilized grey value range</p>
 </div>
 <ul>
@@ -397,7 +396,7 @@ $(document).ready(function () {
 <li><p>With a 1:1 transfer, images are often low-contrast</p></li>
 </ul>
 <div class="figure">
-<img src="fig/histogramm%203.png" alt="" />
+<img src="fig/histogramm%203.png" alt="Image histogram and satellite image with low-contrast" />
 <p class="caption">Image histogram and satellite image with low-contrast</p>
 </div>
 <ul>
@@ -405,7 +404,7 @@ $(document).ready(function () {
 <li><p>Caution! The screen display changes, the data stays the same!</p></li>
 </ul>
 <div class="figure">
-<img src="fig/histogramm%204.png" alt="" />
+<img src="fig/histogramm%204.png" alt="Stretching of an image histogram" />
 <p class="caption">Stretching of an image histogram</p>
 </div>
 <ul>
@@ -413,7 +412,7 @@ $(document).ready(function () {
 <li><p>Often, linear contrast enhancement is used where the increase in gray value per increase in pixel value remains the same for the relevant value ranges</p></li>
 </ul>
 <div class="figure">
-<img src="fig/histogramm%205.png" alt="" />
+<img src="fig/histogramm%205.png" alt="Min-max linear contrast stretch and standard deviation linear contrast stretch (Source: Jensen, 2011)" />
 <p class="caption">Min-max linear contrast stretch and standard deviation linear contrast stretch (Source: Jensen, 2011)</p>
 </div>
 </div>
@@ -432,14 +431,14 @@ $(document).ready(function () {
 </ul></li>
 </ul>
 <div class="figure">
-<img src="fig/bildschirmdarstellung%20qgis.png" alt="" />
+<img src="fig/bildschirmdarstellung%20qgis.png" alt="Layer properties &gt; Symbology in QGIS" />
 <p class="caption">Layer properties &gt; Symbology in QGIS</p>
 </div>
 <ul>
 <li>Display the Sentinel-2 image in true colours</li>
 </ul>
 <div class="figure">
-<img src="fig/sen2%20echtfarben.png" alt="" />
+<img src="fig/sen2%20echtfarben.png" alt="Sentinel-2 image in true colours" />
 <p class="caption">Sentinel-2 image in true colours</p>
 </div>
 <ul>
@@ -458,7 +457,7 @@ $(document).ready(function () {
 <li><p>Try to differentiate water bodies from land mass by stretching the min/max values</p></li>
 </ol>
 <div class="figure">
-<img src="fig/bildschirmdarstellung%20qgis%202.png" alt="" />
+<img src="fig/bildschirmdarstellung%20qgis%202.png" alt="Settings for image histogram" />
 <p class="caption">Settings for image histogram</p>
 </div>
 <ol style="list-style-type: decimal">
@@ -488,7 +487,7 @@ $(document).ready(function () {
 <li><p>Mapping with remote sensing requires generalized/transferable classification schemes to describe the Earth’s surface</p></li>
 </ul>
 <div class="figure">
-<img src="fig/landscape.png" alt="" />
+<img src="fig/landscape.png" alt="Various landscapes including natural, semi-natural and anthropogenic surface types" />
 <p class="caption">Various landscapes including natural, semi-natural and anthropogenic surface types</p>
 </div>
 </div>
@@ -498,18 +497,18 @@ $(document).ready(function () {
 <li>What does a satellite see from orbit?</li>
 </ul>
 <div class="figure">
-<img src="fig/Blick%20Satellit%201.jpg" alt="" />
+<img src="fig/Blick%20Satellit%201.jpg" alt="View from satellite platform" />
 <p class="caption">View from satellite platform</p>
 </div>
 <div class="figure">
-<img src="fig/Blick%20Satellit%202.jpg" alt="" />
+<img src="fig/Blick%20Satellit%202.jpg" alt="Spatial resolution affects what the satellite records" />
 <p class="caption">Spatial resolution affects what the satellite records</p>
 </div>
 <ul>
 <li><p>Land <strong>cover</strong>:</p>
 <ul>
 <li><p>Biophysical cover of the Earth’s surface</p></li>
-<li><p>For instance crops, forest, build-up area</p></li>
+<li><p>For instance crops, forest, built-up area</p></li>
 </ul></li>
 <li><p>Land <strong>use</strong>:</p>
 <ul>
@@ -518,8 +517,8 @@ $(document).ready(function () {
 </ul></li>
 </ul>
 <div class="figure">
-<img src="fig/lu%20lc%201.png" alt="" />
-<p class="caption"><strong>Land cover</strong>: crops, <strong>land use</strong>: agriculture (left); <strong>land cover</strong>: forest, <strong>land use</strong>: forest management (middle); <strong>land cover</strong>: build-up area, <strong>land use</strong>: residential area (right)</p>
+<img src="fig/lu%20lc%201.png" alt="Land cover: crops, land use: agriculture (left); land cover: forest, land use: forest management (middle); land cover: built-up area, land use: residential area (right)" />
+<p class="caption"><strong>Land cover</strong>: crops, <strong>land use</strong>: agriculture (left); <strong>land cover</strong>: forest, <strong>land use</strong>: forest management (middle); <strong>land cover</strong>: built-up area, <strong>land use</strong>: residential area (right)</p>
 </div>
 </div>
 <div id="visual-image-interpretation-1" class="section level2">
@@ -566,8 +565,8 @@ $(document).ready(function () {
 </tbody>
 </table>
 <div class="figure">
-<img src="fig/lu%20lc%202.png" alt="" />
-<p class="caption"><strong>Land cover</strong>: crops and bare soil, <strong>land use</strong>: agriculture (upper left); <strong>land cover</strong>: pines, <strong>land use</strong>: forestry (upper right); <strong>land cover</strong>: build-up area, <strong>land use</strong>: city district (bottom left); <strong>land cover</strong>: build-up area, river and grassland, <strong>land use</strong>: village (bottom right)</p>
+<img src="fig/lu%20lc%202.png" alt="Land cover: crops and bare soil, land use: agriculture (upper left); land cover: pines, land use: forestry (upper right); land cover: built-up area, land use: city district (bottom left); land cover: built-up area, river and grassland, land use: village (bottom right)" />
+<p class="caption"><strong>Land cover</strong>: crops and bare soil, <strong>land use</strong>: agriculture (upper left); <strong>land cover</strong>: pines, <strong>land use</strong>: forestry (upper right); <strong>land cover</strong>: built-up area, <strong>land use</strong>: city district (bottom left); <strong>land cover</strong>: built-up area, river and grassland, <strong>land use</strong>: village (bottom right)</p>
 </div>
 </div>
 <div id="land-use-cover-area-frame-survey-lucas" class="section level2">
@@ -589,24 +588,24 @@ $(document).ready(function () {
 <li><p>Survey takes place every three years (last 2018) involving ca. 750 cartographers</p></li>
 </ul>
 <div class="figure">
-<img src="fig/LUCAS%201.png" alt="" />
+<img src="fig/LUCAS%201.png" alt="Points used for the LUCAS survey in Berlin and Northern Brandenburg (Source: eurostat)" />
 <p class="caption">Points used for the LUCAS survey in Berlin and Northern Brandenburg (Source: <a href="http://ec.europa.eu/eurostat/statistical-atlas/gis/viewer/?config=LUCAS-2015.json">eurostat</a>)</p>
 </div>
 <div class="figure">
-<img src="fig/LUCAS%202.png" alt="" />
+<img src="fig/LUCAS%202.png" alt="Land cover of the EU-27 (Source: EU-LUCAS 2012)" />
 <p class="caption">Land cover of the EU-27 (Source: EU-LUCAS 2012)</p>
 </div>
 <ul>
 <li>LUCAS as reference for remote sensing analyses i.e. europe-wide classification of land cover (Pflugmacher et. al 2018)</li>
 </ul>
 <div class="figure">
-<img src="fig/LUCAS%203.png" alt="" />
+<img src="fig/LUCAS%203.png" alt="Classification of land cover of the EU member states in 2018 (Source: HU-Berlin geovis)" />
 <p class="caption">Classification of land cover of the EU member states in 2018 (Source: <a href="https://www2.hu-berlin.de/geovis/eolab/europeanlandcover/euroLandCover.html">HU-Berlin geovis</a>)</p>
 </div>
 <div id="lucas-classification-scheme" class="section level3">
 <h3>LUCAS classification scheme</h3>
 <div class="figure">
-<img src="fig/LUCAS%204.png" alt="" />
+<img src="fig/LUCAS%204.png" alt="LUCAS classification scheme divided into land cover (green) and land use (red)" />
 <p class="caption">LUCAS classification scheme divided into land cover (green) and land use (red)</p>
 </div>
 </div>
@@ -617,7 +616,7 @@ $(document).ready(function () {
 <ul>
 <li><p>Open the false-colour satellite image of Wuhlheide (1990) on O:/ in QGIS</p>
 <div class="figure">
-<img src="fig/bild%20uebung%20S03.png" alt="" />
+<img src="fig/bild%20uebung%20S03.png" alt="False-colour satellite image of Wuhlheide, Berlin, from 1990" />
 <p class="caption">False-colour satellite image of Wuhlheide, Berlin, from 1990</p>
 </div></li>
 <li><p>Create a classification scheme for the following nine surface types:</p>
@@ -625,7 +624,7 @@ $(document).ready(function () {
 <li>Buildings</li>
 <li>Streets</li>
 <li>Rails</li>
-<li>Sealed (non-build-up) areas</li>
+<li>Sealed (non-built-up) areas</li>
 <li>Coniferous forest</li>
 <li>Deciduous forest</li>
 <li>Mixed forest</li>
@@ -636,7 +635,7 @@ $(document).ready(function () {
 <li><p>Further, add the LUCAS land use and land cover class. Use the most detailed level! (See <em>LUCAS2015_C1_Annex_Classification_sheme.pdf</em>)</p></li>
 </ul>
 <div class="figure">
-<img src="fig/exercise%20S03.png" alt="" />
+<img src="fig/exercise%20S03.png" alt="Example for surface type ‘building’" />
 <p class="caption">Example for surface type ‘building’</p>
 </div>
 <p><strong>Part 2: Mapping of your example areas</strong></p>
@@ -661,11 +660,11 @@ $(document).ready(function () {
 <li>How do we produce such measurements that allow differentiating different surfaces or monitoring changes of surfaces over time?</li>
 </ul>
 <div class="figure">
-<img src="fig/arena.png" alt="" />
+<img src="fig/arena.png" alt="True colour image (left) and false colour image (right) of the stadium on the Wisconsin-Madison University campus, USA (Source: Lillesand, Kiefer and Chipman 2008)" />
 <p class="caption">True colour image (left) and false colour image (right) of the stadium on the Wisconsin-Madison University campus, USA (Source: Lillesand, Kiefer and Chipman 2008)</p>
 </div>
 <div class="figure">
-<img src="fig/spectroscopy%20arena.png" alt="" />
+<img src="fig/spectroscopy%20arena.png" alt="Reflectance of natural and artificial turf (Source: Lillesand, Kiefer and Chipman 2008)" />
 <p class="caption">Reflectance of natural and artificial turf (Source: Lillesand, Kiefer and Chipman 2008)</p>
 </div>
 </div>
@@ -687,7 +686,7 @@ $(document).ready(function () {
 <li><p>In remote sensing, a target’s spectral properties are measured across a wavelength region and in several or even many distinct bands</p></li>
 </ul>
 <div class="figure">
-<img src="fig/electromagnetic%20radiance.png" alt="" />
+<img src="fig/electromagnetic%20radiance.png" alt="Electromagnetic wavelength (Source: Drury 1993)" />
 <p class="caption">Electromagnetic wavelength (Source: Drury 1993)</p>
 </div>
 </div>
@@ -707,7 +706,7 @@ $(document).ready(function () {
 </ul></li>
 </ul>
 <div class="figure">
-<img src="fig/wavelength%20regions.jpg" alt="" />
+<img src="fig/wavelength%20regions.jpg" alt="Wavelength regions (Source: arm.gov LINK ÜBERPRÜFEN!)" />
 <p class="caption">Wavelength regions (Source: <a href="http://www.arm.gov/news/facility/post/5946">arm.gov LINK ÜBERPRÜFEN!</a>)</p>
 </div>
 </div>
@@ -722,7 +721,7 @@ $(document).ready(function () {
 <li><p>Let’s assume laboratory conditions (using an artificial light source instead of the sun)</p></li>
 </ul>
 <div class="figure">
-<img src="fig/Kraus%20und%20Schneider.png" alt="" />
+<img src="fig/Kraus%20und%20Schneider.png" alt="Remote sensing without atmosphere (Source: Kraus und Schneider 1988)" />
 <p class="caption">Remote sensing without atmosphere (Source: Kraus und Schneider 1988)</p>
 </div>
 </div>
@@ -735,7 +734,7 @@ $(document).ready(function () {
 <li><p>We control the instrument calibration, i.e. we measure and eliminate the noise from the signal</p></li>
 </ul>
 <div class="figure">
-<img src="fig/laboratory%20setup.jpg" alt="" />
+<img src="fig/laboratory%20setup.jpg" alt="Typical laboratory setup with an ASD spectrometer (in blue), the fiber optics ending in a pistol grip mounted on a tripod and a video spot as artificial illumination source. The bright target on the smaller tripod is a calibration panel. (Source: Biospec)" />
 <p class="caption">Typical laboratory setup with an ASD spectrometer (in blue), the fiber optics ending in a pistol grip mounted on a tripod and a video spot as artificial illumination source. The bright target on the smaller tripod is a calibration panel. (Source: <a href="http://www.lineas.cchs.csic.es/biospec/methods/laboratory">Biospec</a>)</p>
 </div>
 </div>
@@ -752,7 +751,7 @@ $(document).ready(function () {
 <li><p>The sum of all three terms is always 100% of the incoming radiance: <span class="math inline">\(ρ + α + τ = 1\)</span> (Law of conservation of energy)</p></li>
 </ul>
 <div class="figure">
-<img src="fig/light%20and%20surface.png" alt="" />
+<img src="fig/light%20and%20surface.png" alt="Emittance, absorbance, reflectance and transmittance of energy (light) (Source: edaphic.com)" />
 <p class="caption">Emittance, absorbance, reflectance and transmittance of energy (light) (Source: <a href="http://www.edaphic.com.au/emittance-absorbance-reflectance-transmittance/">edaphic.com</a>)</p>
 </div>
 <ul>
@@ -772,7 +771,7 @@ $(document).ready(function () {
 <li><p>Ω = 1 sr if a conus cuts an area A of 1 m<sup>2</sup> from a sphere with the radius r = 1 m</p></li>
 </ul>
 <div class="figure">
-<img src="fig/Raumwinkel.png" alt="" />
+<img src="fig/Raumwinkel.png" alt="Solid angle Ω (Source: Wikipedia)" />
 <p class="caption">Solid angle Ω (Source: <a href="https://de.wikipedia.org/wiki/Raumwinkel">Wikipedia</a>)</p>
 </div>
 </div>
@@ -787,7 +786,7 @@ $(document).ready(function () {
 <li><p>Reflectance is the percentage of the total measurable radiation, which has not been absorbed or transmitted</p></li>
 </ul>
 <div class="figure">
-<img src="fig/light%20and%20surface.png" alt="" />
+<img src="fig/light%20and%20surface.png" alt="Emittance, absorbance, reflectance and transmittance of energy (light) (Source: edaphic.com)" />
 <p class="caption">Emittance, absorbance, reflectance and transmittance of energy (light) (Source: <a href="http://www.edaphic.com.au/emittance-absorbance-reflectance-transmittance/">edaphic.com</a>)</p>
 </div>
 </div>
@@ -802,7 +801,7 @@ $(document).ready(function () {
 <li><p>Spectral reference panels (e.g. Spectralon®) are almost Lambert reflectors</p></li>
 </ul>
 <div class="figure">
-<img src="fig/diffuse%20und%20direkte%20reflexion.png" alt="" />
+<img src="fig/diffuse%20und%20direkte%20reflexion.png" alt="Direct reflectance (a), Lambertian reflectance (b) and mixed reflectance (c) (Source: Albertz 2001)" />
 <p class="caption">Direct reflectance (a), Lambertian reflectance (b) and mixed reflectance (c) (Source: Albertz 2001)</p>
 </div>
 </div>
@@ -810,11 +809,11 @@ $(document).ready(function () {
 <div id="spectral-surface-characteristics" class="section level2">
 <h2>Spectral surface characteristics</h2>
 <div class="figure">
-<img src="fig/ENVI%20plot.png" alt="" />
+<img src="fig/ENVI%20plot.png" alt="Example of a vegetation measurement (green) in the field" />
 <p class="caption">Example of a vegetation measurement (green) in the field</p>
 </div>
 <div class="figure">
-<img src="fig/veg%20measurement%201.png" alt="" />
+<img src="fig/veg%20measurement%201.png" alt="Field measurements" />
 <p class="caption">Field measurements</p>
 </div>
 <div id="white-reference" class="section level3">
@@ -829,11 +828,11 @@ $(document).ready(function () {
 </ul>
 <p>*If a panel reflects 100% across the spectral region of interest, its radiance is the same as the incoming radiance, i.e. it can serve for normalizing the reflectance</p>
 <div class="figure">
-<img src="fig/ENVI%20plot.png" alt="" />
+<img src="fig/ENVI%20plot.png" alt="Example of a white reference measurement (red) and vegetetation measurement (green) in the field" />
 <p class="caption">Example of a white reference measurement (red) and vegetetation measurement (green) in the field</p>
 </div>
 <div class="figure">
-<img src="fig/white%20reference%20with%20veg.jpg" alt="" />
+<img src="fig/white%20reference%20with%20veg.jpg" alt="White reference measurement in the field" />
 <p class="caption">White reference measurement in the field</p>
 </div>
 </div>
@@ -846,7 +845,7 @@ $(document).ready(function () {
 <li><p>Note: The division by Rad<sub>WR</sub> can result in considerable noise in wavelength regions with poor signal-to-noise-ratio</p></li>
 </ul>
 <div class="figure">
-<img src="fig/reflectance%20spectra.png" alt="" />
+<img src="fig/reflectance%20spectra.png" alt="White reference spectra in red and vegetation spectra in green (left) and the resulting reflectance in green (right)" />
 <p class="caption">White reference spectra in red and vegetation spectra in green (left) and the resulting reflectance in green (right)</p>
 </div>
 </div>
@@ -854,7 +853,7 @@ $(document).ready(function () {
 <div id="reflectance-of-different-surfaces-and-materials" class="section level2">
 <h2>Reflectance of different surfaces and materials</h2>
 <div class="figure">
-<img src="fig/ASD%20field%20measurements.png" alt="" />
+<img src="fig/ASD%20field%20measurements.png" alt="Field measurements" />
 <p class="caption">Field measurements</p>
 </div>
 <ul>
@@ -877,7 +876,7 @@ $(document).ready(function () {
 <li><p>Photosynthetically inactive plant parts differ considerably from active ones across different wavelength regions</p></li>
 </ul>
 <div class="figure">
-<img src="fig/photo%20active%20veg%20reflectance.png" alt="" />
+<img src="fig/photo%20active%20veg%20reflectance.png" alt="Spectra of photosynthetic active vegetation; VIS (leaf pigments) in green, nIR (cell structure) in red and SWIR (water content) in blue" />
 <p class="caption">Spectra of photosynthetic active vegetation; VIS (leaf pigments) in green, nIR (cell structure) in red and SWIR (water content) in blue</p>
 </div>
 <div id="single-leaf-reflectance" class="section level4">
@@ -893,7 +892,7 @@ $(document).ready(function () {
 </ul></li>
 </ul>
 <div class="figure">
-<img src="fig/single%20leaf%20reflectance.png" alt="" />
+<img src="fig/single%20leaf%20reflectance.png" alt="Plant traits that influence vegetation spectra" />
 <p class="caption">Plant traits that influence vegetation spectra</p>
 </div>
 </div>
@@ -911,7 +910,7 @@ $(document).ready(function () {
 <li><p>Both effects can be detected with remote sensing systems</p></li>
 </ul>
 <div class="figure">
-<img src="fig/plant%20stress%20reflectance.png" alt="" />
+<img src="fig/plant%20stress%20reflectance.png" alt="Spectra of vegetation with (green) and without (orange) plant stress (Source: Gausman 1974)" />
 <p class="caption">Spectra of vegetation with (green) and without (orange) plant stress (Source: Gausman 1974)</p>
 </div>
 </div>
@@ -924,7 +923,7 @@ $(document).ready(function () {
 <li><p>Heavy water stress ultimately leads to a destruction of the cell structure and a decrease in plant metabolism</p></li>
 </ul>
 <div class="figure">
-<img src="fig/water%20stress%20reflectance.png" alt="" />
+<img src="fig/water%20stress%20reflectance.png" alt="Spectra of vegetation with low (red), medium (green), high (blue) and very high (black) water stress" />
 <p class="caption">Spectra of vegetation with low (red), medium (green), high (blue) and very high (black) water stress</p>
 </div>
 </div>
@@ -936,7 +935,7 @@ $(document).ready(function () {
 <li><p>In the nIR, complex radiation paths relate to multiple transmission</p></li>
 </ul>
 <div class="figure">
-<img src="fig/multi%20layered%20leaf%20reflectance.png" alt="" />
+<img src="fig/multi%20layered%20leaf%20reflectance.png" alt="reflectance behaviour of wavelengths in the VIS (blue) and nIR (red) on plant leaf layers" />
 <p class="caption">reflectance behaviour of wavelengths in the VIS (blue) and nIR (red) on plant leaf layers</p>
 </div>
 <ul>
@@ -955,7 +954,7 @@ $(document).ready(function () {
 <li><p>In remote sensing, the analysis often focuses on the green parts of the plants only</p></li>
 </ul>
 <div class="figure">
-<img src="fig/plants%20as%20system.png" alt="" />
+<img src="fig/plants%20as%20system.png" alt="Reflectance spectra of a stack of leaves (green), the whole plant (blue) and bark (red)" />
 <p class="caption">Reflectance spectra of a stack of leaves (green), the whole plant (blue) and bark (red)</p>
 </div>
 </div>
@@ -975,7 +974,7 @@ $(document).ready(function () {
 </ul></li>
 </ul>
 <div class="figure">
-<img src="fig/soil%20reflectance.png" alt="" />
+<img src="fig/soil%20reflectance.png" alt="Reflectance spectra of soil with low and high water content (Source: Asrar 1989, adapted)" />
 <p class="caption">Reflectance spectra of soil with low and high water content (Source: Asrar 1989, adapted)</p>
 </div>
 </div>
@@ -991,7 +990,7 @@ $(document).ready(function () {
 </ul></li>
 </ul>
 <div class="figure">
-<img src="fig/OM%20content.png" alt="" />
+<img src="fig/OM%20content.png" alt="Reflectance spectra of soil with low and high organic material content" />
 <p class="caption">Reflectance spectra of soil with low and high organic material content</p>
 </div>
 </div>
@@ -1006,7 +1005,7 @@ $(document).ready(function () {
 <li><p>In its frozen form of ice, and particularly as snow, water is a good reflector</p></li>
 </ul>
 <div class="figure">
-<img src="fig/water%20reflectance.png" alt="" />
+<img src="fig/water%20reflectance.png" alt="Reflectance spectra of pure water from simulation (dark blue) and river water from the Mosel (turquoise)" />
 <p class="caption">Reflectance spectra of pure water from simulation (dark blue) and river water from the Mosel (turquoise)</p>
 </div>
 </div>
@@ -1031,21 +1030,21 @@ $(document).ready(function () {
 <li><p>Band Interleaved by Pixel (BIP): for each band, gray values are stored in a pixel-wise manner on disk</p></li>
 </ul>
 <div class="figure">
-<img src="fig/BIP.png" alt="" />
+<img src="fig/BIP.png" alt="BIP storage structure for three bands with n pixel" />
 <p class="caption">BIP storage structure for three bands with n pixel</p>
 </div>
 <ul>
 <li>Band Interleaved by Line (BIL): bands are stored line-wise</li>
 </ul>
 <div class="figure">
-<img src="fig/BIL.png" alt="" />
+<img src="fig/BIL.png" alt="BIL storage structure for three bands with n pixel" />
 <p class="caption">BIL storage structure for three bands with n pixel</p>
 </div>
 <ul>
 <li>Band Sequential (BSQ): entire bands are stored on disk one after the other</li>
 </ul>
 <div class="figure">
-<img src="fig/BSQ.png" alt="" />
+<img src="fig/BSQ.png" alt="BSQ storage structure for three bands with n pixel" />
 <p class="caption">BSQ storage structure for three bands with n pixel</p>
 </div>
 <ul>
@@ -1157,20 +1156,20 @@ $(document).ready(function () {
 <li>Metadata are additional information about the data and are commonly recorded during data acquisition, e.g. Exchangeable Image File Format (EXIF) in standard camera images</li>
 </ul>
 <div class="figure">
-<img src="fig/metadata%20camera.png" alt="" />
+<img src="fig/metadata%20camera.png" alt="Metadata of a photograph" />
 <p class="caption">Metadata of a photograph</p>
 </div>
 <ul>
 <li><p>Remote-sensing raster formats usually have their individual way to store metadata</p></li>
 <li><p>ENVI format: binary file (.bsq) + header File (.hdr)</p>
 <div class="figure">
-<img src="fig/ENVI%20metadata.png" alt="" />
+<img src="fig/ENVI%20metadata.png" alt="Metadata in ENVI format as .hdr file" />
 <p class="caption">Metadata in ENVI format as .hdr file</p>
 </div></li>
 <li><p>GeoTIFF: within .tiff image</p></li>
 <li><p>GDAL: (.aux.pam) XML file to supplement existing metadata</p>
 <div class="figure">
-<img src="fig/GDAL%20metadata.png" alt="" />
+<img src="fig/GDAL%20metadata.png" alt="Metadata in GDAL format as XML file" />
 <p class="caption">Metadata in GDAL format as XML file</p>
 </div></li>
 </ul>
@@ -1188,15 +1187,15 @@ $(document).ready(function () {
 <li><p>Geometric resolution: 3 - 10 m (depending on altitude)</p></li>
 </ul>
 <div class="figure">
-<img src="fig/Hymap%20NASA.jpg" alt="" />
+<img src="fig/Hymap%20NASA.jpg" alt="HyMap sensor (Source: NASA)" />
 <p class="caption">HyMap sensor (Source: NASA)</p>
 </div>
 <div class="figure">
-<img src="fig/Hymap%20Berlin.png" alt="" />
+<img src="fig/Hymap%20Berlin.png" alt="HyMap data of Berlin" />
 <p class="caption">HyMap data of Berlin</p>
 </div>
 <div class="figure">
-<img src="fig/Beispielspektren%20Hymap.png" alt="" />
+<img src="fig/Beispielspektren%20Hymap.png" alt="HyMap sample spectra of “pure surface materials”" />
 <p class="caption">HyMap sample spectra of “pure surface materials”</p>
 </div>
 </div>
@@ -1212,7 +1211,7 @@ $(document).ready(function () {
 <li><p>111 of 128 spectral channels</p></li>
 </ul>
 <div class="figure">
-<img src="fig/hymap%20berlin%202.png" alt="" />
+<img src="fig/hymap%20berlin%202.png" alt="Dataset for the exercise" />
 <p class="caption">Dataset for the exercise</p>
 </div>
 </div>
@@ -1245,7 +1244,7 @@ $(document).ready(function () {
 <li><p>Developed by HU Berlin´s Earth Observation Lab for the hyperspectral satellite sensor EnMAP</p></li>
 </ul>
 <div class="figure">
-<img src="fig/EnMAP%20intro.png" alt="" />
+<img src="fig/EnMAP%20intro.png" alt="Interface of the EnMAP plugin in QGIS" />
 <p class="caption">Interface of the EnMAP plugin in QGIS</p>
 </div>
 </div>
@@ -1257,7 +1256,7 @@ $(document).ready(function () {
 <li><p><a href="enmap-box.readthedocs.io/en/latest/usr_section/usr_installation.html">Installation</a></p></li>
 </ul>
 <div class="figure">
-<img src="fig/EnMAP%20installation.png" alt="" />
+<img src="fig/EnMAP%20installation.png" alt="EnMAP-Box documentation (see here)" />
 <p class="caption">EnMAP-Box documentation (see <a href="enmap-box.readthedocs.io/en/latest/">here</a>)</p>
 </div>
 </div>
@@ -1286,7 +1285,7 @@ $(document).ready(function () {
 <li><p>Collect 5 reflectance spectra in the HyMap image (HyMAP_BB_Subset.bsq) for following (pure) materials/surfaces:</p>
 <ul>
 <li><p>Building</p></li>
-<li><p>Sealed (non build-up)</p></li>
+<li><p>Sealed (non built-up)</p></li>
 <li><p>Grass</p></li>
 <li><p>Tree</p></li>
 <li><p>Soil</p></li>
@@ -1313,7 +1312,7 @@ $(document).ready(function () {
 <li><p>Spatial resolution of 10 – 60 m, depending on spectral bands, e.g. nIR bands 8 (10m) and 8a (20m).</p></li>
 </ul>
 <div class="figure">
-<img src="fig/Sentinel2_bands.png" alt="" />
+<img src="fig/Sentinel2_bands.png" alt="Sentinel 2 vs Landsat 7 and 8" />
 <p class="caption">Sentinel 2 vs Landsat 7 and 8</p>
 </div>
 </div>
@@ -1329,28 +1328,26 @@ $(document).ready(function () {
 <li><p>L1C and L2A products are partitioned in “granules”: 100x100 km2 UTM/WGS84 projection</p></li>
 </ul>
 <div class="figure">
-<img src="fig/Sentinel2_granules.png" alt="" />
+<img src="fig/Sentinel2_granules.png" alt="Sentinel 2 Granules" />
 <p class="caption">Sentinel 2 Granules</p>
 </div>
 </div>
 <div id="acquiring-sentinel-2-data" class="section level2">
 <h2>Acquiring Sentinel-2 data</h2>
 <ul>
-<li><p>Create a User-Account at the <a href="https://scihub.copernicus.eu/dhus/#/home">Copernicus Open Access Hub</a></p></li>
+<li>Create a User-Account at the <a href="https://scihub.copernicus.eu/dhus/#/home">Copernicus Open Access Hub</a></li>
 <li><p>Search for images with these specifications:</p>
-<pre><code>Date: XXX
-
-Sensor: Sentinel-2
-
-Producttype: Surface Reflectance (Level 2A, S2MSI2A) 
-
-Cloud cover: max. 20%
-
-Region: greater area of Berlin</code></pre></li>
+<ul>
+<li><p>Date: XXX</p></li>
+<li><p>Sensor: Sentinel-2</p></li>
+<li><p>Producttype: Surface Reflectance (Level 2A, S2MSI2A)</p></li>
+<li><p>Cloud cover: max. 20%</p></li>
+<li><p>Region: greater area of Berlin</p></li>
+</ul></li>
 <li><p>How many images are available for these specifications? download this image:</p></li>
+<li><p>Granule: XXX</p></li>
+<li><p>Date: XXX</p></li>
 </ul>
-<p>Granule: XXX</p>
-<p>Date: XXX</p>
 </div>
 <div id="pre-processing" class="section level2">
 <h2>Pre-processing</h2>
@@ -1360,7 +1357,7 @@ Region: greater area of Berlin</code></pre></li>
 <li><p>Take a look at your files</p></li>
 </ul>
 <div class="figure">
-<img src="fig/Sentinel2_filestructure.png" alt="" />
+<img src="fig/Sentinel2_filestructure.png" alt="Sentinel 2 filestructure" />
 <p class="caption">Sentinel 2 filestructure</p>
 </div>
 <div id="visualizing-the-sentinel-2-image-with-virtual-raster-builder-in-the-enmap-box" class="section level3">
@@ -1369,7 +1366,7 @@ Region: greater area of Berlin</code></pre></li>
 <li><p>Goal: the single bands in JPEG2000-format (.jp2) will be merged into a single Multiband-Image in ENVI-format</p></li>
 <li><p>Open QGIS and install the ‘Virtual Raster Builder’ plugin</p></li>
 <li><p>Open the EnMAP-Box and load ‘S2_Subset_Berlin.shp’ into Data Sources. The shapefile will be used to clip the Sentinel-2 scene to a smaller extend</p></li>
-<li><p>Open ‘Virtual Raster Builder’ from the EnMAP-Box. Create a Multiband-Image with the following specifications:</p>
+<li>Open ‘Virtual Raster Builder’ from the EnMAP-Box. Create a Multiband-Image with the following specifications:
 <ul>
 <li>Spectral Bands: B2, B3, B4, B5, B6, B7, B8a, B11, B12</li>
 <li>Spatial Resolution: 20m (from the ‘R20M’ file)</li>
@@ -1395,9 +1392,9 @@ Region: greater area of Berlin</code></pre></li>
 <h3>Compare S2 &amp; HyMap</h3>
 <p>part 1 - spatial resolution</p>
 <ul>
-<li><p>Visualize the Sentinel-2 image and the HyMap image from last week in a RGB bandcombination that is suited for comparison. In order to do that open the images in two separate MapViews and link them (spatialy + zoom)</p></li>
+<li><p>Visualize the Sentinel-2 image and the HyMap image from last week in a RGB bandcombination that is suited for comparison. In order to do that open the images in two separate MapViews and link them (spatialy + zoom).</p></li>
 <li><p>Compare both images visually and describe the effects on image details due to the different spatial resolution (20 m vs. 3.6 m).</p></li>
-<li><p>Choose one surface as example for each of these classes: impervious- build up, impervious- not build up, grass/lawn, trees, soil, water.</p></li>
+<li><p>Choose one surface as example for each of these classes: impervious- built up, impervious- non built up, grass/lawn, trees, soil, water.</p></li>
 <li><p>Take a screenshot from each example.</p></li>
 </ul>
 </div>
@@ -1405,14 +1402,14 @@ Region: greater area of Berlin</code></pre></li>
 <h3>Compare S2 &amp; HyMap</h3>
 <p>part 2 - spectral resolution</p>
 <ul>
-<li><p>Restart QGIS and EnMAP-Box. Display the Sentinel-2 image and the HyMap image in a suited RGB band combination (Wozu ist der Neustart notwendig ?)</p></li>
+<li><p>Restart QGIS and EnMAP-Box. Display the Sentinel-2 image and the HyMap image in a suited RGB band combination. (Wozu ist der Neustart notwendig ?)</p></li>
 <li><p>Visualize spectra of the same surface in the Sentinel-2 and in the HyMAP image (9 vs. 111 spectral bands).</p></li>
 <li><p>Try to choose a ‘pure’ surface (no mixtures) which is also stable in temporal terms (unchanged over time).</p></li>
 <li><p>Do this for the classes mentioned above and add a description and a screenshot.</p></li>
 <li><p><strong>Assignment:</strong> please upload the comparison (spatial and spectral) of the Sentinel-2 and the HyMap image as pdf to moodle.</p></li>
 </ul>
 <div class="figure">
-<img src="fig/homework_example.png" alt="" />
+<img src="fig/homework_example.png" alt="assignment example" />
 <p class="caption">assignment example</p>
 </div>
 <hr />
@@ -1425,8 +1422,8 @@ Region: greater area of Berlin</code></pre></li>
 <div id="normalized-difference-vegetation-index-ndvi" class="section level2">
 <h2>Normalized Difference Vegetation Index (NDVI)</h2>
 <ul>
-<li><p>The derivation of vegetation indicies or similar variables is based on feature extraction</p></li>
-<li><p>NDVI the one of the most common vegeation indicies</p></li>
+<li><p>The derivation of vegetation indicies or similar variables is based on feature extraction.</p></li>
+<li><p>NDVI the one of the most common vegeation indicies.</p></li>
 <li><p>It represents the difference between red and nIR reflectance. This difference is strongly prounounced with photosynthetically active vegetation. (Sollte man wahrscheinlich nochmal umschreiben)</p></li>
 <li><p>The NDVI displayes this difference within a normalized value (between -1 and 1) for each pixel.</p></li>
 </ul>
@@ -1449,7 +1446,7 @@ Region: greater area of Berlin</code></pre></li>
 3. provide the NDVI formular      -&gt; NDVI   = (nIR - red)/(nIR + red)
 
 4. specify the output image       -&gt; NDVI   = [filepath and name of the NDVI image]</code></pre></li>
-<li><p>Run the function and open the singleband grayscale image in a new Map View</p></li>
+<li><p>Run the function and open the singleband grayscale image in a new Map View.</p></li>
 </ul>
 </div>
 <div id="part-2-discussion-of-the-ndvi" class="section level2">
@@ -1486,22 +1483,72 @@ Region: greater area of Berlin</code></pre></li>
 <p>-&gt; Sentinel_2_T33UUU_20190216_20m_9bands_subset_berlin.bsq</p></li>
 <li><p>Then calculate a difference-image for summer and winter NDVI.</p>
 <p>-&gt; NDVI 27. Juli 2019 – NDVI 16. Februar 2019 DATES: XXX</p></li>
-<li><p>Create the histogram of the difference-image and briefly discuss the distribution</p></li>
+<li><p>Compute the histogram of the difference-image and briefly discuss the distribution.</p></li>
 <li><p>Display the difference-image in a suited Visualisation; e.g. discrete classes, colour gradient from high negative to high positive differences.</p></li>
 <li><p>Discuss the resulting Map in bullitpoints concerning these surfaces: impervious (buildings, and non build-up), agriculture, forest, water.</p></li>
 <li><p><strong>Assignment:</strong> Please upload the results of the comparison of NDVI and imperviousness (part 1, plot and discussion) and the temporal variation of NDVI (part 2, histogram, map + legend, discussion) as pdf to moodle.</p></li>
 </ul>
-<p>Berechnen Sie das Histogramm des NDVI-Differenzbildes und diskutieren Sie die Verteilung stichpunktartig.</p>
-<p>Stellen Sie das NDVI-Differenzbild mit einer sinnvollen Visualisierung dar, z.B. einer diskrete Klassenunterteilung, oder einem Farbgradienten von hohen negativen bis zu hohen positiven Differenzen. Diskutieren Sie die Karte stichpunktartig bzgl. folgender Oberflächen: Versiegelte Flächen (Gebäude &amp; unbebaut), Landwirtschaft, Wald, Wasser Bitte laden Sie die Ergebnisse des Vergleiches NDVI und Versieglung (Teil 1, Plot, Diskussion) und der temporalen Variation des NDVI (Teil 2; Histogramm, Karte + Legende, Diskussion) als PDF in Moodle hoch.</p>
 <hr />
 </div>
 </div>
-<div id="image-classification" class="section level1">
-<h1>Image classification</h1>
+<div id="image-classification-part-1-decision-tree" class="section level1">
+<h1>Image Classification part 1: Decision Tree</h1>
+<div id="introduction-to-decision-tree-classification" class="section level2">
+<h2>Introduction to Decision Tree classification</h2>
+<ul>
+<li><p>Landcover classification with the Decision Tree</p></li>
+<li><p>DT is based on ‘nodes’/decision-rules to convert spectral information (image) into thematic information (landcover map)</p></li>
+<li><p>Each pixel will be assigned to a class (e.g. Landcover) if its spectral information (or indicies like NDVI) fits certain criteria</p></li>
+<li><p>A Decision Tree is created by hierachically organized binary (yes/no) decisions.</p></li>
+</ul>
+<p><img src="fig/decision_tree_scheme.png" /></p>
+</div>
+<div id="example-classification-of-water" class="section level2">
+<h2>Example: classification of water</h2>
+<ul>
+<li>NDVI &lt;= 0.6 and SWIR &lt;= 2% <img src="fig/Decision_Tree_Example.png" /></li>
+</ul>
+</div>
+<div id="decision-tree-exercise" class="section level2">
+<h2>Decision Tree exercise</h2>
+<ul>
+<li><p>Open the processed Sentinel-2 image (20m, 9 spectral bands, subset Berlin, DATE XXX) from session 6 in the EnMAP-Box.</p></li>
+<li><p>Classify water bodies vs. land according to the nodes from the example (see slide above). Use the imageMath Calculator. Note that the reflexion values of the image are scaled 0 - 10.000</p></li>
+</ul>
+<p><img src="fig/image_math_decisiontree_example.png" /></p>
+</div>
+<div id="decision-tree-for-landcover-of-berlin-and-suburbs" class="section level2">
+<h2>Decision Tree for Landcover of Berlin and suburbs</h2>
+<ul>
+<li><p>Open the processed Sentinel-2 image (20m, 9 spectral bands, subset Berlin, DATE XXX) from session 6 in the EnMAP-Box.</p></li>
+<li>Create a Decision Tree with imageMath Calculator (see examples below) to categorize the these classes:
+<ul>
+<li>class 1: water bodies</li>
+<li>class 2: built up</li>
+<li>class 3: soil &amp; dry vegetation</li>
+<li>class 4: coniferous forest</li>
+<li>class 5: deciduous forest &amp; lawns</li>
+</ul></li>
+<li>Discuss the resulting classification critically and list pros and cons of the method and the nodes used respectively</li>
+<li><p><strong>Assignment:</strong> Please upload a screenshot of your imageMath script, the classification (map + legend) and the discussion as .pdf to moodle.</p></li>
+</ul>
+<div class="figure">
+<img src="fig/decision_tree_exercise1.png" alt="Example" />
+<p class="caption">Example</p>
+</div>
+<div class="figure">
+<img src="fig/decision_tree_exercise2.png" alt="Code in imageMath Calculator" />
+<p class="caption">Code in imageMath Calculator</p>
+</div>
+<div class="figure">
+<img src="fig/decision_tree_good_practice.png" alt="Example for resulting map" />
+<p class="caption">Example for resulting map</p>
+</div>
 <hr />
 </div>
-<div id="random-forest" class="section level1">
-<h1>Random forest</h1>
+</div>
+<div id="image-classification-part-2-random-forest" class="section level1">
+<h1>Image Classification part 2: Random Forest</h1>
 <hr />
 </div>
 <div id="accuracy-assessment" class="section level1">
