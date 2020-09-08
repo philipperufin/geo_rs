@@ -1263,7 +1263,8 @@ $$NDVI = (ρnIR- ρred) / (ρnIR+ ρred)$$
   + class 4: coniferous forest 
   + class 5: deciduous forest & lawns
 
-* Discuss the resulting classification critically and list pros and cons of the method and the nodes used respectively 
+* Discuss the resulting classification critically and list pros and cons of the method and the nodes used respectively.
+
 * **Assignment:** Please upload a screenshot of your imageMath script, the classification (map + legend) and the discussion as .pdf to moodle. 
 
 ![Example](docs/fig/decision_tree_exercise1.png) 

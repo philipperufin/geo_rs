@@ -76,8 +76,8 @@ $(document).ready(function () {
         <li><a href="#lab-and-field-spectroscopy">Lab and field spectroscopy</a></li>
         <li><a href="#optical-data-multi--hyperspectral">Optical data (Multi- / Hyperspectral)</a></li>
         <li><a href="#enmap-box-for-qgis">EnMAP Box for QGIS</a></li>
-        <li><a href="#data-acquisition">Data acquisition</a></li>
-        <li><a href="#vegetation-properties-spectral-indices">Vegetation properties &amp; spectral indices</a></li>
+        <li><a href="#data-acquisition">Data Acquisition</a></li>
+        <li><a href="#vegetation-properties-spectral-indices">Vegetation Properties &amp; Spectral Indices</a></li>
         <li><a href="#image-classification-part-1-decision-tree">Image Classification part 1: Decision Tree</a></li>
         <li><a href="#image-classification-part-2-random-forest">Image Classification part 2: Random Forest</a></li>
         <li><a href="#accuracy-assessment">Accuracy assessment</a></li>
@@ -1302,7 +1302,7 @@ $(document).ready(function () {
 </div>
 </div>
 <div id="data-acquisition" class="section level1">
-<h1>Data acquisition</h1>
+<h1>Data Acquisition</h1>
 <div id="provider-vielleicht-eher-sentinel-2" class="section level2">
 <h2>Provider (vielleicht eher ‘Sentinel 2’?)</h2>
 <ul>
@@ -1333,7 +1333,7 @@ $(document).ready(function () {
 </div>
 </div>
 <div id="acquiring-sentinel-2-data" class="section level2">
-<h2>Acquiring Sentinel-2 data</h2>
+<h2>Acquiring Sentinel-2 Data</h2>
 <ul>
 <li>Create a User-Account at the <a href="https://scihub.copernicus.eu/dhus/#/home">Copernicus Open Access Hub</a></li>
 <li><p>Search for images with these specifications:</p>
@@ -1350,7 +1350,7 @@ $(document).ready(function () {
 </ul>
 </div>
 <div id="pre-processing" class="section level2">
-<h2>Pre-processing</h2>
+<h2>Pre-Processing</h2>
 <ul>
 <li><p>The downloaded Sentinel-2 image is a .zip-file</p></li>
 <li><p>Unzip it and delete the .zip-file</p></li>
@@ -1379,7 +1379,7 @@ $(document).ready(function () {
 <h3>Create VRT (in den Folien vom Vorjahr soll man ein ENVI erstellen…)</h3>
 </div>
 <div id="amend-metadata" class="section level3">
-<h3>Amend metadata</h3>
+<h3>Amend Metadata</h3>
 <ul>
 <li><p>Visualize the Multiband Sentinel-2 Image in the EnMAP-Box with the band combination R = 8a (nIR), G = 4 (red), B = 3 (green).</p></li>
 <li><p>Take a look at the .hdr file. Which metainformation is missing ?</p></li>
@@ -1417,7 +1417,7 @@ $(document).ready(function () {
 </div>
 </div>
 <div id="vegetation-properties-spectral-indices" class="section level1">
-<h1>Vegetation properties &amp; spectral indices</h1>
+<h1>Vegetation Properties &amp; Spectral Indices</h1>
 <p><img src="fig/spectral_resolution_comparison.png" /></p>
 <div id="normalized-difference-vegetation-index-ndvi" class="section level2">
 <h2>Normalized Difference Vegetation Index (NDVI)</h2>
@@ -1473,7 +1473,7 @@ $(document).ready(function () {
 <li><p>Inform yourself about the origin of the layer: (<a href="https://land.copernicus.eu/pan-european/high-resolution-layers/imperviousness" class="uri">https://land.copernicus.eu/pan-european/high-resolution-layers/imperviousness</a>)</p></li>
 <li><p>Gather NDVI values of 20 surfaces (zu viele, 10 würden reichen) in a table. Make sure to cover a wide range of values (e.g. -0.2 to 1).</p></li>
 <li><p>Create a scatterplot that shows the correlation between NDVI and imperviousness. Use a software of your choice; prefarably R.</p></li>
-<li><p>Describe and discuss the scatterplot in bullitpoints.</p></li>
+<li><p>Describe and discuss the scatterplot in bullet points.</p></li>
 </ul>
 </div>
 <div id="assignment-part-2-temporal-variation-of-the-ndvi" class="section level2">
@@ -1485,7 +1485,7 @@ $(document).ready(function () {
 <p>-&gt; NDVI 27. Juli 2019 – NDVI 16. Februar 2019 DATES: XXX</p></li>
 <li><p>Compute the histogram of the difference-image and briefly discuss the distribution.</p></li>
 <li><p>Display the difference-image in a suited Visualisation; e.g. discrete classes, colour gradient from high negative to high positive differences.</p></li>
-<li><p>Discuss the resulting Map in bullitpoints concerning these surfaces: impervious (buildings, and non build-up), agriculture, forest, water.</p></li>
+<li><p>Discuss the resulting Map in bullet points concerning these surfaces: impervious (buildings, and non build-up), agriculture, forest, water.</p></li>
 <li><p><strong>Assignment:</strong> Please upload the results of the comparison of NDVI and imperviousness (part 1, plot and discussion) and the temporal variation of NDVI (part 2, histogram, map + legend, discussion) as pdf to moodle.</p></li>
 </ul>
 <hr />
@@ -1504,13 +1504,13 @@ $(document).ready(function () {
 <p><img src="fig/decision_tree_scheme.png" /></p>
 </div>
 <div id="example-classification-of-water" class="section level2">
-<h2>Example: classification of water</h2>
+<h2>Example: Classification of Water</h2>
 <ul>
 <li>NDVI &lt;= 0.6 and SWIR &lt;= 2% <img src="fig/Decision_Tree_Example.png" /></li>
 </ul>
 </div>
 <div id="decision-tree-exercise" class="section level2">
-<h2>Decision Tree exercise</h2>
+<h2>Decision Tree Exercise</h2>
 <ul>
 <li><p>Open the processed Sentinel-2 image (20m, 9 spectral bands, subset Berlin, DATE XXX) from session 6 in the EnMAP-Box.</p></li>
 <li><p>Classify water bodies vs. land according to the nodes from the example (see slide above). Use the imageMath Calculator. Note that the reflexion values of the image are scaled 0 - 10.000</p></li>
@@ -1518,7 +1518,7 @@ $(document).ready(function () {
 <p><img src="fig/image_math_decisiontree_example.png" /></p>
 </div>
 <div id="decision-tree-for-landcover-of-berlin-and-suburbs" class="section level2">
-<h2>Decision Tree for Landcover of Berlin and suburbs</h2>
+<h2>Decision Tree for Landcover of Berlin and Suburbs</h2>
 <ul>
 <li><p>Open the processed Sentinel-2 image (20m, 9 spectral bands, subset Berlin, DATE XXX) from session 6 in the EnMAP-Box.</p></li>
 <li>Create a Decision Tree with imageMath Calculator (see examples below) to categorize the these classes:
@@ -1529,7 +1529,7 @@ $(document).ready(function () {
 <li>class 4: coniferous forest</li>
 <li>class 5: deciduous forest &amp; lawns</li>
 </ul></li>
-<li>Discuss the resulting classification critically and list pros and cons of the method and the nodes used respectively</li>
+<li><p>Discuss the resulting classification critically and list pros and cons of the method and the nodes used respectively.</p></li>
 <li><p><strong>Assignment:</strong> Please upload a screenshot of your imageMath script, the classification (map + legend) and the discussion as .pdf to moodle.</p></li>
 </ul>
 <div class="figure">
@@ -1549,7 +1549,146 @@ $(document).ready(function () {
 </div>
 <div id="image-classification-part-2-random-forest" class="section level1">
 <h1>Image Classification part 2: Random Forest</h1>
+<ol style="list-style-type: decimal">
+<li>Random Forest Classifier</li>
+<li>Variability and separability of thematic classes</li>
+<li>Random Forest Classification of the Greater Berlin Area</li>
+</ol>
+<div id="random-forest-classifier" class="section level2">
+<h2>1. Random Forest Classifier</h2>
+<ul>
+<li>Random Forest classification is a supervised classification approach based on self-learning decision trees</li>
+</ul>
+<p><img src="fig/random_forest_1.png" /> <img src="fig/random_forest_2.png" /></p>
+</div>
+<div id="random-forest-classifier-1" class="section level2">
+<h2>1. Random Forest Classifier</h2>
+<ul>
+<li><p>Random Forest classification relies on an ensemble of self-learning decision trees, where each decision tree is randomized</p></li>
+<li><p>Class assignment of each image pixel is based on a majority vote</p></li>
+</ul>
+<p><img src="fig/random_forest_3.png" /></p>
+</div>
+<div id="variability-and-separability-of-thematic-classes" class="section level2">
+<h2>2. Variability and separability of thematic classes</h2>
+<ul>
+<li><p><strong>Thematic classes</strong> often consist of multiple <strong>spectral classes</strong> (cluster of several surfaces which have similar spectral properties)</p></li>
+<li><p>It is essential to consider all spectral classes, meaning all characteristics of a thematic class, when generating training data for the Random Forest Classification</p></li>
+<li><p>Depending on the number of spectral classes, a thematic class can have higher or lower <strong>within-class variability</strong> <img src="fig/thematic_vs_spectral_classes.png" alt="spectral vs. thematic classes" /></p></li>
+<li><p>If spectral classes of a thematic classes are organized in separable clusters, the <strong>separability</strong> of the thematic classes is high</p></li>
+<li><p>If spectral classes overlap, the separability of thematic classes will decrease or even be unseparable.</p></li>
+<li><p>Depending on the separability of the thematic classes, the <strong>between-class similarity</strong> will be higher or lower <img src="fig/between_class_similarity.png" alt="between-class similarity" /></p></li>
+</ul>
+</div>
+<div id="random-forest-classification-of-the-greater-berlin-area" class="section level2">
+<h2>3. Random Forest Classification of the Greater Berlin Area</h2>
+<ul>
+<li><p>Goal: Landcover Classification Map of the Greater Berlin Area with Random Forest Classification</p></li>
+<li>Use the Random Forest to classify the processed Sentinel-2 image (20m, 9 spectral bands, subset Berlin, DATE XXX) from session 6 into these Landcover classes:
+<ul>
+<li>class 1: Urban (impervious built-up and non built-up)</li>
+<li>class 2: Grass &amp; Crops</li>
+<li>class 3: Deciduous Forest</li>
+<li>class 4: Coniferous forest</li>
+<li>class 5: Soil (including agricultural cropland)</li>
+<li>class 6: Water</li>
+</ul></li>
+<li><p>Afterwards the Quality of the Map (validation) shall be evaluated with an Accuracy Assessment</p></li>
+</ul>
+</div>
+<div id="random-forest-classification-of-the-greater-berlin-area-1" class="section level2">
+<h2>Random Forest Classification of the Greater Berlin Area</h2>
+<ul>
+<li>Part 1 - Gathering a Trainingdata-Set in QGIS</li>
+<li>Part 2 - Random Forest Classification in the EnMAP-Box</li>
+<li>Part 3 - Revision of the Classification</li>
+<li>Part 4 - Validation of the output in the EnMAP-Box (next session)</li>
+</ul>
+<div id="part-1---gathering-a-trainingdata-set-in-qgis" class="section level3">
+<h3>Part 1 - Gathering a Trainingdata-Set in QGIS</h3>
+<ul>
+<li><p>Visualize the Sentinel-2 image in QGIS</p></li>
+<li><p>Generate a point-shapefile (file name: “training_data.shp”, Geometry Type: Point, CRS: EPSG 32633) with two attribute columns: “lc_id” type: integer and “lc_class” type: text data.</p></li>
+<li><p>Collect 20 representative trainingpoints per class. Consider these criteria: spatially evenly distributed, each trainingpoint belongs to one class only, within each thematic class cover all spectral classes.</p></li>
+<li><p>Type in a unique class id and the name for each class in the attribute table:</p></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">lc_id</th>
+<th align="left">lc_class</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">urban</td>
+</tr>
+<tr class="even">
+<td align="left">…</td>
+<td align="left">…</td>
+</tr>
+<tr class="odd">
+<td align="left">2</td>
+<td align="left">grass_crops</td>
+</tr>
+<tr class="even">
+<td align="left">…</td>
+<td align="left">…</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">deciduous</td>
+</tr>
+<tr class="even">
+<td align="left">…</td>
+<td align="left">…</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Tips:
+<ul>
+<li>use suited pseudo color visualizations (e.g. nir-swir1-red, or nir-red-blue)</li>
+<li>use QuickMapServies with high resolution images as help</li>
+<li>use ‘Identify Features’ function in QGIS to see spectral signatures</li>
+<li>name your classes consistently</li>
+<li>save your progress regulary in the attribute table</li>
+</ul></li>
+</ul>
+</div>
+<div id="part-2---random-forest-classification-in-the-enmap-box" class="section level3">
+<h3>Part 2 - Random Forest Classification in the EnMAP-Box</h3>
+<ul>
+<li><p>Start the EnMAP-Box and load the Sentinel-2 image and the “training_data.shp” shapefile into the Data Source Panel.</p></li>
+<li><p>Open the ‘Classification Workflow’ via ‘Applictions’ and specify:</p>
+<ul>
+<li>Training Inputs- Raster: Sentinel-2 image</li>
+<li>Training Inputs- Reference: shapefile with trainingpoints</li>
+<li>Attribute: Column with numeric class ID<br />
+</li>
+<li>Sampling: Class name and colors<br />
+</li>
+<li>Mapping- Input Raster: Sentinel-2 image</li>
+<li>Mapping- Outputs: activate Classification and specify file path and file name of the resulting classification map</li>
+</ul></li>
+<li><p>Leave everything else to default setting for now.</p></li>
+<li><p>Run the Random Forest and open the resulting landcover classification in a second Map View.</p></li>
+</ul>
+</div>
+<div id="part-3---revision-of-the-classification" class="section level3">
+<h3>Part 3 - Revision of the Classification</h3>
+<ul>
+<li><p>Please assess the quality of the resulting landcover map and indentify which classes respectively which areas were unsufficiently/incorretly classified (e.g. separation of “urban” and “soil”).</p></li>
+<li><p>Gather further trainingpoints for the problematic classes. Consider to include mixed pixels that are dominated by impervious surfaces (&gt; 50%) into the “urban” class.</p></li>
+<li><p>Repeat the Random Forest Classification with the new trainingpoints until you reach a satisfying result.</p></li>
+<li><p>In 4-6 bullet points explain the procedure and the respective effect of the repeated generation of training data.</p></li>
+<li><p>Discuss the result of the final classification in 4-6 bullet points.</p></li>
+<li><p><strong>Assignment:</strong> Please upload the final classification (map incl. legend) and the discussion as .pdf in moodle.</p></li>
+</ul>
 <hr />
+</div>
+</div>
 </div>
 <div id="accuracy-assessment" class="section level1">
 <h1>Accuracy assessment</h1>
