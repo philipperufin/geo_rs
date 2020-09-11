@@ -37,38 +37,75 @@ opts_knit$set(width=75)
 
 ## About
 
-Introduction to Remote Sensing is an introductory remote sensing course for Geography students at Humboldt-Universität zu Berlin. In this course, you will be exposed to theoretical fundaments and introductory applications of remote sensing. The course is based on open source software.
+Introduction to Remote Sensing is the basic remote sensing course for Geography students at Humboldt-Universität zu Berlin. In this course, you will be exposed to the theoretical fundaments and introductory applications of remote sensing.
+
+We link the course contents closely to ongoing research of the department´s remote sensing group - the [Earth Observation Lab](https://hu.berlin/eo-lab). During the first weeks, we will focus on datasets acquired for the region of Berlin and Brandenburg. 
+
+Course topics contain 
+
+- visual image interpretation
+- spectrometry
+- acquisition and processing of optical satellite data
+- vegetation analyses
+- principles of image classification
+- fundaments of accuracy assessments
+- time series analyses
+- change detection
+
+After completing this course, you are able to acquire and process remotely sensed datasets using basic analytical tools and generate insights that help you to answer research questions in other projects. 
+
+The course is based on open source software.
 
 ------
 
 ## Requirements 
 
+*Active participation* is expected. Successful completion of the module requires you to ask questions and get involved in discussion rounds. 
+
+*Exercises* will be worked on in teams of four and submitted individually on a weekly basis. We grade submissions based on a point scheme, where each submission can earn you at most three points: 
+
+no submission: 0 points
+insufficient: 1 point
+satisfactory: 2 points
+good: 3 points
+
+75% of the maximum available points must be achieved by the end of the semester for successful participation. In case your submission was graded with 1 or 2 points, you can re-submit your results until monday the week after the initial submission. You will be informed about the grading of your submission via moodle. 
+
+*A brief presentation* of exercise results towards the end of the class is mandatory for each participant.
+
+
 ------
 
-## Learning goals & course contents
-
-------
 
 # Course materials
 
-## Software 
+## The lecture
+
+The video lectures for this course are provided via moodle on a weekly basis. The videos will be made available one week ahead of time to foster asynchronous learning. While watching the lectures, please make sure you understand the contents, and revisit passages which you did not understand. 
+
+We start the weekly meetings with a Q&A and discussion of the lecture contents, so please take notes on open questions of understanding or discussion.
+
+## The seminar
+
+Seminar contents are of an applied nature and closely related to the lecture contents. This website contains the neccessary seminar materials. For every week, we provide a background section, introducing the topic session, as well as the instructions and datasets needed to complete the weekly exercise.
+
+Completed exercises must be submitted individually (by every student) via [moodle](http://moodle.hu-berlin.de/) on a weekly basis. It is important to carefully read the exercise and submission instructions (e.g. concerning submission content, deadlines, file naming, and formats). Please contact us in case of doubt. 
+
+Submission deadline for the weekly exercise is always the following monday at 10am. Please provide single file submissions in the original format, in case you have to submit multiple files, create a *.zip archive. Please use the naming convention indicating session number and family name of all students in the respective team, e.g. 's01_hammer_spengler_okujeni_rufin.pdf'.
+
+Common disk space may be needed for group works. We suggest you use shared repositories in platforms like [HU-Box](https://www.cms.hu-berlin.de/de/dl/speicherdienste/HU-Box), or store your data in a shared folder on drive O:/ (access requires VPN connection).
+
+## Before we start
 
 We use openly available and platform independent (Windows, Linux, Mac OS) software packages throughout this course. Please install the latest versions of: 
 
-* [R v3.6.X](https://www.r-project.org/)
-* [R studio v1.2.X](https://rstudio.com/products/rstudio/)
+* [Google Earth Pro](http://www.google.de/earth/download/gep/)
+
 * [QGIS v3.1X.X](https://www.qgis.org/)
+* [EnMAP Box QGIS Plugin](https://enmap-box.readthedocs.io/en/latest/usr_section/usr_installation.html)
 
+* LibreOffice, Microsoft Office, or other software packages containing word processors spreadsheet tools
 
-------
-
-## Data
-
-------
-
-## Assignments
-
-The weekly assignments are defined in the respective session. Each session comprises several tasks that involve scipting in R. Course participants must submit completed assignments, documented as R scripts, in [moodle](http://moodle.hu-berlin.de/) to pass. Weekly submission deadlines are monday, 23:59. Please name the script of your work group as SXX_name1_name2.R. Please structure your script for every assignment as follows:
 
 ------
 
