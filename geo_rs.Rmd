@@ -1429,6 +1429,101 @@ $$NDVI = (ρnIR- ρred) / (ρnIR+ ρred)$$
 ------
 
 # Accuracy assessment
+1. Introduction to Accuracy Assessment 
+2. Exercise 
+
+## 1. Introduction to Accuracy Assessment 
+* Maps derived from remotely sensed data always contain classification errors. 
+
+* The severity of these errors depends on many factors, i.e. 
+  + input data (satellite images, training data)
+  + classification algorythms (Random Forest vs. Maximum Likelihood) 
+  + complexity and separability of classes (forest / non-forest vs. various urban surface materials)
+
+![](docs/fig/classification_vs_reality.png)
+  
+* A quantitative assessment of the map accuracy and errors is necessary. 
+
+* When validating a classification result, the classification (estimate) is compared to the validation data (ground truth) at random. 
+
+* Conditions for that are: 
+  + Validation data should be created inpendently from training data. 
+  + Validation data should be sampled at random, sometimes this is not practicable. 
+  + Validation and training data should not be autocorrelated, i.e. by defining a minimum distance between points.
+
+![](docs/fig/validation_example.png)
+
+## The Confusion Matrix 
+* The **confusion matrix** is the basis of all accuracy analysis and compares validation data (ground truth) with the classified pixels of the map (estimate). 
+
+![](docs/fig/validation_example2.png)
+
+![](docs/fig/validation_example3.png)
+
+* Class information obtained from the validation data appear in the columns of the matrix, pixels from the classification appear in the rows of the matrix. 
+
+* According to that the values in the diagonal are the correctly classified pixels. 
+
+![contrasting this example, usually only samples of validation data exist](docs/fig/validation_example4.png)
+
+
+## The Overall Accuracy 
+* A common error estimate is the **Overall Accuracy** which expresses the ration of correctly classified pixels in percent. 
+
+![](docs/fig/overall_accuracy.png)
+
+* Note: The OA does not provide information on which class was classified well or bad, nor if single classes were over- or underestimated. 
+
+* Class specific error estimates are the **User's Accuracy** with the Error of Commission and the **Producer's Accuracy** with the  Error of Omission 
+
+## User's Accuracy 
+* The **User's Accuracy** is a *class specific* error estimate. It expresses (in %) the amount of correctly classified pixels divided by the amount of validation pixels. 
+
+* The **Error of Commission** is derived from it. The error of commission expresses the percentage of falsly classified pixels when compared to validation data. 
+
+![](docs/fig/classification_vs_reality.png)
+
+* User´s Accuracy: 
+Forest: 100% (6/6)  ->  100% of the area classified as forest is really forest. 
+Cropland: 33% (1/3) ->  33% of the area classified as cropland is really cropland.
+
+* Error of Commission:
+Forest: 0% (0/6)    -> 0% of the area classified as forest was wrongly classified. 
+Cropland: 67% (2/3) -> 67% of the area classified as cropland was wrongly classified. 
+
+## Producer's Accuracy 
+* The **Producer's Accuracy** is also a *class specific* error estimate. It expresses (in %) the amount of correctly classified pixels of a class divided by the amount of all validation pixels of that class. 
+
+* The **Error of Omission** is derived from it. It expresses the percentage of pixels that were uncorrectly classified when compared to all validation points from that class.
+
+![](docs/fig/classification_vs_reality.png)
+
+
+* Producer´s Accuracy:
+  * Forest: 75% (6/8)    -> 75% of the true forest was correctly classified.
+  * Cropland: 100% (1/1) -> 100% of the true cropland was correctly classified. 
+
+
+* Error of Omission:
+  * Forest: 25% (2/8)    -> 25% of the true forest was forgotten. 
+  * Cropland: 0% (0/1)   -> 0% of the true cropland was forgotten.
+
+## Introduction to Accuracy Assessment 
+* Class specific error estimates (User's and Producer's Accuracy) can easily be derived from the confusion matrix. 
+
+* The class specific errors (Error of Commission and Omission) can easily be calculated:  
+
+  *100 % - User's Accuracy = Error of Commission*   
+
+
+  *100 % - Producer's Accuracy = Error of Omission* 
+
+* Note: to 'omit' area leads to **underestimation**
+* Note: to 'commit' errors leads to **overestimation**
+    
+ *OA = amount of correctly classified pixels / mount of validation pixels*
+![](docs/fig/overall_accuracy2.png)
+
 
 ------
 
