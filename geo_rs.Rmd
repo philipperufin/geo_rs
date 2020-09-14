@@ -1024,7 +1024,7 @@ Characterize the land cover and land use change in Berlin with Google Earth^TM^.
 
 ------
 
-# Data acquisition
+# Data Acquisition
 
 ## Provider (vielleicht eher 'Sentinel 2'?)
 
@@ -1052,7 +1052,7 @@ Launched in June 2015  (Sentinel-2A), and March 2017 (Sentinel-2B)
 
 ![Sentinel 2 Granules](docs/fig/Sentinel2_granules.png)
 
-## Acquiring Sentinel-2 data
+## Acquiring Sentinel-2 Data
 * Create a User-Account at the [Copernicus Open Access Hub](https://scihub.copernicus.eu/dhus/#/home)
 * Search for images with these specifications: 
 
@@ -1073,7 +1073,7 @@ download this image:
 
 * Date: XXX
 
-## Pre-processing
+## Pre-Processing
 * The downloaded Sentinel-2 image is a .zip-file
 
 * Unzip it and delete the .zip-file
@@ -1097,7 +1097,7 @@ download this image:
 
 ### Create VRT (in den Folien vom Vorjahr soll man ein ENVI erstellen...)
 
-### Amend metadata
+### Amend Metadata
 * Visualize the Multiband Sentinel-2 Image in the EnMAP-Box with the band combination R = 8a (nIR), G = 4 (red), B = 3 (green).
 
 * Take a look at the .hdr file. Which metainformation is missing ?
@@ -1137,7 +1137,7 @@ part 2 - spectral resolution
 
 ------
 
-# Vegetation properties & spectral indices
+# Vegetation Properties & Spectral Indices
 ![](docs/fig/spectral_resolution_comparison.png)
 
 ## Normalized Difference Vegetation Index (NDVI)
@@ -1203,8 +1203,8 @@ $$NDVI = (ρnIR- ρred) / (ρnIR+ ρred)$$
 
 * Create a scatterplot that shows the correlation between NDVI and imperviousness. Use a software of your choice; prefarably R. 
 
-* Describe and discuss the scatterplot in bullitpoints. 
-
+* Describe and discuss the scatterplot in bullet points. 
+ 
 ## Assignment part 2: Temporal Variation of the NDVI
 
 * Calculate another NDVI image from the provided Sentinel-2 image taken in winter (date XXX). Use the 'imageMath Calculator'. 
@@ -1219,40 +1219,43 @@ $$NDVI = (ρnIR- ρred) / (ρnIR+ ρred)$$
 
 * Display the difference-image in a suited Visualisation; e.g. discrete classes, colour gradient from high negative to high positive differences. 
 
-* Discuss the resulting Map in bullitpoints concerning these surfaces: impervious (buildings, and non build-up), agriculture, forest, water. 
+* Discuss the resulting Map in bullet points concerning these surfaces: impervious (buildings, and non build-up), agriculture, forest, water. 
 
 * **Assignment:** Please upload the results of the comparison of NDVI and imperviousness (part 1, plot and discussion) and the temporal variation of NDVI (part 2, histogram, map + legend, discussion) as pdf to moodle.
 
 ------
 
 # Image Classification part 1: Decision Tree 
+  1. Introduction 
+  2. Example: Classification of Water 
+  3. Exercise 
+  
+## Introduction to Decision Tree Classification 
 
-## Introduction to Decision Tree classification 
+* Goal: a landcover map with a Decision Tree. 
 
-* Landcover classification with the Decision Tree
+* DT is based on 'nodes'/decision-rules to convert **spectral information** (image) into **thematic information** (landcover map).
 
-* DT is based on 'nodes'/decision-rules to convert spectral information (image) into thematic information (landcover map)
-
-* Each pixel will be assigned to a class (e.g. Landcover) if its spectral information (or indicies like NDVI) fits certain criteria
+* Each pixel will be assigned to a class (e.g. Landcover) if its spectral information (or indicies like NDVI) fits certain criteria.
 
 * A Decision Tree is created by hierachically organized binary (yes/no) decisions. 
 
 ![](docs/fig/decision_tree_scheme.png)
 
-## Example: classification of water
+## Example: Classification of Water
 
 * NDVI <= 0.6 and SWIR <= 2%
 ![](docs/fig/Decision_Tree_Example.png)
 
-## Decision Tree exercise 
+## Decision Tree Exercise 
 
 * Open the processed Sentinel-2 image (20m, 9 spectral bands, subset Berlin, DATE XXX) from session 6 in the EnMAP-Box. 
 
-* Classify water bodies vs. land according to the nodes from the example (see slide above). Use the imageMath Calculator. Note that the reflexion values of the image are scaled 0 - 10.000 
+* Classify water bodies vs. land according to the nodes from the example (see slide above). Use the imageMath Calculator. Note that the reflexion values of the image are scaled 0 - 10.000.
 
 ![](docs/fig/image_math_decisiontree_example.png)
 
-## Decision Tree for Landcover of Berlin and suburbs 
+## Decision Tree for Landcover of Berlin and Suburbs 
 
 * Open the processed Sentinel-2 image (20m, 9 spectral bands, subset Berlin, DATE XXX) from session 6 in the EnMAP-Box.
 
@@ -1262,6 +1265,7 @@ $$NDVI = (ρnIR- ρred) / (ρnIR+ ρred)$$
   + class 3: soil & dry vegetation
   + class 4: coniferous forest 
   + class 5: deciduous forest & lawns
+
 
 * Discuss the resulting classification critically and list pros and cons of the method and the nodes used respectively.
 
@@ -1276,6 +1280,114 @@ $$NDVI = (ρnIR- ρred) / (ρnIR+ ρred)$$
 ------
 
 # Image Classification part 2: Random Forest
+1. Random Forest Classifier
+2. Variability and Separability of Thematic Classes
+3. Random Forest Classification of the Greater Berlin Area 
+
+## 1. Random Forest Classifier
+* Random Forest classification is a supervised classification approach based on self-learning decision trees.
+
+![](docs/fig/random_forest_1.png)
+![](docs/fig/random_forest_2.png)
+
+## 1. Random Forest Classifier 
+* Random Forest classification relies on an ensemble of self-learning decision trees, where each decision tree is randomized.
+
+* Class assignment of each image pixel is based on a majority vote.
+
+![](docs/fig/random_forest_3.png)
+
+## 2. Variability and separability of thematic classes
+* **Thematic classes** often consist of multiple **spectral classes** (cluster of several surfaces which have similar spectral properties).
+
+* It is essential to consider all spectral classes, meaning all characteristics of a thematic class, when generating training data for the Random Forest Classification.
+
+* Depending on the number of spectral classes, a thematic class can have higher or lower **within-class variability**.
+
+![spectral vs. thematic classes](docs/fig/thematic_vs_spectral_classes.png)
+
+* If spectral classes of the thematic classes are organized in separable clusters, the **separability** of the thematic classes is high. 
+
+* If spectral classes overlap, the separability of the thematic classes will decrease or they even may be unseparable. 
+
+* Depending on the separability of the thematic classes, the **between-class similarity** will be higher or lower.
+
+![between-class similarity](docs/fig/between_class_similarity.png)
+
+## 3. Random Forest Classification of the Greater Berlin Area 
+* Goal: landcover classification map of the Greater Berlin Area with Random Forest classification.
+
+* Use the Random Forest to classify the processed Sentinel-2 image (20m, 9 spectral bands, subset Berlin, DATE XXX) from session 6 into these Landcover classes: 
+  + class 1: Urban (impervious built-up and non built-up)
+  + class 2: Grass & Crops
+  + class 3: Deciduous Forest 
+  + class 4: Coniferous forest 
+  + class 5: Soil (including agricultural cropland)
+  + class 6: Water
+
+* Afterwards the Quality of the Map (validation) shall be evaluated with an Accuracy Assessment.
+
+## Random Forest Classification of the Greater Berlin Area 
+* Part 1 - Gathering a Trainingdata-Set in QGIS
+* Part 2 - Random Forest Classification in the EnMAP-Box
+* Part 3 - Revision of the Classification
+* Part 4 - Validation of the output in the EnMAP-Box (next session)
+
+### Part 1 - Gathering a Trainingdata-Set in QGIS 
+* Visualize the Sentinel-2 image in QGIS 
+
+* Generate a point-shapefile (file name: "training_data.shp", Geometry Type: Point, CRS: EPSG 32633) with two attribute columns:
+"lc_id" type: integer and "lc_class" type: text data.
+
+* Collect 20 representative training points per class. Consider these criteria: spatially evenly distributed, each training point belongs to one class only, within each thematic class cover all spectral classes. 
+
+* Type in a unique class id and the name for each class in the attribute table:
+
+|lc_id|lc_class|
+| :--- | :--- |
+|1|urban|
+|...|...|
+|2|grass_crops|
+|...|...|
+|3|deciduous|
+|...|...|
+
+* Tips: 
+  * use suited pseudo color visualizations (e.g. nir-swir1-red, or nir-red-blue)
+  * use QuickMapServies with high resolution images as help 
+  * use 'Identify Features' function in QGIS to see spectral signatures 
+  * name your classes consistently 
+  * save your progress regulary in the attribute table
+
+### Part 2 - Random Forest Classification in the EnMAP-Box 
+
+* Start the EnMAP-Box and load the Sentinel-2 image and the "training_data.shp" shapefile into the Data Source Panel. 
+
+* Open the 'Classification Workflow' via 'Applictions' and specify: 
+ 
+  + Training Inputs- Raster: Sentinel-2 image
+  + Training Inputs- Reference: shapefile with trainingpoints
+  + Attribute: Column with numeric class ID  
+  + Sampling: Class name and colors  
+  + Mapping- Input Raster: Sentinel-2 image 
+  + Mapping- Outputs: activate Classification and specify file path and file name of the resulting classification map 
+  
+* Leave everything else to default setting for now. 
+
+* Run the Random Forest and open the resulting landcover classification in a second Map View.
+
+### Part 3 - Revision of the Classification
+* Please assess the quality of the resulting landcover map and indentify which classes respectively which areas were unsufficiently/incorretly classified (e.g. separation of "urban" and "soil").
+
+* Gather further trainingpoints for the problematic classes. Consider to include mixed pixels that are dominated by impervious surfaces (> 50%) into the "urban" class. 
+
+* Repeat the Random Forest Classification with the new trainingpoints until you reach a satisfying result.
+
+* In 4-6 bullet points explain the procedure and the respective effect of the repeated generation of training data. 
+
+* Discuss the result of the final classification in 4-6 bullet points. 
+
+* **Assignment:** Please upload the final classification (map incl. legend) and the discussion as .pdf in moodle. 
 
 ------
 

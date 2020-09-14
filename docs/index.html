@@ -1493,12 +1493,17 @@ $(document).ready(function () {
 </div>
 <div id="image-classification-part-1-decision-tree" class="section level1">
 <h1>Image Classification part 1: Decision Tree</h1>
+<ol style="list-style-type: decimal">
+<li>Introduction</li>
+<li>Example: Classification of Water</li>
+<li>Exercise</li>
+</ol>
 <div id="introduction-to-decision-tree-classification" class="section level2">
-<h2>Introduction to Decision Tree classification</h2>
+<h2>Introduction to Decision Tree Classification</h2>
 <ul>
-<li><p>Landcover classification with the Decision Tree</p></li>
-<li><p>DT is based on ‘nodes’/decision-rules to convert spectral information (image) into thematic information (landcover map)</p></li>
-<li><p>Each pixel will be assigned to a class (e.g. Landcover) if its spectral information (or indicies like NDVI) fits certain criteria</p></li>
+<li><p>Goal: a landcover map with a Decision Tree.</p></li>
+<li><p>DT is based on ‘nodes’/decision-rules to convert <strong>spectral information</strong> (image) into <strong>thematic information</strong> (landcover map).</p></li>
+<li><p>Each pixel will be assigned to a class (e.g. Landcover) if its spectral information (or indicies like NDVI) fits certain criteria.</p></li>
 <li><p>A Decision Tree is created by hierachically organized binary (yes/no) decisions.</p></li>
 </ul>
 <p><img src="fig/decision_tree_scheme.png" /></p>
@@ -1513,7 +1518,7 @@ $(document).ready(function () {
 <h2>Decision Tree Exercise</h2>
 <ul>
 <li><p>Open the processed Sentinel-2 image (20m, 9 spectral bands, subset Berlin, DATE XXX) from session 6 in the EnMAP-Box.</p></li>
-<li><p>Classify water bodies vs. land according to the nodes from the example (see slide above). Use the imageMath Calculator. Note that the reflexion values of the image are scaled 0 - 10.000</p></li>
+<li><p>Classify water bodies vs. land according to the nodes from the example (see slide above). Use the imageMath Calculator. Note that the reflexion values of the image are scaled 0 - 10.000.</p></li>
 </ul>
 <p><img src="fig/image_math_decisiontree_example.png" /></p>
 </div>
@@ -1551,39 +1556,49 @@ $(document).ready(function () {
 <h1>Image Classification part 2: Random Forest</h1>
 <ol style="list-style-type: decimal">
 <li>Random Forest Classifier</li>
-<li>Variability and separability of thematic classes</li>
+<li>Variability and Separability of Thematic Classes</li>
 <li>Random Forest Classification of the Greater Berlin Area</li>
 </ol>
 <div id="random-forest-classifier" class="section level2">
 <h2>1. Random Forest Classifier</h2>
 <ul>
-<li>Random Forest classification is a supervised classification approach based on self-learning decision trees</li>
+<li>Random Forest classification is a supervised classification approach based on self-learning decision trees.</li>
 </ul>
 <p><img src="fig/random_forest_1.png" /> <img src="fig/random_forest_2.png" /></p>
 </div>
 <div id="random-forest-classifier-1" class="section level2">
 <h2>1. Random Forest Classifier</h2>
 <ul>
-<li><p>Random Forest classification relies on an ensemble of self-learning decision trees, where each decision tree is randomized</p></li>
-<li><p>Class assignment of each image pixel is based on a majority vote</p></li>
+<li><p>Random Forest classification relies on an ensemble of self-learning decision trees, where each decision tree is randomized.</p></li>
+<li><p>Class assignment of each image pixel is based on a majority vote.</p></li>
 </ul>
 <p><img src="fig/random_forest_3.png" /></p>
 </div>
 <div id="variability-and-separability-of-thematic-classes" class="section level2">
 <h2>2. Variability and separability of thematic classes</h2>
 <ul>
-<li><p><strong>Thematic classes</strong> often consist of multiple <strong>spectral classes</strong> (cluster of several surfaces which have similar spectral properties)</p></li>
-<li><p>It is essential to consider all spectral classes, meaning all characteristics of a thematic class, when generating training data for the Random Forest Classification</p></li>
-<li><p>Depending on the number of spectral classes, a thematic class can have higher or lower <strong>within-class variability</strong> <img src="fig/thematic_vs_spectral_classes.png" alt="spectral vs. thematic classes" /></p></li>
-<li><p>If spectral classes of a thematic classes are organized in separable clusters, the <strong>separability</strong> of the thematic classes is high</p></li>
-<li><p>If spectral classes overlap, the separability of thematic classes will decrease or even be unseparable.</p></li>
-<li><p>Depending on the separability of the thematic classes, the <strong>between-class similarity</strong> will be higher or lower <img src="fig/between_class_similarity.png" alt="between-class similarity" /></p></li>
+<li><p><strong>Thematic classes</strong> often consist of multiple <strong>spectral classes</strong> (cluster of several surfaces which have similar spectral properties).</p></li>
+<li><p>It is essential to consider all spectral classes, meaning all characteristics of a thematic class, when generating training data for the Random Forest Classification.</p></li>
+<li><p>Depending on the number of spectral classes, a thematic class can have higher or lower <strong>within-class variability</strong>.</p></li>
 </ul>
+<div class="figure">
+<img src="fig/thematic_vs_spectral_classes.png" alt="spectral vs. thematic classes" />
+<p class="caption">spectral vs. thematic classes</p>
+</div>
+<ul>
+<li><p>If spectral classes of the thematic classes are organized in separable clusters, the <strong>separability</strong> of the thematic classes is high.</p></li>
+<li><p>If spectral classes overlap, the separability of the thematic classes will decrease or they even may be unseparable.</p></li>
+<li><p>Depending on the separability of the thematic classes, the <strong>between-class similarity</strong> will be higher or lower.</p></li>
+</ul>
+<div class="figure">
+<img src="fig/between_class_similarity.png" alt="between-class similarity" />
+<p class="caption">between-class similarity</p>
+</div>
 </div>
 <div id="random-forest-classification-of-the-greater-berlin-area" class="section level2">
 <h2>3. Random Forest Classification of the Greater Berlin Area</h2>
 <ul>
-<li><p>Goal: Landcover Classification Map of the Greater Berlin Area with Random Forest Classification</p></li>
+<li><p>Goal: landcover classification map of the Greater Berlin Area with Random Forest classification.</p></li>
 <li>Use the Random Forest to classify the processed Sentinel-2 image (20m, 9 spectral bands, subset Berlin, DATE XXX) from session 6 into these Landcover classes:
 <ul>
 <li>class 1: Urban (impervious built-up and non built-up)</li>
@@ -1593,7 +1608,7 @@ $(document).ready(function () {
 <li>class 5: Soil (including agricultural cropland)</li>
 <li>class 6: Water</li>
 </ul></li>
-<li><p>Afterwards the Quality of the Map (validation) shall be evaluated with an Accuracy Assessment</p></li>
+<li><p>Afterwards the Quality of the Map (validation) shall be evaluated with an Accuracy Assessment.</p></li>
 </ul>
 </div>
 <div id="random-forest-classification-of-the-greater-berlin-area-1" class="section level2">
@@ -1609,7 +1624,7 @@ $(document).ready(function () {
 <ul>
 <li><p>Visualize the Sentinel-2 image in QGIS</p></li>
 <li><p>Generate a point-shapefile (file name: “training_data.shp”, Geometry Type: Point, CRS: EPSG 32633) with two attribute columns: “lc_id” type: integer and “lc_class” type: text data.</p></li>
-<li><p>Collect 20 representative trainingpoints per class. Consider these criteria: spatially evenly distributed, each trainingpoint belongs to one class only, within each thematic class cover all spectral classes.</p></li>
+<li><p>Collect 20 representative training points per class. Consider these criteria: spatially evenly distributed, each training point belongs to one class only, within each thematic class cover all spectral classes.</p></li>
 <li><p>Type in a unique class id and the name for each class in the attribute table:</p></li>
 </ul>
 <table>
