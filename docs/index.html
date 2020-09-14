@@ -104,37 +104,56 @@ $(document).ready(function () {
 </div>
 <div id="about" class="section level2">
 <h2>About</h2>
-<p>Introduction to Remote Sensing is an introductory remote sensing course for Geography students at Humboldt-Universität zu Berlin. In this course, you will be exposed to theoretical fundaments and introductory applications of remote sensing. The course is based on open source software.</p>
+<p>Introduction to Remote Sensing is the basic remote sensing course for Geography students at Humboldt-Universität zu Berlin. In this course, you will be exposed to the theoretical fundaments and introductory applications of remote sensing.</p>
+<p>We link the course contents closely to ongoing research of the department´s remote sensing group - the <a href="https://hu.berlin/eo-lab">Earth Observation Lab</a>. During the first weeks, we will focus on datasets acquired for the region of Berlin and Brandenburg.</p>
+<p>Course topics contain</p>
+<ul>
+<li>visual image interpretation</li>
+<li>spectrometry</li>
+<li>acquisition and processing of optical satellite data</li>
+<li>vegetation analyses</li>
+<li>principles of image classification</li>
+<li>fundaments of accuracy assessments</li>
+<li>time series analyses</li>
+<li>change detection</li>
+</ul>
+<p>After completing this course, you are able to acquire and process remotely sensed datasets using basic analytical tools and generate insights that help you to answer research questions in other projects.</p>
+<p>The course is based on open source software.</p>
 <hr />
 </div>
 <div id="requirements" class="section level2">
 <h2>Requirements</h2>
-<hr />
-</div>
-<div id="learning-goals-course-contents" class="section level2">
-<h2>Learning goals &amp; course contents</h2>
+<p><em>Active participation</em> is expected. Successful completion of the module requires you to ask questions and get involved in discussion rounds.</p>
+<p><em>Exercises</em> will be worked on in teams of four and submitted individually on a weekly basis. We grade submissions based on a point scheme, where each submission can earn you at most three points:</p>
+<p>no submission: 0 points insufficient: 1 point satisfactory: 2 points good: 3 points</p>
+<p>75% of the maximum available points must be achieved by the end of the semester for successful participation. In case your submission was graded with 1 or 2 points, you can re-submit your results until monday the week after the initial submission. You will be informed about the grading of your submission via moodle.</p>
+<p><em>A brief presentation</em> of exercise results towards the end of the class is mandatory for each participant.</p>
 <hr />
 </div>
 </div>
 <div id="course-materials" class="section level1">
 <h1>Course materials</h1>
-<div id="software" class="section level2">
-<h2>Software</h2>
+<div id="the-lecture" class="section level2">
+<h2>The lecture</h2>
+<p>The video lectures for this course are provided via moodle on a weekly basis. The videos will be made available one week ahead of time to foster asynchronous learning. While watching the lectures, please make sure you understand the contents, and revisit passages which you did not understand.</p>
+<p>We start the weekly meetings with a Q&amp;A and discussion of the lecture contents, so please take notes on open questions of understanding or discussion.</p>
+</div>
+<div id="the-seminar" class="section level2">
+<h2>The seminar</h2>
+<p>Seminar contents are of an applied nature and closely related to the lecture contents. This website contains the neccessary seminar materials. For every week, we provide a background section, introducing the topic session, as well as the instructions and datasets needed to complete the weekly exercise.</p>
+<p>Completed exercises must be submitted individually (by every student) via <a href="http://moodle.hu-berlin.de/">moodle</a> on a weekly basis. It is important to carefully read the exercise and submission instructions (e.g. concerning submission content, deadlines, file naming, and formats). Please contact us in case of doubt.</p>
+<p>Submission deadline for the weekly exercise is always the following monday at 10am. Please provide single file submissions in the original format, in case you have to submit multiple files, create a *.zip archive. Please use the naming convention indicating session number and family name of all students in the respective team, e.g. ‘s01_hammer_spengler_okujeni_rufin.pdf’.</p>
+<p>Common disk space may be needed for group works. We suggest you use shared repositories in platforms like <a href="https://www.cms.hu-berlin.de/de/dl/speicherdienste/HU-Box">HU-Box</a>, or store your data in a shared folder on drive O:/ (access requires VPN connection).</p>
+</div>
+<div id="before-we-start" class="section level2">
+<h2>Before we start</h2>
 <p>We use openly available and platform independent (Windows, Linux, Mac OS) software packages throughout this course. Please install the latest versions of:</p>
 <ul>
-<li><a href="https://www.r-project.org/">R v3.6.X</a></li>
-<li><a href="https://rstudio.com/products/rstudio/">R studio v1.2.X</a></li>
+<li><p><a href="http://www.google.de/earth/download/gep/">Google Earth Pro</a></p></li>
 <li><a href="https://www.qgis.org/">QGIS v3.1X.X</a></li>
+<li><p><a href="https://enmap-box.readthedocs.io/en/latest/usr_section/usr_installation.html">EnMAP Box QGIS Plugin</a></p></li>
+<li><p>LibreOffice, Microsoft Office, or other software packages containing word processors spreadsheet tools</p></li>
 </ul>
-<hr />
-</div>
-<div id="data" class="section level2">
-<h2>Data</h2>
-<hr />
-</div>
-<div id="assignments" class="section level2">
-<h2>Assignments</h2>
-<p>The weekly assignments are defined in the respective session. Each session comprises several tasks that involve scipting in R. Course participants must submit completed assignments, documented as R scripts, in <a href="http://moodle.hu-berlin.de/">moodle</a> to pass. Weekly submission deadlines are monday, 23:59. Please name the script of your work group as SXX_name1_name2.R. Please structure your script for every assignment as follows:</p>
 <hr />
 </div>
 </div>
@@ -1707,7 +1726,106 @@ $(document).ready(function () {
 </div>
 <div id="accuracy-assessment" class="section level1">
 <h1>Accuracy assessment</h1>
+<ol style="list-style-type: decimal">
+<li>Introduction to Accuracy Assessment</li>
+<li>Exercise</li>
+</ol>
+<div id="introduction-to-accuracy-assessment" class="section level2">
+<h2>1. Introduction to Accuracy Assessment</h2>
+<ul>
+<li><p>Maps derived from remotely sensed data always contain classification errors.</p></li>
+<li>The severity of these errors depends on many factors, i.e. 
+<ul>
+<li>input data (satellite images, training data)</li>
+<li>classification algorythms (Random Forest vs. Maximum Likelihood)</li>
+<li>complexity and separability of classes (forest / non-forest vs. various urban surface materials)</li>
+</ul></li>
+</ul>
+<p><img src="fig/classification_vs_reality.png" /></p>
+<ul>
+<li><p>A quantitative assessment of the map accuracy and errors is necessary.</p></li>
+<li><p>When validating a classification result, the classification (estimate) is compared to the validation data (ground truth) at random.</p></li>
+<li>Conditions for that are:
+<ul>
+<li>Validation data should be created inpendently from training data.</li>
+<li>Validation data should be sampled at random, sometimes this is not practicable.</li>
+<li>Validation and training data should not be autocorrelated, i.e. by defining a minimum distance between points.</li>
+</ul></li>
+</ul>
+<p><img src="fig/validation_example.png" /></p>
+</div>
+<div id="the-confusion-matrix" class="section level2">
+<h2>The Confusion Matrix</h2>
+<ul>
+<li>The <strong>confusion matrix</strong> is the basis of all accuracy analysis and compares validation data (ground truth) with the classified pixels of the map (estimate).</li>
+</ul>
+<p><img src="fig/validation_example2.png" /></p>
+<p><img src="fig/validation_example3.png" /></p>
+<ul>
+<li><p>Class information obtained from the validation data appear in the columns of the matrix, pixels from the classification appear in the rows of the matrix.</p></li>
+<li><p>According to that the values in the diagonal are the correctly classified pixels.</p></li>
+</ul>
+<div class="figure">
+<img src="fig/validation_example4.png" alt="contrasting this example, usually only samples of validation data exist" />
+<p class="caption">contrasting this example, usually only samples of validation data exist</p>
+</div>
+</div>
+<div id="the-overall-accuracy" class="section level2">
+<h2>The Overall Accuracy</h2>
+<ul>
+<li>A common error estimate is the <strong>Overall Accuracy</strong> which expresses the ration of correctly classified pixels in percent.</li>
+</ul>
+<p><img src="fig/overall_accuracy.png" /></p>
+<ul>
+<li><p>Note: The OA does not provide information on which class was classified well or bad, nor if single classes were over- or underestimated.</p></li>
+<li><p>Class specific error estimates are the <strong>User’s Accuracy</strong> with the Error of Commission and the <strong>Producer’s Accuracy</strong> with the Error of Omission</p></li>
+</ul>
+</div>
+<div id="users-accuracy" class="section level2">
+<h2>User’s Accuracy</h2>
+<ul>
+<li><p>The <strong>User’s Accuracy</strong> is a <em>class specific</em> error estimate. It expresses (in %) the amount of correctly classified pixels divided by the amount of validation pixels.</p></li>
+<li><p>The <strong>Error of Commission</strong> is derived from it. The error of commission expresses the percentage of falsly classified pixels when compared to validation data.</p></li>
+</ul>
+<p><img src="fig/classification_vs_reality.png" /></p>
+<ul>
+<li><p>User´s Accuracy: Forest: 100% (6/6) -&gt; 100% of the area classified as forest is really forest. Cropland: 33% (1/3) -&gt; 33% of the area classified as cropland is really cropland.</p></li>
+<li><p>Error of Commission: Forest: 0% (0/6) -&gt; 0% of the area classified as forest was wrongly classified. Cropland: 67% (2/3) -&gt; 67% of the area classified as cropland was wrongly classified.</p></li>
+</ul>
+</div>
+<div id="producers-accuracy" class="section level2">
+<h2>Producer’s Accuracy</h2>
+<ul>
+<li><p>The <strong>Producer’s Accuracy</strong> is also a <em>class specific</em> error estimate. It expresses (in %) the amount of correctly classified pixels of a class divided by the amount of all validation pixels of that class.</p></li>
+<li><p>The <strong>Error of Omission</strong> is derived from it. It expresses the percentage of pixels that were uncorrectly classified when compared to all validation points from that class.</p></li>
+</ul>
+<p><img src="fig/classification_vs_reality.png" /></p>
+<ul>
+<li>Producer´s Accuracy:
+<ul>
+<li>Forest: 75% (6/8) -&gt; 75% of the true forest was correctly classified.</li>
+<li>Cropland: 100% (1/1) -&gt; 100% of the true cropland was correctly classified.</li>
+</ul></li>
+<li>Error of Omission:
+<ul>
+<li>Forest: 25% (2/8) -&gt; 25% of the true forest was forgotten.</li>
+<li>Cropland: 0% (0/1) -&gt; 0% of the true cropland was forgotten.</li>
+</ul></li>
+</ul>
+</div>
+<div id="introduction-to-accuracy-assessment-1" class="section level2">
+<h2>Introduction to Accuracy Assessment</h2>
+<ul>
+<li><p>Class specific error estimates (User’s and Producer’s Accuracy) can easily be derived from the confusion matrix.</p></li>
+<li><p>The class specific errors (Error of Commission and Omission) can easily be calculated:</p>
+<p><em>100 % - User’s Accuracy = Error of Commission</em></p>
+<p><em>100 % - Producer’s Accuracy = Error of Omission</em></p></li>
+<li>Note: to ‘omit’ area leads to <strong>underestimation</strong></li>
+<li><p>Note: to ‘commit’ errors leads to <strong>overestimation</strong></p></li>
+</ul>
+<p><em>OA = amount of correctly classified pixels / mount of validation pixels</em> <img src="fig/overall_accuracy2.png" /></p>
 <hr />
+</div>
 </div>
 <div id="sentinel-2-time-series" class="section level1">
 <h1>Sentinel-2 time series</h1>
